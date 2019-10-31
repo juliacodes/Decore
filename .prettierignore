@@ -1,0 +1,8 @@
+# Directories
+/public
+/build
+/node_modules
+
+# Files
+*.json
+/src/serviceWorker.js
