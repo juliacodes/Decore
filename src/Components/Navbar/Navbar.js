@@ -1,14 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
+import COLORS from '../../Styling/Colors';
 
 const NavContainer = styled.div`
-    width: 100%;
-    padding: 15px 0;
+    width: 171px;
+    height: 171px;
+    background-color: ${COLORS.yellow};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        color: white;
+        font-size: 20px;
+    }
 `;
 
 const Navbar = () => (
     <NavContainer>
-        <p>Navbar</p>
+        <p>Logo</p>
     </NavContainer>
 );
 
