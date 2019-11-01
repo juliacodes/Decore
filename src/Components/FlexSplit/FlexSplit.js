@@ -1,11 +1,20 @@
 import styled from 'styled-components';
+import { QUERIES } from '../../Styling';
 
 export const FlexLeft = styled.div`
-    width: 30%;
+    width: 100%;
+
+    @media (${QUERIES.medium}) {
+        width: 30%;
+    }
 `;
 
 export const FlexRight = styled.div`
-    width: 30%;
+    width: 100%;
+
+    @media (${QUERIES.medium}) {
+        width: 30%;
+    }
 
     div {
         width: 100%;

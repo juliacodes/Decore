@@ -1,14 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLORS } from '../../Styling';
+import { COLORS, QUERIES } from '../../Styling';
 
 const Block = styled.div`
-    width: 400px;
+    width: 10%;
     height: 100vh;
     background-color: ${COLORS.deepBlue};
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
+
+    @media (${QUERIES.medium}) {
+        width: 400px;
+    }
 `;
 
 const ScrollCont = styled.div`

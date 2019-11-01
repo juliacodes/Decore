@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLORS } from '../../Styling';
+import { COLORS, QUERIES } from '../../Styling';
 
 const NavContainer = styled.div`
     width: 171px;
@@ -9,13 +9,17 @@ const NavContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
 
     p {
         color: white;
         font-size: 20px;
+    }
+
+    @media (${QUERIES.medium}) {
+        position: absolute;
     }
 `;
 

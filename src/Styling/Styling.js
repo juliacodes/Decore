@@ -27,3 +27,8 @@ export const Button = styled.button`
     border: none;
     margin-top: 40px;
 `;
+
+export const QUERIES = {
+    medium: `min-width: 1092px`,
+    small: `min-width: 552px`
+};
