@@ -8,6 +8,7 @@ html {
   
   body {
     margin: 0;
+    font-family: 'Muli', sans-serif;
   }
   
   main {
@@ -15,6 +16,7 @@ html {
   }
   
   h1 {
+    font-family: 'Oswald', sans-serif;
     font-size: 2em;
     margin: 0.67em 0;
   }
