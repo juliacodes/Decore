@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import COLORS from '../../Styling/Colors';
+import { COLORS } from '../../Styling';
 
 const Block = styled.div`
     width: 400px;

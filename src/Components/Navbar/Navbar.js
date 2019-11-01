@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import COLORS from '../../Styling/Colors';
+import { COLORS } from '../../Styling';
 
 const NavContainer = styled.div`
     width: 171px;
@@ -9,6 +9,9 @@ const NavContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
 
     p {
         color: white;
