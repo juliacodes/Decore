@@ -1,1 +1,1 @@
-export { COLORS, Heading } from './Styling';
+export { COLORS, Heading, Paragraph, Button } from './Styling';

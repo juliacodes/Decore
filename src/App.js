@@ -1,7 +1,7 @@
 import React from 'react';
 import { LayoutInner, Layout, Container } from './Components/Layout';
 import { FlexLeft, FlexRight } from './Components/FlexSplit';
-import { Heading } from './Styling';
+import { Heading, Paragraph, Button } from './Styling';
 
 import Navbar from './Components/Navbar';
 import RightBar from './Components/RightBar';
@@ -13,7 +13,10 @@ const App = () => (
             <Container>
                 <FlexLeft>
                     <Heading>Lorem ipsum dolor sit amet. </Heading>
-                    <p>Lorem ipsum dolor sit amet, consectetur </p>
+                    <Paragraph>
+                        Lorem ipsum dolor sit amet, consectetur{' '}
+                    </Paragraph>
+                    <Button>Launch</Button>
                 </FlexLeft>
                 <FlexRight>
                     <div />
