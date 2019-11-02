@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
+import Builder from './views/builder';
 import * as serviceWorker from './serviceWorker';
 // eslint-disable-next-line import/extensions
 import GlobalStyles from './reset.css.js';
@@ -11,6 +12,7 @@ const routing = (
         <div>
             <GlobalStyles />
             <Route exact path="/" component={App} />
+            <Route path="/edit" component={Builder} />
         </div>
     </Router>
 );
