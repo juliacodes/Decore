@@ -11,6 +11,12 @@ export const Heading = styled.h1`
     font-weight: 700;
 `;
 
+export const SmallHeading = styled.h1`
+    font-size: 20px;
+    font-weight: 500;
+    color: ${props => props.fontColor};
+`;
+
 export const Paragraph = styled.p`
     color: #929090;
     font-size: 15px;
