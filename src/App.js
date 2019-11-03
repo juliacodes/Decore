@@ -1,7 +1,9 @@
 import React from 'react';
 import { LayoutInner, Layout, Container } from './Components/Layout';
 import { FlexLeft, FlexRight } from './Components/FlexSplit';
-import { Heading, Paragraph, Button } from './Styling';
+import FeatureCards from './Components/FeatureCards';
+
+import { Heading, SubHeading, Paragraph, Button } from './Styling';
 
 import Navbar from './Components/Navbar';
 import RightBar from './Components/RightBar';

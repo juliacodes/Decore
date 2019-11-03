@@ -9,6 +9,13 @@ export const COLORS = {
 export const Heading = styled.h1`
     font-size: 80px;
     font-weight: 700;
+    text-transform: uppercase;
+`;
+
+export const SubHeading = styled.h2`
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
 `;
 
 export const Paragraph = styled.p`
