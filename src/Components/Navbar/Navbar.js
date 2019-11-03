@@ -17,6 +17,7 @@ const NavContainer = styled.div`
 
     @media (${QUERIES.medium}) {
         position: absolute;
+        top: 0;
     }
 `;
 

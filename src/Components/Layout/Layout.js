@@ -9,11 +9,13 @@ export const Layout = styled.div`
 
 export const LayoutInner = styled.div`
     width: 100%;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 0 auto 80px auto;
     position: relative;
+    justify-content: center;
 `;
 
 export const FullWidthContainer = styled.div``;

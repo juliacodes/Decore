@@ -2,9 +2,7 @@ import React from 'react';
 import { LayoutInner, Layout, Container } from './Components/Layout';
 import { FlexLeft, FlexRight } from './Components/FlexSplit';
 import FeatureCards from './Components/FeatureCards';
-
 import { Heading, SubHeading, Paragraph, Button } from './Styling';
-
 import Navbar from './Components/Navbar';
 import RightBar from './Components/RightBar';
 
@@ -38,6 +36,20 @@ const App = () => (
             </Container>
             <FeatureCards />
             <FeatureCards />
+        </LayoutInner>
+        <LayoutInner>
+            <Container style={{ height: 'unset' }}>
+                <FlexLeft>
+                    {' '}
+                    <SubHeading>Built For Developers</SubHeading>
+                    <Paragraph>
+                        Lorem ipsum dolor sit amet, consectetur Lorem ipsum
+                        dolor sit amet, consectetur Lorem ipsum dolor sit amet,
+                        consectetur
+                    </Paragraph>
+                </FlexLeft>
+                <FlexRight />
+            </Container>
         </LayoutInner>
     </Layout>
 );
