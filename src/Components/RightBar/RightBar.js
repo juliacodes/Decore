@@ -11,7 +11,7 @@ const Block = styled.div`
     top: 0;
 
     @media (${QUERIES.medium}) {
-        width: 400px;
+        width: 30%;
     }
 `;
 
@@ -22,10 +22,15 @@ const ScrollCont = styled.div`
     bottom: 250px;
     height: 30px;
     color: white;
+    display: none;
 
     p {
         display: inline-block;
         padding: 0;
+    }
+
+    @media (${QUERIES.medium}) {
+        display: block;
     }
 `;
 

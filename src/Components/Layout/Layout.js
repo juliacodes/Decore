@@ -3,6 +3,8 @@ import { QUERIES } from '../../Styling';
 
 export const Layout = styled.div`
     width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
 `;
 
 export const LayoutInner = styled.div`
@@ -11,6 +13,7 @@ export const LayoutInner = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    position: relative;
 `;
 
 export const FullWidthContainer = styled.div``;
