@@ -26,6 +26,19 @@ const App = () => (
             </Container>
             <RightBar />
         </LayoutInner>
+        <LayoutInner>
+            <Container style={{ height: 'unset' }}>
+                <FlexLeft />
+                <FlexRight>
+                    <SubHeading>Don&apos;t Start From Scratch</SubHeading>
+                    <Paragraph>
+                        Lorem ipsum dolor sit amet, consectetur{' '}
+                    </Paragraph>
+                </FlexRight>
+            </Container>
+            <FeatureCards />
+            <FeatureCards />
+        </LayoutInner>
     </Layout>
 );
 
