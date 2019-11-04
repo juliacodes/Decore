@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { COLORS, QUERIES } from '../../Styling';
 
 const NavContainer = styled.div`
-    width: 171px;
-    height: 171px;
+    width: 100px;
+    height: 100px;
     background-color: ${COLORS.yellow};
     display: flex;
     justify-content: center;
@@ -19,9 +19,8 @@ const NavContainer = styled.div`
     }
 
     @media (${QUERIES.medium}) {
-        position: absolute;
-        top: 0;
-        left: 0;
+        width: 171px;
+        height: 171px;
     }
 `;
 

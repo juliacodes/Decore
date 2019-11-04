@@ -9,7 +9,8 @@ const Block = styled.div`
     position: fixed;
     right: 0;
     top: 0;
-    transition: width 0.5s;
+    transform: none;
+    transition: transform 0.5s;
     display: none;
 
     @media (${QUERIES.medium}) {
@@ -26,7 +27,7 @@ const ScrollCont = styled.div`
     height: 30px;
     color: white;
     display: none;
-    transition: opacity 0.5s;
+    transition: opacity 0.5s 0.3s;
 
     p {
         display: inline-block;
@@ -78,7 +79,7 @@ class RightBar extends React.Component {
                     this.state.minimize
                         ? {
                               transitionDuration: '.5s',
-                              width: '30px'
+                              transform: 'translate(90%,0)'
                           }
                         : {}
                 }
@@ -88,7 +89,7 @@ class RightBar extends React.Component {
                         // eslint-disable-next-line react/destructuring-assignment
                         this.state.minimize
                             ? {
-                                  transitionDuration: '.2s',
+                                  transition: 'opacity  .3s',
                                   opacity: '0'
                               }
                             : { opacity: '1' }
