@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const QUERIES = {
+    medium: `min-width: 1092px`,
+    small: `min-width: 552px`
+};
+
 export const COLORS = {
     yellow: '#FDBE6F',
     deepBlue: '#5442F8',
@@ -7,8 +12,23 @@ export const COLORS = {
 };
 
 export const Heading = styled.h1`
-    font-size: 80px;
+    font-size: 40px;
     font-weight: 700;
+    text-transform: uppercase;
+
+    @media (${QUERIES.medium}) {
+        font-size: 60px;
+    }
+`;
+
+export const SubHeading = styled.h2`
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 30px;
+
+    @media (${QUERIES.medium}) {
+        font-size: 50px;
+    }
 `;
 
 export const SmallHeading = styled.h1`
@@ -33,8 +53,3 @@ export const Button = styled.button`
     border: none;
     margin-top: 40px;
 `;
-
-export const QUERIES = {
-    medium: `min-width: 1092px`,
-    small: `min-width: 552px`
-};
