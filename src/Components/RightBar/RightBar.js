@@ -72,11 +72,11 @@ class RightBar extends React.Component {
     }
 
     render() {
+        const { minimize } = this.state;
         return (
             <Block
                 style={
-                    // eslint-disable-next-line react/destructuring-assignment
-                    this.state.minimize
+                    minimize
                         ? {
                               transitionDuration: '.5s',
                               transform: 'translate(90%,0)'
@@ -86,8 +86,7 @@ class RightBar extends React.Component {
             >
                 <ScrollCont
                     style={
-                        // eslint-disable-next-line react/destructuring-assignment
-                        this.state.minimize
+                        minimize
                             ? {
                                   transition: 'opacity  .3s',
                                   opacity: '0'
