@@ -10,10 +10,10 @@ export const TriContainer = styled(Container)`
     margin: 0 auto;
     justify-content: space-between;
     align-items: unset;
-    padding: 20px;
+    padding: 0;
 
     ${FlexLeft}, ${FlexCenter}, ${FlexRight} {
-        width: 90%;
+        width: 100%;
         margin: 0;
 
         @media (${QUERIES.medium}) {
