@@ -57,7 +57,7 @@ class RightBar extends React.Component {
     }
 
     handleScroll() {
-        if (window.pageYOffset >= 600) {
+        if (window.pageYOffset >= 500) {
             this.setState({
                 minimize: true
             });
