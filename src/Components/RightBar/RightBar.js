@@ -10,9 +10,11 @@ const Block = styled.div`
     right: 0;
     top: 0;
     transition: width 0.5s;
+    display: none;
 
     @media (${QUERIES.medium}) {
         width: 30%;
+        display: block;
     }
 `;
 
