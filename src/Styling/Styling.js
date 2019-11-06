@@ -8,7 +8,9 @@ export const QUERIES = {
 export const COLORS = {
     yellow: '#FDBE6F',
     deepBlue: '#5442F8',
-    lightBlue: '#e7f6fd'
+    lightBlue: '#e7f6fd',
+    palePink: '#F1DDE8',
+    paleBlue: '#E6EFFE'
 };
 
 export const Heading = styled.h1`
