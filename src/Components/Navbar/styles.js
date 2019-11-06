@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { COLORS, QUERIES } from '../../Styling';
 
@@ -24,10 +23,4 @@ const NavContainer = styled.div`
     }
 `;
 
-const Navbar = () => (
-    <NavContainer>
-        <p>Logo</p>
-    </NavContainer>
-);
-
-export default Navbar;
+export default NavContainer;
