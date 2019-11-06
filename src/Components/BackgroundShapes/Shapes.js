@@ -22,11 +22,11 @@ export const TriCont = styled.svg`
     animation: ${AnimateIn} 0.5s forwards;
 `;
 
-export const Circle = props => {
+export const Circle = ({ topPosition, leftPosition, colorStroke }) => {
     return (
         <CircleCont
-            topPosition={props.topPosition}
-            leftPosition={props.leftPosition}
+            topPosition={topPosition}
+            leftPosition={leftPosition}
             width="11"
             height="11"
             viewBox="0 0 11 11"
@@ -37,18 +37,18 @@ export const Circle = props => {
                 cx="5.5"
                 cy="5.5"
                 r="4.5"
-                stroke={props.colorStroke}
+                stroke={colorStroke}
                 strokeWidth="2"
             />
         </CircleCont>
     );
 };
 
-export const Triangle = props => {
+export const Triangle = ({ topPosition, leftPosition, colorStroke }) => {
     return (
         <TriCont
-            topPosition={props.topPosition}
-            leftPosition={props.leftPosition}
+            topPosition={topPosition}
+            leftPosition={leftPosition}
             width="22"
             height="23"
             viewBox="0 0 22 23"
@@ -57,14 +57,14 @@ export const Triangle = props => {
         >
             <path
                 d="M1.99051 6.19199L16.6464 9.5041L6.45008 20.5404L1.99051 6.19199Z"
-                stroke={props.colorStroke}
+                stroke={colorStroke}
                 strokeWidth="2"
             />
         </TriCont>
     );
 };
 
-export const Dot = props => {
+export const Dot = ({ colorStroke }) => {
     return (
         <DotCont
             width="8"
@@ -73,13 +73,7 @@ export const Dot = props => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >
-            <circle
-                cx="4"
-                cy="4"
-                r="4"
-                fill={props.colorStroke}
-                fillOpacity="0.61"
-            />
+            <circle cx="4" cy="4" r="4" fill={colorStroke} fillOpacity="0.61" />
         </DotCont>
     );
 };

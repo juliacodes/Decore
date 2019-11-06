@@ -1,13 +1,19 @@
 import { keyframes } from 'styled-components/macro';
 
 const AnimateIn = keyframes`
-from{
+0%{
     opacity: 0;
-    transform: scale(0) rotate(0deg);
+    transform: translate(0, 10px) scale(0) rotate(0deg);
 }
-to{
+
+70%{
     opacity: 1;
-    transform: scale(1.7) rotate(200deg);
+    transform: translate(0, 0) scale(1.9) rotate(180deg);
+}
+
+100%{
+    opacity: 1;
+    transform: translate(0, 0) scale(1.7) rotate(200deg);
 }
 `;
 
