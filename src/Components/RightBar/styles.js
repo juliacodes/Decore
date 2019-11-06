@@ -6,7 +6,7 @@ export const SlideOut = keyframes`
     transform: translate(0,0) rotate(0deg)
 }
 
-80%{
+70%{
     transform: translate(90%,0) matrix(1.00,0.00,0.050,1.00,0,0);
 }
 100%{
@@ -16,10 +16,14 @@ export const SlideOut = keyframes`
 
 export const SlideIn = keyframes`
 0%{
-    transform: translate(90%,0)
+    transform: translate(92%,0)  matrix(1.00,0.00,0.00,1.00,0,0);
+}
+
+70%{
+    transform: translate(5%,0) matrix(1.00,0.00,0.050,1.00,0,0);
 }
 100%{
-    transform: translate(0,0)
+    transform: translate(0,0) rotate(0deg)
 }
 `;
 
