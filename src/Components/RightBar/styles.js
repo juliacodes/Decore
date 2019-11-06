@@ -1,5 +1,27 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components/macro';
 import { COLORS, QUERIES } from '../../Styling';
+
+export const SlideOut = keyframes`
+0%{
+    transform: translate(0,0) rotate(0deg)
+}
+
+80%{
+    transform: translate(90%,0) matrix(1.00,0.00,0.050,1.00,0,0);
+}
+100%{
+    transform: translate(92%,0)  matrix(1.00,0.00,0.00,1.00,0,0);
+}
+`;
+
+export const SlideIn = keyframes`
+0%{
+    transform: translate(90%,0)
+}
+100%{
+    transform: translate(0,0)
+}
+`;
 
 export const Block = styled.div`
     width: 10%;
@@ -8,9 +30,15 @@ export const Block = styled.div`
     position: fixed;
     right: 0;
     top: 0;
-    transform: none;
-    transition: transform 0.5s;
     display: none;
+    animation: ${props =>
+        props.minimizeAnim
+            ? css`
+                  ${SlideOut} .8s forwards ease-out
+              `
+            : css`
+                  ${SlideIn} .8s forwards ease-out
+              `};
 
     @media (${QUERIES.medium}) {
         width: 30%;

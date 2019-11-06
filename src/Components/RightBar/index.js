@@ -28,16 +28,7 @@ export default class RightBar extends React.Component {
     render() {
         const { minimize } = this.state;
         return (
-            <Block
-                style={
-                    minimize
-                        ? {
-                              transitionDuration: '.5s',
-                              transform: 'translate(90%,0)'
-                          }
-                        : {}
-                }
-            >
+            <Block minimizeAnim={minimize} style={minimize ? {} : {}}>
                 <ScrollCont
                     style={
                         minimize
