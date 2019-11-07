@@ -10,6 +10,8 @@ import Shapes from './Components/BackgroundShapes';
 
 import RightBar from './Components/RightBar';
 
+import Footer from './Components/Footer';
+
 const App = () => (
     <Layout>
         <LayoutInner>
@@ -55,6 +57,7 @@ const App = () => (
                 </FlexLeft>
                 <FlexRight />
             </Container>
+            <Footer />
         </LayoutInner>
     </Layout>
 );
