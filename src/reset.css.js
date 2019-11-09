@@ -34,6 +34,11 @@ html {
 
   a {
     background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: inherit;
   }
   
   abbr[title] {
