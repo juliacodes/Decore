@@ -1,10 +1,9 @@
-import React from 'react';
 import styled from 'styled-components/macro';
 import { Container } from '../Layout';
 import { FlexLeft, FlexRight, FlexCenter } from '../FlexSplit';
-import { SubHeading, Paragraph, QUERIES } from '../../Styling';
+import { SubHeading, QUERIES } from '../../Styling';
 
-export const TriContainer = styled(Container)`
+const TriContainer = styled(Container)`
     width: 100%;
     height: auto;
     margin: 0 auto;
@@ -55,26 +54,4 @@ export const TriContainer = styled(Container)`
     }
 `;
 
-const FeatureCards = () => (
-    <TriContainer>
-        <FlexLeft>
-            <div>
-                <SubHeading>Feature</SubHeading>
-                <Paragraph>
-                    Lorem ipsum dolor sit amet, dolor sit amet{' '}
-                </Paragraph>
-            </div>
-        </FlexLeft>
-        <FlexCenter>
-            <div>
-                <SubHeading>Feature</SubHeading>
-                <Paragraph>
-                    Lorem ipsum dolor sit amet, dolor sit amet{' '}
-                </Paragraph>
-            </div>
-        </FlexCenter>
-        <FlexRight />
-    </TriContainer>
-);
-
-export default FeatureCards;
+export default TriContainer;

@@ -12,7 +12,9 @@ export const COLORS = {
     yellow: '#FDBE6F',
     darkBlue: '#005EFD',
     deepBlue: '#5442F8',
-    lightBlue: '#e7f6fd'
+    lightBlue: '#e7f6fd',
+    palePink: '#F1DDE8',
+    paleBlue: '#E6EFFE'
 };
 
 export const FONTS = {

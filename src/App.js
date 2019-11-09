@@ -6,12 +6,17 @@ import { FlexLeft, FlexRight } from './Components/FlexSplit';
 import FeatureCards from './Components/FeatureCards';
 
 import Navbar from './Components/Navbar';
+import Shapes from './Components/BackgroundShapes';
+
 import RightBar from './Components/RightBar';
+
+import Footer from './Components/Footer';
 
 const App = () => (
     <Layout>
         <LayoutInner>
             <Navbar />
+            <Shapes />
             <Container>
                 <FlexLeft>
                     <Heading>Lorem ipsum dolor sit amet. </Heading>
@@ -52,6 +57,7 @@ const App = () => (
                 </FlexLeft>
                 <FlexRight />
             </Container>
+            <Footer />
         </LayoutInner>
     </Layout>
 );
