@@ -14,7 +14,7 @@ const routing = (
             <GlobalStyles />
             <Route exact path="/" component={App} />
             <Route path="/theme" component={ChooseTheme} />
-            <Route path="/edit" component={Builder} />
+            <Route path="/edit/:theme" component={Builder} />
         </div>
     </Router>
 );

@@ -1,21 +1,30 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChooseThemeLayout, ThemeWrapper, Theme } from './styles';
-import { SmallHeading, Button } from '../../Styling/Styling';
+import { COLORS, FONTS, SmallHeading, Button } from '../../Styling/Styling';
+import {
+    ChooseTheme,
+    ChooseThemeLayout,
+    ThemeWrapper,
+    Theme,
+    ShortHero
+} from './styles';
 
 const ThemeChooser = () => {
-    const [chosenTheme, setChosenTheme] = useState(undefined);
+    const [chosenTheme, setChosenTheme] = useState('second');
 
+    // Set the selected theme when a user clicks one
     const handleTheme = themeName => {
         setChosenTheme(themeName);
     };
 
     return (
-        <div>
-            <ChooseThemeLayout>
-                <SmallHeading fontColor="#8F8F8F">
+        <ChooseTheme>
+            <ShortHero background="#5442F8">
+                <SmallHeading fontColor="#FFFFFF" fontFamily={FONTS.secondary}>
                     Choose Your Template
                 </SmallHeading>
+            </ShortHero>
+            <ChooseThemeLayout>
                 <ThemeWrapper>
                     <Theme
                         onClick={() => handleTheme('first')}
@@ -30,11 +39,19 @@ const ThemeChooser = () => {
                         className={chosenTheme === 'third' ? 'selected' : null}
                     />
                 </ThemeWrapper>
-                <Button>
-                    <Link to={`/edit/${chosenTheme}`}>Continue</Link>
-                </Button>
+                <Link to={`/edit/${chosenTheme}`}>
+                    <Button
+                        background={COLORS.lightBlue}
+                        color={COLORS.darkBlue}
+                        fontFamily={FONTS.primary}
+                        hoverBackground={COLORS.darkBlue}
+                        hoverColor={COLORS.lightBlue}
+                    >
+                        Continue
+                    </Button>
+                </Link>
             </ChooseThemeLayout>
-        </div>
+        </ChooseTheme>
     );
 };
 
