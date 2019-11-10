@@ -1,25 +1,25 @@
 import React from 'react';
-import { FlexLeft, FlexRight, FlexCenter } from '../FlexSplit';
+import { FlexLeft, FlexRight, FlexCenter, ImageDiv } from '../FlexSplit';
 import { SubHeading, Paragraph } from '../../Styling';
 import TriContainer from './styles';
 
 const FeatureCards = () => (
     <TriContainer>
         <FlexLeft>
-            <div>
+            <ImageDiv>
                 <SubHeading>Feature</SubHeading>
                 <Paragraph>
                     Lorem ipsum dolor sit amet, dolor sit amet{' '}
                 </Paragraph>
-            </div>
+            </ImageDiv>
         </FlexLeft>
         <FlexCenter>
-            <div>
+            <ImageDiv>
                 <SubHeading>Feature</SubHeading>
                 <Paragraph>
                     Lorem ipsum dolor sit amet, dolor sit amet{' '}
                 </Paragraph>
-            </div>
+            </ImageDiv>
         </FlexCenter>
         <FlexRight />
     </TriContainer>

@@ -33,6 +33,16 @@ export const SubHeading = styled.h2`
     }
 `;
 
+export const HeadingLight = styled.h3`
+    font-weight: 400;
+    font-size: 20px;
+    margin: 30px 0;
+
+    @media (${QUERIES.medium}) {
+        font-size: 25px;
+    }
+`;
+
 export const Paragraph = styled.p`
     color: #929090;
     font-size: 15px;
