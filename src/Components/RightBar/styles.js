@@ -4,41 +4,41 @@ import { COLORS, QUERIES } from '../../Styling';
 
 export const SlideOut = keyframes`
 0%{
-    transform: scale(1)  translate(0,0) rotate(0deg)
+    transform: translate(70%,0) rotate(0deg)
 }
 
 70%{
-    transform: scale(1) translate(90%,0) matrix(1.00,0.00,0.050,1.00,0,0);
+    transform: translate(94%,0) matrix(1.00,0.00,0.050,1.00,0,0);
 }
 100%{
-    transform: scale(1) translate(92%,0)  matrix(1.00,0.00,0.00,1.00,0,0);
+    transform:translate(97%,0)  matrix(1.00,0.00,0.00,1.00,0,0);
 }
 `;
 
 export const SlideIn = keyframes`
 0%{
-    transform: translate(92%,0)  matrix(1.00,0.00,0.00,1.00,0,0);
+    transform: translate(100%,0)  matrix(1.00,0.00,0.00,1.00,0,0);
 }
 
 70%{
-    transform: translate(5%,0) matrix(1.00,0.00,0.050,1.00,0,0);
+    transform: translate(78%,0) matrix(1.00,0.00,0.050,1.00,0,0);
 }
 100%{
-    transform: translate(0,0) rotate(0deg)
+    transform: translate(70%,0)
 }
 `;
 
 export const SlideFull = keyframes`
 0%{
-    transform: scale(1) translate(92%,0)  matrix(1.00,0.00,0.00,1.00,0,0);
+    transform: translate(92%,0)  matrix(1.00,0.00,0.00,1.00,0,0);
 }
 
 70%{
-    transform: scale(7) matrix(1.00,0.00,0.050,1.00,0,0);
+    transform: matrix(1.00,0.00,0.050,1.00,0,0);
 }
 100%{
     background-color: #3A3A43;
-    transform: scale(10) matrix(1.00,0.00,0.00,1.00,0,0)
+    transform: matrix(1.00,0.00,0.00,1.00,0,0)
 }
 `;
 
@@ -64,7 +64,7 @@ export const Block = styled.div`
               `};
 
     @media (${QUERIES.medium}) {
-        width: 30%;
+        width: 100%;
         display: block;
     }
 `;
