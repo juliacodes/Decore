@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container } from '../Layout';
+import { Container, LayoutInner } from '../Layout';
 import { FlexLeft, FlexRight, FlexCenter } from '../FlexSplit';
 
 import { COLORS, QUERIES, SubHeading, Button } from '../../Styling';
 
 const FooterContainer = styled(Container)`
-    height: 500px;
-
     ${FlexLeft} {
         width: 30%;
     }
@@ -19,24 +17,28 @@ const FooterContainer = styled(Container)`
     ${Button} {
         background-color: #ffcc57;
         color: #fff;
+        float: right;
+        width: 220px;
     }
 `;
 
 const Footer = () => (
-    <FooterContainer>
-        <FlexLeft>
-            <SubHeading>
-                Start
-                <br />
-                Building
-                <br />
-                Today
-            </SubHeading>
-        </FlexLeft>
-        <FlexRight>
-            <Button>Launch Builder -></Button>
-        </FlexRight>
-    </FooterContainer>
+    <LayoutInner>
+        <FooterContainer>
+            <FlexLeft>
+                <SubHeading>
+                    Start
+                    <br />
+                    Building
+                    <br />
+                    Today
+                </SubHeading>
+            </FlexLeft>
+            <FlexRight>
+                <Button>Launch Builder &#10230;</Button>
+            </FlexRight>
+        </FooterContainer>
+    </LayoutInner>
 );
 
 export default Footer;

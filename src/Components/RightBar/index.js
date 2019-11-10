@@ -5,7 +5,7 @@ export default class RightBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            minimize: false
+            position: 'half'
         };
     }
 
@@ -14,24 +14,43 @@ export default class RightBar extends React.Component {
     }
 
     handleScroll() {
-        if (window.pageYOffset >= 500) {
+        const windowHeight =
+            'innerHeight' in window
+                ? window.innerHeight
+                : document.documentElement.offsetHeight;
+        const { body } = document;
+        const html = document.documentElement;
+        const docHeight = Math.max(
+            body.scrollHeight,
+            body.offsetHeight,
+            html.clientHeight,
+            html.scrollHeight,
+            html.offsetHeight
+        );
+        const windowBottom = windowHeight + window.pageYOffset;
+
+        if (window.pageYOffset >= 500 && windowBottom + 100 < docHeight) {
             this.setState({
-                minimize: true
+                position: 'side'
+            });
+        } else if (windowBottom + 100 >= docHeight) {
+            this.setState({
+                position: 'full'
             });
         } else {
             this.setState({
-                minimize: false
+                position: 'half'
             });
         }
     }
 
     render() {
-        const { minimize } = this.state;
+        const { position } = this.state;
         return (
-            <Block minimizeAnim={minimize}>
+            <Block positionAnim={position}>
                 <ScrollCont
                     style={
-                        minimize
+                        position === 'side' || position === 'full'
                             ? {
                                   transition: 'opacity  .3s',
                                   opacity: '0'
