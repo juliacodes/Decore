@@ -8,7 +8,7 @@ export const SlideOut = keyframes`
 }
 
 70%{
-    transform: translate(94%,0) matrix(1.00,0.00,0.050,1.00,0,0);
+    transform: translate(80%,0) matrix(1.00,0.00,0.050,1.00,0,0);
 }
 100%{
     transform:translate(97%,0)  matrix(1.00,0.00,0.00,1.00,0,0);
@@ -20,8 +20,8 @@ export const SlideIn = keyframes`
     transform: translate(100%,0)  matrix(1.00,0.00,0.00,1.00,0,0);
 }
 
-70%{
-    transform: translate(78%,0) matrix(1.00,0.00,0.050,1.00,0,0);
+20%{
+    transform: translate(90%,0) matrix(1.00,0.00,0.050,1.00,0,0);
 }
 100%{
     transform: translate(70%,0)
@@ -38,7 +38,7 @@ export const SlideFull = keyframes`
 }
 100%{
     background-color: #3A3A43;
-    transform: matrix(1.00,0.00,0.00,1.00,0,0)
+    transform: translate(0,0) matrix(1.00,0.00,0.00,1.00,0,0)
 }
 `;
 

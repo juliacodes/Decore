@@ -20,19 +20,18 @@ const FooterContainer = styled(Container)`
         float: right;
         width: 220px;
     }
+
+    ${SubHeading} {
+        max-width: 200px;
+        color: white;
+    }
 `;
 
 const Footer = () => (
     <LayoutInner>
         <FooterContainer>
             <FlexLeft>
-                <SubHeading>
-                    Start
-                    <br />
-                    Building
-                    <br />
-                    Today
-                </SubHeading>
+                <SubHeading>Start Building Today</SubHeading>
             </FlexLeft>
             <FlexRight>
                 <Button>Launch Builder &#10230;</Button>
