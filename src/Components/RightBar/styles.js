@@ -92,7 +92,7 @@ export const Block = styled.div`
 export const ScrollCont = styled.div`
     transform: rotate(90deg);
     position: absolute;
-    right: -5%;
+    left: 15%;
     bottom: 250px;
     height: 30px;
     color: white;
