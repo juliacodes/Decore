@@ -7,7 +7,7 @@ export const SlideOut = keyframes`
     transform: translate(70%,0) rotate(0deg)
 }
 
-70%{
+20%{
     transform: translate(80%,0) matrix(1.00,0.00,0.050,1.00,0,0);
 }
 100%{
