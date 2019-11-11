@@ -1,46 +1,14 @@
 import styled from 'styled-components';
 
-export const QUERIES = {
-    medium: `min-width: 1092px`,
-    small: `min-width: 552px`
-};
-
 export const COLORS = {
     yellow: '#FDBE6F',
     deepBlue: '#5442F8',
-    lightBlue: '#e7f6fd',
-    palePink: '#F1DDE8',
-    paleBlue: '#E6EFFE'
+    lightBlue: '#e7f6fd'
 };
 
 export const Heading = styled.h1`
-    font-size: 40px;
+    font-size: 80px;
     font-weight: 700;
-    text-transform: uppercase;
-
-    @media (${QUERIES.medium}) {
-        font-size: 60px;
-    }
-`;
-
-export const SubHeading = styled.h2`
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 30px;
-
-    @media (${QUERIES.medium}) {
-        font-size: 50px;
-    }
-`;
-
-export const HeadingLight = styled.h3`
-    font-weight: 400;
-    font-size: 20px;
-    margin: 30px 0;
-
-    @media (${QUERIES.medium}) {
-        font-size: 25px;
-    }
 `;
 
 export const Paragraph = styled.p`
@@ -59,3 +27,8 @@ export const Button = styled.button`
     border: none;
     margin-top: 40px;
 `;
+
+export const QUERIES = {
+    medium: `min-width: 1092px`,
+    small: `min-width: 552px`
+};
