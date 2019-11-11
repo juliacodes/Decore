@@ -1,1 +1,9 @@
-export { COLORS, Heading, Paragraph, Button, QUERIES } from './Styling';
+export {
+    COLORS,
+    Heading,
+    SubHeading,
+    HeadingLight,
+    Paragraph,
+    Button,
+    QUERIES
+} from './Styling';
