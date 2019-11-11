@@ -43,17 +43,24 @@ export const SlideFull = keyframes`
 `;
 
 export const Block = styled.div`
-    width: 10%;
+    width: 100%;
     height: 100vh;
     background-color: ${COLORS.deepBlue};
     position: fixed;
     right: 0;
+    display: ${props =>
+        props.positionAnim === 'full'
+            ? css`
+                  block;
+              `
+            : css`
+                none;
+            `};
     top: 0;
-    display: none;
     animation: ${props =>
         props.positionAnim === 'side'
             ? css`
-                  ${SlideOut} .8s forwards ease-out
+                  none;
               `
             : props.positionAnim === 'full'
             ? css`
@@ -66,6 +73,19 @@ export const Block = styled.div`
     @media (${QUERIES.medium}) {
         width: 100%;
         display: block;
+
+        animation: ${props =>
+            props.positionAnim === 'side'
+                ? css`
+                      ${SlideOut} .8s forwards ease-out
+                  `
+                : props.positionAnim === 'full'
+                ? css`
+                      ${SlideFull} 1.2s forwards ease-out
+                  `
+                : css`
+                      ${SlideIn} .8s forwards ease-out
+                  `};
     }
 `;
 
@@ -76,7 +96,6 @@ export const ScrollCont = styled.div`
     bottom: 250px;
     height: 30px;
     color: white;
-    display: none;
     transition: opacity 0.5s 0.3s;
 
     p {
