@@ -7,9 +7,7 @@ export default class Editor extends React.Component {
         super();
 
         this.state = {
-            builds: buildData.builds,
-            // eslint-disable-next-line react/no-unused-state
-            build: buildData.builds[0]
+            builds: buildData.builds
         };
     }
 
@@ -19,7 +17,6 @@ export default class Editor extends React.Component {
             <EditorWrapper>
                 <p>Editor</p>
                 {builds.map(build => {
-                    // eslint-disable-next-line react/destructuring-assignment
                     if (build.type === 'split-div') {
                         return (
                             <BuildChild>
