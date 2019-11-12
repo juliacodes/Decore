@@ -1,5 +1,11 @@
 import React from 'react';
-import { EditorWrapper, BuildChild, SplitDiv, ChildDiv } from './styles';
+import {
+    EditorWrapper,
+    BuildChild,
+    SplitDiv,
+    ChildDiv,
+    NavDiv
+} from './styles';
 import buildData from '../../store/buildData';
 
 export default class Editor extends React.Component {
@@ -22,6 +28,13 @@ export default class Editor extends React.Component {
                             <BuildChild>
                                 <SplitDiv>{build.type}</SplitDiv>
                                 <SplitDiv>{build.type}</SplitDiv>
+                            </BuildChild>
+                        );
+                    }
+                    if (build.type === 'nav') {
+                        return (
+                            <BuildChild>
+                                <NavDiv>{build.type}</NavDiv>
                             </BuildChild>
                         );
                     }

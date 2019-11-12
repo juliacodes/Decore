@@ -31,3 +31,7 @@ export const ChildDiv = styled.div`
 export const SplitDiv = styled(ChildDiv)`
     width: 47%;
 `;
+
+export const NavDiv = styled(ChildDiv)`
+    height: 50px;
+`;

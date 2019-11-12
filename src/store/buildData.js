@@ -2,7 +2,7 @@ const buildData = {
     builds: [
         {
             index: 0,
-            type: 'div'
+            type: 'nav'
         },
         {
             index: 1,
@@ -10,6 +10,10 @@ const buildData = {
         },
         {
             index: 2,
+            type: 'div'
+        },
+        {
+            index: 3,
             type: 'split-div'
         }
     ]
