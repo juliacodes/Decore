@@ -1,1 +1,1 @@
-export { FlexLeft, FlexRight, FlexCenter } from './FlexSplit';
+export { FlexLeft, FlexRight } from './FlexSplit';

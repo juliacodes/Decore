@@ -12,9 +12,7 @@ export const COLORS = {
     yellow: '#FDBE6F',
     darkBlue: '#005EFD',
     deepBlue: '#5442F8',
-    lightBlue: '#e7f6fd',
-    palePink: '#F1DDE8',
-    paleBlue: '#E6EFFE'
+    lightBlue: '#e7f6fd'
 };
 
 export const FONTS = {
@@ -24,23 +22,8 @@ export const FONTS = {
 };
 
 export const Heading = styled.h1`
-    font-size: 40px;
+    font-size: 80px;
     font-weight: 700;
-    text-transform: uppercase;
-
-    @media (${QUERIES.medium}) {
-        font-size: 60px;
-    }
-`;
-
-export const SubHeading = styled.h2`
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 30px;
-
-    @media (${QUERIES.medium}) {
-        font-size: 50px;
-    }
 `;
 
 export const SmallHeading = styled.h1`
@@ -89,3 +72,8 @@ export const Button = styled.button`
         color: ${props => props.hoverColor};
     }
 `;
+
+export const QUERIES = {
+    medium: `min-width: 1092px`,
+    small: `min-width: 552px`
+};
