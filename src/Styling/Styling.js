@@ -1,18 +1,11 @@
 import styled from 'styled-components';
 
-export const QUERIES = {
-    // These are the bootstrap breakpoints
-    small: `min-width: 540px`,
-    medium: `min-width: 720px`,
-    large: `min-width: 960px`,
-    xlarge: `min-width: 1140px`
-};
-
 export const COLORS = {
     yellow: '#FDBE6F',
     darkBlue: '#005EFD',
     deepBlue: '#5442F8',
-    lightBlue: '#e7f6fd'
+    lightBlue: '#e7f6fd',
+    mediumGray: '#8F8F8F'
 };
 
 export const FONTS = {
