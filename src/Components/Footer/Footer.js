@@ -5,6 +5,8 @@ import { FlexLeft, FlexRight, FlexCenter } from '../FlexSplit';
 
 import { COLORS, QUERIES, SubHeading, Button } from '../../Styling';
 
+import { HorizontalLine } from '../HorizontalLine';
+
 const FooterContainer = styled(Container)`
     ${FlexLeft} {
         width: 30%;
@@ -36,6 +38,7 @@ const Footer = () => (
             <FlexRight>
                 <Button>Launch Builder &#10230;</Button>
             </FlexRight>
+            <HorizontalLine />
         </FooterContainer>
     </LayoutInner>
 );
