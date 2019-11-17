@@ -32,20 +32,6 @@ export const Paragraph = styled.p`
     font-size: 15px;
 `;
 
-// export const Button = styled.button`
-//     width: 130px;
-//     height: 46px;
-//     background: ${COLORS.lightBlue};
-//     font-size: 13.5666px;
-//     line-height: 17px;
-//     border-radius: 18px;
-//     color: ${COLORS.deepBlue};
-//     border: none;
-//     margin-top: 40px;
-// `;
-
-// I commented out your button and made a more reusable one
-
 export const Button = styled.button`
     display: inline-block;
     height: 40px;

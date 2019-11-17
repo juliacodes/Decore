@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ChromePicker } from 'react-color';
 import {
     Heading,
@@ -9,10 +10,13 @@ import {
     Paragraph,
     ColorPicker,
     ButtonGroup,
-    Button
+    ColorButton
 } from './styles';
 
+import { COLORS, FONTS, Button } from '../../Styling/Styling';
+
 const ChooseColors = () => {
+    const node = useRef(); // Reference hook for handleClick function
     const [colors, setColors] = useState({
         colorOne: '#4ECDC4',
         colorTwo: '#A7EEE9',
@@ -26,52 +30,82 @@ const ChooseColors = () => {
 
     const [pickerStatus, setPickerStatus] = useState(false);
     const [pickerSelected, setPickerSelected] = useState('colorOne');
+    const [pickerLocation, setPickerLocation] = useState({
+        x: undefined,
+        y: undefined
+    });
 
-    const handlePicker = color => {
+    const handlePicker = (color, e) => {
         setPickerSelected(color);
         setPickerStatus(true);
+        setPickerLocation({
+            x: e.target.offsetLeft,
+            y: e.target.offsetTop
+        });
     };
 
     const handleChangeComplete = color => {
         setColors(prevState => ({ ...prevState, [pickerSelected]: color.hex }));
     };
 
+    // If click event is not within a element with ref={node},
+    // set the status of the picker to false (hidden)
+    const handleClick = e => {
+        if (!node.current.contains(e.target)) {
+            setPickerStatus(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClick); // return function to be called when unmounted
+        return () => {
+            document.removeEventListener('mousedown', handleClick);
+        };
+    }, []);
+
     return (
         <ChooseColorsWrapper>
             <Heading>Template Colors</Heading>
-            <ColorPicker display={pickerStatus}>
-                <ChromePicker
-                    color={colors[pickerSelected]}
-                    onChange={handleChangeComplete}
-                    disableAlpha
-                />
-            </ColorPicker>
-            <TemplateColors>
+            <TemplateColors ref={node}>
                 {Object.keys(colors).map((color, index) => (
                     <Color
                         // Using index for this case is fine since there is only a set number of colors
                         // eslint-disable-next-line react/no-array-index-key
                         key={index}
                         background={colors[color]}
-                        onClick={() => handlePicker(color)}
+                        onClick={e => handlePicker(color, e)}
                     />
                 ))}
+                <ColorPicker
+                    display={pickerStatus}
+                    top={pickerLocation.y}
+                    left={pickerLocation.x}
+                >
+                    <ChromePicker
+                        color={colors[pickerSelected]}
+                        onChange={handleChangeComplete}
+                        disableAlpha
+                    />
+                </ColorPicker>
             </TemplateColors>
             <Heading>Example Components</Heading>
             <ButtonGroup>
-                <Button
+                <ColorButton
                     backgroundColor={colors.colorOne}
                     border={colors.colorOne}
                     color="#FFFFFF"
                 >
                     Primary
-                </Button>
-                <Button border={colors.colorOne} color={colors.colorOne}>
+                </ColorButton>
+                <ColorButton
+                    backgroundColor={colors.colorThree}
+                    color="#FFFFFF"
+                >
                     Secondary
-                </Button>
-                <Button border={colors.colorThree} color={colors.colorThree}>
+                </ColorButton>
+                <ColorButton backgroundColor={colors.colorFive} color="#FFFFFF">
                     Alt
-                </Button>
+                </ColorButton>
             </ButtonGroup>
             <Heading>Links</Heading>
             <Paragraph>
@@ -80,6 +114,16 @@ const ChooseColors = () => {
                 adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.
             </Paragraph>
+            <Button
+                background={COLORS.lightBlue}
+                color={COLORS.darkBlue}
+                fontFamily={FONTS.primary}
+                hoverBackground={COLORS.darkBlue}
+                hoverColor={COLORS.lightBlue}
+                margin="100px auto 50px auto"
+            >
+                <Link to="/edit/custom">Continue</Link>
+            </Button>
         </ChooseColorsWrapper>
     );
 };

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { COLORS, FONTS } from '../../Styling/Styling';
+import { COLORS, FONTS, Button } from '../../Styling/Styling';
 
 export const ChooseColorsWrapper = styled.div`
     max-width: 1200px;
-    padding: 0 20px;
+    padding: 50px 20px;
     margin: 0 auto;
 `;
 
@@ -16,7 +16,9 @@ export const Heading = styled.h2`
 `;
 
 export const TemplateColors = styled.div`
+    position: relative;
     display: flex;
+    margin-bottom: 100px;
 `;
 
 export const Color = styled.div`
@@ -44,23 +46,39 @@ export const Paragraph = styled.p`
 `;
 
 export const ColorPicker = styled.div`
-    /* position: absolute; */
-    /* bottom: 0; */
-    /* left: 0; */
+    position: absolute;
+    top: 100%;
+    left: ${props => props.left}px;
+    transform: translateX(-25%);
     display: ${props => (props.display ? 'block' : 'none')};
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent; /* left arrow slant */
+        border-right: 12px solid transparent; /* right arrow slant */
+        border-bottom: 12px solid white; /* bottom, add background color here */
+        font-size: 0;
+        line-height: 0;
+        left: 50%;
+        top: -12px;
+        transform: translateX(-17px);
+    }
 `;
 
 export const ButtonGroup = styled.div`
     display: flex;
+    margin-bottom: 100px;
 `;
 
-export const Button = styled.div`
-    border: 3px solid;
+export const ColorButton = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: ${props => props.backgroundColor};
-    border-color: ${props => props.border};
-    text-align: center;
     height: 60px;
-    line-height: 60px;
     width: 170px;
     box-sizing: border-box;
     color: ${props => props.color};

@@ -51,7 +51,10 @@ const ThemeChooser = () => {
                     </Button>
                 </Link>
                 <p>
-                    or start from a <Link to="/colors">blank template</Link>
+                    or start from a{' '}
+                    <Link to="/colors">
+                        <span>blank template</span>
+                    </Link>
                 </p>
             </ChooseThemeLayout>
         </ChooseTheme>

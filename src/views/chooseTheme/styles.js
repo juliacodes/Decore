@@ -26,6 +26,32 @@ export const ChooseThemeLayout = styled.div`
     ${Button} {
         margin: 50px 0;
     }
+
+    p {
+        position: relative;
+        span {
+            color: #6c63ff;
+            text-decoration: underline;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 1px;
+            background-color: #dedede;
+            top: 60%;
+        }
+
+        &:before {
+            transform: translateX(-150%);
+        }
+
+        &:after {
+            transform: translateX(50%);
+        }
+    }
 `;
 
 export const ThemeWrapper = styled.div`
