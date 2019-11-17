@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { Container, LayoutInner } from '../Layout';
 import { FlexLeft, FlexRight, FlexCenter } from '../FlexSplit';
 
-import { COLORS, QUERIES, SubHeading, Button } from '../../Styling';
+import { COLORS, QUERIES, SubHeading, Button, Paragraph } from '../../Styling';
 
-import { HorizontalLine } from '../HorizontalLine';
+// import { HorizontalLine } from '../HorizontalLine';
 
 const FooterContainer = styled(Container)`
     ${FlexLeft} {
@@ -29,6 +29,18 @@ const FooterContainer = styled(Container)`
     }
 `;
 
+const HorizontalLine = styled.hr`
+    color: #b2b2b2;
+    opacity: 0.3;
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+`;
+
+const ThisSubHeading = styled(SubHeading)`
+    font-size: 18px;
+`;
+
 const Footer = () => (
     <LayoutInner>
         <FooterContainer>
@@ -39,6 +51,10 @@ const Footer = () => (
                 <Button>Launch Builder &#10230;</Button>
             </FlexRight>
             <HorizontalLine />
+            <FlexLeft>
+                <ThisSubHeading>Logo</ThisSubHeading>
+            </FlexLeft>
+            <FlexRight></FlexRight>
         </FooterContainer>
     </LayoutInner>
 );
