@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
+import ChooseTheme from './views/chooseTheme';
+import ChooseColors from './views/chooseColors';
+import Builder from './views/builder';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 // eslint-disable-next-line import/extensions
@@ -11,6 +14,9 @@ const routing = (
         <div>
             <GlobalStyles />
             <Route exact path="/" component={App} />
+            <Route path="/theme" component={ChooseTheme} />
+            <Route path="/colors" component={ChooseColors} />
+            <Route path="/edit/:theme" component={Builder} />
         </div>
     </Router>
 );

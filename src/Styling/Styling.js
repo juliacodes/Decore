@@ -5,12 +5,21 @@ export const QUERIES = {
     small: `min-width: 552px`
 };
 
+export const FONTS = {
+    primary: 'Inter',
+    secondary: 'Muli',
+    tertiary: 'Oswald'
+};
+
 export const COLORS = {
     yellow: '#FDBE6F',
+    darkBlue: '#005EFD',
     deepBlue: '#5442F8',
     lightBlue: '#e7f6fd',
     palePink: '#F1DDE8',
-    paleBlue: '#E6EFFE'
+    paleBlue: '#E6EFFE',
+    mediumGray: '#8F8F8F',
+    border: '#EBEBEB'
 };
 
 export const Heading = styled.h1`
@@ -21,6 +30,14 @@ export const Heading = styled.h1`
     @media (${QUERIES.medium}) {
         font-size: 60px;
     }
+`;
+
+export const SmallHeading = styled.h1`
+    font-family: ${props => props.fontFamily}, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: ${props => props.fontColor};
+    font-weight: bold;
 `;
 
 export const SubHeading = styled.h2`

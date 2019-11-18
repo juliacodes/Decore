@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Heading, SubHeading, Paragraph, Button } from './Styling';
 import { LayoutInner, Layout, Container } from './Components/Layout';
 import { FlexLeft, FlexRight, ImageDiv } from './Components/FlexSplit';
@@ -22,7 +23,9 @@ const App = () => (
                     <Paragraph>
                         Lorem ipsum dolor sit amet, consectetur{' '}
                     </Paragraph>
-                    <Button>Launch</Button>
+                    <Link to="/theme">
+                        <Button>Launch</Button>
+                    </Link>
                 </FlexLeft>
                 <FlexRight>
                     <ImageDiv />
