@@ -9,6 +9,7 @@ import { COLORS, QUERIES, SubHeading, Button, Paragraph } from '../../Styling';
 const LayoutInnerFooter = styled(LayoutInner)`
     max-width: 1500px;
     padding: 0 40px;
+    min-height: 600px;
 `;
 const FooterContainer = styled(Container)`
     justify-content: space-between;
