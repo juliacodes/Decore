@@ -1,5 +1,4 @@
 import React from 'react';
-import { PropTypes, defaultProps } from 'prop-types';
 import {
     ModalBackground,
     ModalWrapper,
@@ -51,13 +50,3 @@ export default class Modal extends React.Component {
         );
     }
 }
-
-Modal.propTypes = {
-    title: PropTypes.string,
-    children: PropTypes.node
-};
-
-Modal.defaultProps = {
-    title: '',
-    children: ''
-};

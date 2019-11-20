@@ -1,8 +1,10 @@
 import React from 'react';
 import Select from 'react-select';
+import { premadeList, premadeSchemes } from '../../store/premadeSchemes';
 import {
     ControlSideBar,
     SettingsBar,
+    TopBar,
     Dropdown,
     ColorScheme,
     Color,
@@ -16,18 +18,13 @@ export default class ControlBar extends React.Component {
         super(props);
 
         this.state = {
-            colorScheme: {
-                colorOne: '#4ECDC4',
-                colorTwo: '#A7EEE9',
-                colorThree: '#FF6B6B',
-                colorFour: '#FFAAAA',
-                colorFive: '#FFEB8C',
-                colorSix: '#FFF4C1',
-                colorSeven: '#D4D4D4',
-                colorEight: '#EFF3EF'
-            }
+            colorScheme: premadeSchemes.default
         };
     }
+
+    handleChangeScheme = theme => {
+        this.setState({ colorScheme: premadeSchemes[theme.value] });
+    };
 
     render() {
         const { colorScheme } = this.state;
@@ -35,20 +32,28 @@ export default class ControlBar extends React.Component {
 
         return (
             <ControlSideBar>
-                <Padded padding="25px">
-                    <Dropdown>
-                        <Select
-                            inputId="theme"
-                            placeholder="Choose Scheme"
-                            classNamePrefix="theme"
-                        />
-                    </Dropdown>
-                    <ColorScheme>
-                        {Object.keys(colorScheme).map(color => (
-                            <Color color={colorScheme[color]} />
-                        ))}
-                    </ColorScheme>
-                </Padded>
+                <TopBar>
+                    <Padded padding="25px">
+                        <Dropdown>
+                            <Select
+                                inputId="theme"
+                                placeholder="Choose Scheme"
+                                classNamePrefix="theme"
+                                options={premadeList}
+                                onChange={this.handleChangeScheme}
+                                defaultValue={{
+                                    label: 'Default',
+                                    value: 'default'
+                                }}
+                            />
+                        </Dropdown>
+                        <ColorScheme>
+                            {Object.keys(colorScheme).map(color => (
+                                <Color color={colorScheme[color]} />
+                            ))}
+                        </ColorScheme>
+                    </Padded>
+                </TopBar>
                 <SettingsBar>
                     <Settings onClick={handleModal}>
                         <svg

@@ -40,6 +40,14 @@ export const Dropdown = styled.div`
     .theme__control {
         border-radius: 3px;
     }
+
+    .theme__option {
+        cursor: pointer;
+    }
+
+    .theme__single-value {
+        color: ${COLORS.mediumGray};
+    }
 `;
 
 export const SettingsBar = styled.div`
@@ -53,6 +61,10 @@ export const SettingsBar = styled.div`
     p {
         margin: 0;
     }
+`;
+
+export const TopBar = styled.div`
+    border-bottom: 1px solid ${COLORS.border};
 `;
 
 export const Settings = styled.div`
