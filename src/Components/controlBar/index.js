@@ -1,10 +1,13 @@
 import React from 'react';
 import Select from 'react-select';
+import Accordion from '../accordion';
 import { premadeList, premadeSchemes } from '../../store/premadeSchemes';
 import {
     ControlSideBar,
     SettingsBar,
     TopBar,
+    Elements,
+    Element,
     Dropdown,
     ColorScheme,
     Color,
@@ -54,6 +57,14 @@ export default class ControlBar extends React.Component {
                         </ColorScheme>
                     </Padded>
                 </TopBar>
+                <Elements>
+                    <Accordion title="General Components">
+                        {/* Content of the accordon will go in here  */}
+                    </Accordion>
+                    <Accordion title="Structure">
+                        {/* Content of the accordon will go in here  */}
+                    </Accordion>
+                </Elements>
                 <SettingsBar>
                     <Settings onClick={handleModal}>
                         <svg

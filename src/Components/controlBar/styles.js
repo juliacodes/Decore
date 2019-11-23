@@ -100,3 +100,16 @@ export const Export = styled.button`
     font-weight: bold;
     cursor: pointer;
 `;
+
+export const Elements = styled.div``;
+
+export const Element = styled.div`
+    background-color: #f8f8f8;
+    color: ${COLORS.mediumGray};
+    padding: 10px;
+    cursor: pointer;
+
+    p {
+        margin: 0;
+    }
+`;
