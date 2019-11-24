@@ -1,7 +1,5 @@
 import React from 'react';
 // import NavBar from '../editorElements/navbar';
-import Text from '../editorElements/text';
-import Title from '../editorElements/title';
 import {
     EditorWrapper,
     BuildChild,
@@ -24,8 +22,6 @@ export default class Editor extends React.Component {
         const { builds } = this.state;
         return (
             <EditorWrapper>
-                <Title />
-                <Text />
                 {builds.map(build => {
                     if (build.type === 'split-div') {
                         return (

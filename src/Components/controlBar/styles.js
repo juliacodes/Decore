@@ -108,6 +108,17 @@ export const Element = styled.div`
     color: ${COLORS.mediumGray};
     padding: 10px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease;
+
+    &:hover {
+        background-color: #d9d9d9;
+    }
+
+    svg {
+        margin-right: 10px;
+    }
 
     p {
         margin: 0;
