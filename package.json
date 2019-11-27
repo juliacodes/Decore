@@ -5,6 +5,8 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-inline": "^15.0.0",
     "@ckeditor/ckeditor5-react": "^2.0.0",
+    "babel-preset-react": "^6.24.1",
+    "font-picker-react": "^3.4.1",
     "react": "^16.10.2",
     "react-color": "^2.17.3",
     "react-dom": "^16.10.2",
