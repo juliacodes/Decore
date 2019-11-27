@@ -8,13 +8,15 @@ html {
   
   body {
     margin: 0;
+    font-family: 'Muli', sans-serif;
   }
   
   main {
     display: block;
   }
   
-  h1 {
+  h1, h2 {
+    font-family: 'Oswald', sans-serif;
     font-size: 2em;
     margin: 0.67em 0;
   }
