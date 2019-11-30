@@ -38,7 +38,36 @@ export const Dropdown = styled.div`
     margin-bottom: 25px;
 
     .theme__control {
-        border-radius: 3px;
+        border-radius: 10px;
+        border: none;
+        padding: 0 5px;
+        box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .theme__indicator-separator {
+        background-color: transparent;
+    }
+
+    .theme__menu {
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        box-shadow: none;
+    }
+    .theme__option,
+    .theme__option--is-focused {
+        border: none;
+    }
+
+    .theme__option--is-selected {
+        border: none;
+        background-color: ${COLORS.deepPurple};
+    }
+
+    .theme__menu-list {
+        border-radius: 10px;
+        border: none;
+        padding: 0;
     }
 
     .theme__option {
