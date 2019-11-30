@@ -52,7 +52,7 @@ export const Dropdown = styled.div`
         border-radius: 10px;
         outline: none;
         border: none;
-        box-shadow: none;
+        box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
     }
     .theme__option,
     .theme__option--is-focused {
