@@ -3,6 +3,12 @@ import Editor from '../../Components/editor';
 import ControlBar from '../../Components/controlBar';
 import Modal from '../../Components/modal';
 import BuilderWrapper from './styles';
+import Dragula from 'react-dragula';
+import Element from '../../Components/controlBar/';
+import ReactDOM from 'react-dom';
+import { EditorWrapper } from '../../Components/editor/styles';
+
+// var instance = ReactDOM.render(<Element />, document.getElementById("root"));
 
 export default class Builder extends React.Component {
     constructor(props) {
@@ -33,7 +39,7 @@ export default class Builder extends React.Component {
     render() {
         const { settings } = this.state;
         return (
-            <BuilderWrapper>
+            <BuilderWrapper ref={this.dragulaDecorator}>
                 <Modal ref={this.settingsModal} title="Settings">
                     <div>
                         <label htmlFor="projectName">
@@ -52,5 +58,11 @@ export default class Builder extends React.Component {
                 <ControlBar handleModal={this.openModal} />
             </BuilderWrapper>
         );
+    }
+
+    dragulaDecorator = (Element) => {
+        if(Element){
+            Dragula([Element], [EditorWrapper]);
+        }
     }
 }
