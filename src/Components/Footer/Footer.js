@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, LayoutInner } from '../Layout';
 import { FlexLeft, FlexRight, FlexCenter } from '../FlexSplit';
+import logo from '../../images/logo-white.svg';
 
 import { COLORS, QUERIES, SubHeading, Button, Paragraph } from '../../Styling';
 
@@ -65,10 +66,10 @@ const FooterContainerCol = styled(FooterContainer)`
     width: 100%;
     margin: 0 auto;
 
-    p {
-        font-weight: 700;
-        font-size: 30px;
-        color: white;
+    img {
+        height: 100px;
+        width: 120px;
+        margin-bottom: 20px;
     }
 `;
 
@@ -88,7 +89,7 @@ const Footer = () => (
         </FooterContainer>
         <FooterContainerCol>
             <HorizontalLine />
-            <Paragraph>Logo</Paragraph>
+            <img src={logo} alt="decore" />
         </FooterContainerCol>
         <FooterContainerInner>
             <FlexLeft>
