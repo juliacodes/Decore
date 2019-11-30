@@ -2,7 +2,9 @@ import React from 'react';
 import Editor from '../../Components/editor';
 import ControlBar from '../../Components/controlBar';
 import Modal from '../../Components/modal';
-import BuilderWrapper from './styles';
+import {BuilderWrapper, Heading} from './styles';
+
+
 
 export default class Builder extends React.Component {
     constructor(props) {
@@ -10,7 +12,9 @@ export default class Builder extends React.Component {
 
         this.state = {
             settings: {
-                projectName: ''
+                projectName: '',
+                projectDesc: '',
+                projectMeta: ''
             }
         };
         this.settingsModal = React.createRef();
@@ -37,12 +41,36 @@ export default class Builder extends React.Component {
                 <Modal ref={this.settingsModal} title="Settings">
                     <div>
                         <label htmlFor="projectName">
-                            Project Name
+                           <Heading>Project Name</Heading>
                             <input
                                 type="text"
                                 name="projectName"
                                 id="projectName"
                                 value={settings.projectName}
+                                onChange={this.handleSettingsChange}
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <label htmlFor="projectDesc">
+                            <Heading>Project Desc</Heading>
+                            <input
+                                type="text"
+                                name="projectDesc"
+                                id="projectDesc"
+                                value={settings.projectDesc}
+                                onChange={this.handleSettingsChange}
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <label htmlFor="projectMeta">
+                            <Heading>Meta Tags</Heading>
+                            <input
+                                type="text"
+                                name="projectMeta"
+                                id="projectMeta"
+                                value={settings.projectMeta}
                                 onChange={this.handleSettingsChange}
                             />
                         </label>
