@@ -84,7 +84,6 @@ export const SettingsBar = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 15px 25px;
-    border-top: 1px solid ${COLORS.border};
     font-size: 14px;
 
     p {
