@@ -92,9 +92,7 @@ export const SettingsBar = styled.div`
     }
 `;
 
-export const TopBar = styled.div`
-    border-bottom: 1px solid ${COLORS.border};
-`;
+export const TopBar = styled.div``;
 
 export const Settings = styled.div`
     display: flex;
@@ -130,10 +128,13 @@ export const Export = styled.button`
     cursor: pointer;
 `;
 
-export const Elements = styled.div``;
+export const Elements = styled.div`
+    margin: 0 auto;
+    width: 270px; /* same width of color dropdown */
+`;
 
 export const Element = styled.div`
-    background-color: #f8f8f8;
+    background-color: white;
     color: ${COLORS.mediumGray};
     padding: 10px;
     cursor: pointer;
@@ -142,7 +143,8 @@ export const Element = styled.div`
     transition: 0.3s ease;
 
     &:hover {
-        background-color: #d9d9d9;
+        background-color: ${COLORS.deepPurple};
+        color: white;
     }
 
     svg {
