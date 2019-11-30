@@ -1,16 +1,30 @@
 import React from "react";
 import FontPicker from "font-picker-react";
+
+
+export default class Font extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeFontFamily: "",
+    };
+  }
  
-const Font = () => (
-   <FontPicker
+  render() {
+    return (
+        <FontPicker
           apiKey="AIzaSyCZwT9nkGdLqU1uuAwJvStcwtOp_x9s_60"
-          activeFontFamily={props.activeFontFamily}
-          onChange={nextFont => this.setState({
+          activeFontFamily={this.state.activeFontFamily}
+          onChange={nextFont =>
+            this.setState({
               activeFontFamily: nextFont.family,
             })
           }
         />
+    );
+  }
+}
+
 
   
-);
-export default Font;
+

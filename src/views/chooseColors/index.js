@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChromePicker } from 'react-color';
+import Font from '../../Components/Font';
 import {
     Heading,
     ChooseColorsWrapper,
@@ -14,6 +15,8 @@ import {
 } from './styles';
 
 import { COLORS, FONTS, Button } from '../../Styling/Styling';
+
+
 
 const ChooseColors = () => {
     const node = useRef(); // Reference hook for handleClick function
@@ -63,6 +66,8 @@ const ChooseColors = () => {
         };
     }, []);
 
+
+
     return (
         <ChooseColorsWrapper>
             <Heading>Template Colors</Heading>
@@ -107,8 +112,12 @@ const ChooseColors = () => {
                     Alt
                 </ColorButton>
             </ButtonGroup>
+
+            <Heading>Select A Font</Heading>
+                <Font/>
+
             <Heading>Links</Heading>
-            <Paragraph>
+            <Paragraph className="apply-font">
                 Lorem ipsum dolor sit amet,{' '}
                 <TemplateLink color={colors.colorOne}>consectetur</TemplateLink>{' '}
                 adipiscing elit, sed do eiusmod tempor incididunt ut labore et
