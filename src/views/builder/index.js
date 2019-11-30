@@ -2,7 +2,9 @@ import React from 'react';
 import Editor from '../../Components/editor';
 import ControlBar from '../../Components/controlBar';
 import Modal from '../../Components/modal';
-import {BuilderWrapper, Heading} from './styles';
+import Switch from '../../Components/Switch'
+import {BuilderWrapper, Heading, Edit} from './styles';
+
 
 
 
@@ -12,9 +14,9 @@ export default class Builder extends React.Component {
 
         this.state = {
             settings: {
-                projectName: '',
-                projectDesc: '',
-                projectMeta: ''
+                projectName: 'Hello World App',
+                projectDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, etiam non purus euismod.',
+                projectMeta: 'Include tags with your title and description to help with search engine optimization'
             }
         };
         this.settingsModal = React.createRef();
@@ -42,6 +44,7 @@ export default class Builder extends React.Component {
                     <div>
                         <label htmlFor="projectName">
                            <Heading>Project Name</Heading>
+                           <Edit>Edit</Edit>
                             <input
                                 type="text"
                                 name="projectName"
@@ -54,6 +57,7 @@ export default class Builder extends React.Component {
                     <div>
                         <label htmlFor="projectDesc">
                             <Heading>Project Desc</Heading>
+                            <Edit>Edit</Edit>
                             <input
                                 type="text"
                                 name="projectDesc"
@@ -66,6 +70,7 @@ export default class Builder extends React.Component {
                     <div>
                         <label htmlFor="projectMeta">
                             <Heading>Meta Tags</Heading>
+                            <Switch></Switch>
                             <input
                                 type="text"
                                 name="projectMeta"
