@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Heading, SubHeading, Paragraph, Button } from './Styling';
 import { LayoutInner, Layout, Container } from './Components/Layout';
-import { FlexLeft, FlexRight, ImageDiv } from './Components/FlexSplit';
+import { FlexLeft, FlexRight, Image } from './Components/FlexSplit';
 import FeatureCards from './Components/FeatureCards';
 import DevRow from './Components/DevRow';
-
+import landingBuilder from './images/landing-builder.jpg';
 import Navbar from './Components/Navbar';
 import Shapes from './Components/BackgroundShapes';
 import RightBar from './Components/RightBar';
@@ -19,16 +19,18 @@ const App = () => (
             <Shapes />
             <Container>
                 <FlexLeft>
-                    <Heading>Lorem ipsum dolor sit amet. </Heading>
+                    <Heading style={{ maxWidth: '400px' }}>
+                        jump start your next web project{' '}
+                    </Heading>
                     <Paragraph>
-                        Lorem ipsum dolor sit amet, consectetur{' '}
+                        A custom layout generator built for developers
                     </Paragraph>
                     <Link to="/theme">
                         <Button>Launch</Button>
                     </Link>
                 </FlexLeft>
                 <FlexRight>
-                    <ImageDiv />
+                    <Image src={landingBuilder} alt="landing builder" />
                 </FlexRight>
             </Container>
             <RightBar />
@@ -38,8 +40,9 @@ const App = () => (
                 <FlexLeft />
                 <FlexRight>
                     <SubHeading>Don&apos;t Start From Scratch</SubHeading>
-                    <Paragraph>
-                        Lorem ipsum dolor sit amet, consectetur{' '}
+                    <Paragraph style={{ maxWidth: '400px' }}>
+                        Begin coding your website without having to set up
+                        layouts, fonts, colors, or even meta tags
                     </Paragraph>
                 </FlexRight>
             </Container>

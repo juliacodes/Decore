@@ -63,6 +63,7 @@ export const HeadingLight = styled.h3`
 export const Paragraph = styled.p`
     color: #929090;
     font-size: 15px;
+    line-height: 20px;
 `;
 
 export const Button = styled.button`
