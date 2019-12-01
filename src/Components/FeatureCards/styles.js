@@ -1,7 +1,7 @@
-import styled from 'styled-components/macro';
-import { Container } from '../Layout';
-import { FlexLeft, FlexRight, FlexCenter } from '../FlexSplit';
-import { SubHeading, QUERIES } from '../../Styling';
+import styled from "styled-components/macro";
+import { Container } from "../Layout";
+import { FlexLeft, FlexRight, FlexCenter } from "../FlexSplit";
+import { SubHeading, QUERIES } from "../../Styling";
 
 const TriContainer = styled(Container)`
     width: 100%;
@@ -18,6 +18,11 @@ const TriContainer = styled(Container)`
         @media (${QUERIES.medium}) {
             width: 30%;
         }
+    }
+
+    img{
+        width: 300px;
+        margin: 20px auto;
     }
 
     ${FlexRight} {

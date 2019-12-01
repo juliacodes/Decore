@@ -5,7 +5,8 @@ import { LayoutInner, Layout, Container } from './Components/Layout';
 import { FlexLeft, FlexRight, Image } from './Components/FlexSplit';
 import FeatureCards from './Components/FeatureCards';
 import DevRow from './Components/DevRow';
-import landingBuilder from './images/landing-builder.jpg';
+import landingBuilder from './images/landing/landing-builder.jpg';
+
 import Navbar from './Components/Navbar';
 import Shapes from './Components/BackgroundShapes';
 import RightBar from './Components/RightBar';
@@ -46,8 +47,22 @@ const App = () => (
                     </Paragraph>
                 </FlexRight>
             </Container>
-            <FeatureCards />
-            <FeatureCards />
+            <FeatureCards
+                src1="color"
+                src2="layout"
+                h1="Custom Colors"
+                h2="Build a Layout"
+                p1="Set the font and accent colors of your layout"
+                p2="Drag and drop any items you want"
+            />
+            <FeatureCards
+                src1="template"
+                src2="download"
+                h1="Templates"
+                h2="Download Files"
+                p1="Choose any template you like to quickly get started"
+                p2="Downlaod your zipped starter files"
+            />
         </LayoutInner>
         <DevRow />
         <Footer />
