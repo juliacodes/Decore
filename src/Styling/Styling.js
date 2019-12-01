@@ -14,7 +14,7 @@ export const COLORS = {
 };
 
 export const Heading = styled.h1`
-    font-size: 40px;
+    font-size: 60px;
     font-weight: 700;
     text-transform: uppercase;
 
@@ -27,6 +27,7 @@ export const SubHeading = styled.h2`
     font-weight: bold;
     text-transform: uppercase;
     font-size: 30px;
+    color: #999;
 
     @media (${QUERIES.medium}) {
         font-size: 50px;
@@ -45,7 +46,7 @@ export const HeadingLight = styled.h3`
 
 export const Paragraph = styled.p`
     color: #929090;
-    font-size: 15px;
+    font-size: 25px;
 `;
 
 export const Button = styled.button`
@@ -56,6 +57,6 @@ export const Button = styled.button`
     line-height: 17px;
     border-radius: 18px;
     color: ${COLORS.deepBlue};
-    border: none;
+    border: 1px solid ${COLORS.deepBlue};
     margin-top: 40px;
 `;

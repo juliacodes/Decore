@@ -18,33 +18,16 @@ const App = () => (
             <Shapes />
             <Container>
                 <FlexLeft>
-                    <Heading>Lorem ipsum dolor sit amet. </Heading>
+                    <Heading>404 :(</Heading>
+                    <SubHeading>oops!</SubHeading>
                     <Paragraph>
-                        Lorem ipsum dolor sit amet, consectetur{' '}
+                        We can't seem to be able to find the page you are
+                        looking for!{' '}
                     </Paragraph>
-                    <Button>Launch</Button>
+                    <Button>Go back</Button>
                 </FlexLeft>
-                <FlexRight>
-                    <ImageDiv />
-                </FlexRight>
             </Container>
-            <RightBar />
         </LayoutInner>
-        <LayoutInner>
-            <Container style={{ height: 'unset' }}>
-                <FlexLeft />
-                <FlexRight>
-                    <SubHeading>Don&apos;t Start From Scratch</SubHeading>
-                    <Paragraph>
-                        Lorem ipsum dolor sit amet, consectetur{' '}
-                    </Paragraph>
-                </FlexRight>
-            </Container>
-            <FeatureCards />
-            <FeatureCards />
-        </LayoutInner>
-        <DevRow />
-        <Footer />
     </Layout>
 );
 
