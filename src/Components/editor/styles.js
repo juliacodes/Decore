@@ -10,7 +10,7 @@ export const EditorWrapper = styled.div`
     }
 `;
 
-export const BuildChild = styled.div`
+export const BuildChildCont = styled.div`
     width: 50%;
     margin: 30px auto;
     display: flex;
@@ -34,6 +34,10 @@ export const ChildDiv = styled.div`
 
 export const SplitDiv = styled(ChildDiv)`
     width: 47%;
+`;
+
+export const TriDiv = styled(ChildDiv)`
+    width: 30%;
 `;
 
 export const NavDiv = styled(ChildDiv)``;

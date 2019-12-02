@@ -6,7 +6,7 @@ const buildData = {
         },
         {
             index: 1,
-            type: 'div'
+            type: 'tri-div'
         },
         {
             index: 2,
