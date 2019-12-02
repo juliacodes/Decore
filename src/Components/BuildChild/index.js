@@ -16,7 +16,19 @@ class BuildChild extends React.Component {
         super();
 
         this.state = { active: false };
+
+        this.buildNode = React.createRef();
     }
+
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside)
+    }
+
+    handleClickOutside = e => {
+        if (!this.buildNode.current.contains(e.target)) {
+            this.setState({ active: false });
+        }
+    };
 
     render() {
         const { name } = this.props;
@@ -24,6 +36,7 @@ class BuildChild extends React.Component {
             <BuildChildCont
                 className={this.state.active && 'activeParent'}
                 onClick={() => this.setState({ active: !this.state.active })}
+                ref={this.buildNode}
             >
                 <SettingsButton />
 

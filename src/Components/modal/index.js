@@ -17,13 +17,14 @@ export default class Modal extends React.Component {
         this.modal = React.createRef();
     }
 
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside)
+    }
+
     toggleModal = status => {
         this.setState({ active: status });
     };
 
-    componentDidMount() {
-        document.addEventListener('mousedown', this.handleClickOutside)
-    }
 
     handleClickOutside = e => {
         if (!this.modal.current.contains(e.target)) {
