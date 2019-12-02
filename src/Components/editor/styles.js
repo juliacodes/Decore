@@ -20,6 +20,7 @@ export const BuildChildCont = styled.div`
     position: relative;
     transition-duration: 2s;
     border: 2px solid transparent;
+    cursor: grab;
 `;
 
 export const ChildDiv = styled.div`

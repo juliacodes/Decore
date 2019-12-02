@@ -21,13 +21,23 @@ export default class Modal extends React.Component {
         this.setState({ active: status });
     };
 
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside)
+    }
+
+    handleClickOutside = e => {
+        if (!this.modal.current.contains(e.target)) {
+            this.setState({ active: false });
+        }
+    };
+
     render() {
         const { active } = this.state;
         const { title, children } = this.props;
 
         return (
             <ModalBackground className={active && 'active'}>
-                <ModalWrapper>
+                <ModalWrapper ref={this.modal}>
                     <ModalHeading>
                         <p>{title}</p>
                         <svg
