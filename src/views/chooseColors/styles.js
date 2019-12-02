@@ -9,6 +9,8 @@ export const ChooseColorsWrapper = styled.div`
     ${SmallHeading} {
         font-family: ${FONTS.primary};
         font-weight: 400;
+        font-size: 20px;
+        color: #8f8f8f;
     }
 `;
 
