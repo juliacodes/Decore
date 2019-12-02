@@ -1,7 +1,10 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Editor from '../../Components/editor';
 import ControlBar from '../../Components/controlBar';
 import Modal from '../../Components/modal';
+import Element from '../../Components/controlBar/';
+import { EditorWrapper } from '../../Components/editor/styles';
 import { BuilderWrapper, ModalRow, SettingType, SettingVal } from './styles';
 import { FlexLeft, FlexRight } from '../../Components/FlexSplit/FlexSplit';
 import { Button } from '../../Styling';
