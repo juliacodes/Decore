@@ -20,7 +20,9 @@ export const COLORS = {
     paleBlue: '#E6EFFE',
     mediumGray: '#8F8F8F',
     border: '#EBEBEB',
-    deepPurple: '#6C63FF'
+    deepPurple: '#6C63FF',
+    lightPurple: 'rgba(108, 99, 255, 0.53)',
+    lightGray: '#F5F5F5'
 };
 
 export const Heading = styled.h1`
