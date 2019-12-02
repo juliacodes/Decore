@@ -16,8 +16,6 @@ import {
 
 import { COLORS, FONTS, Button } from '../../Styling/Styling';
 
-
-
 const ChooseColors = () => {
     const node = useRef(); // Reference hook for handleClick function
     const [colors, setColors] = useState({
@@ -66,8 +64,6 @@ const ChooseColors = () => {
         };
     }, []);
 
-
-
     return (
         <ChooseColorsWrapper>
             <Heading>Template Colors</Heading>
@@ -114,7 +110,7 @@ const ChooseColors = () => {
             </ButtonGroup>
 
             <Heading>Select A Font</Heading>
-                <Font/>
+            <Font />
 
             <Heading>Links</Heading>
             <Paragraph className="apply-font">
