@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Container, LayoutInner } from '../Layout';
-import { FlexLeft, FlexRight, FlexCenter } from '../FlexSplit';
+import { FlexLeft, FlexRight } from '../FlexSplit';
+import logo from '../../images/logo-white.svg';
 
-import { COLORS, QUERIES, SubHeading, Button, Paragraph } from '../../Styling';
+import { SubHeading, Button, Paragraph } from '../../Styling';
 
 // import { HorizontalLine } from '../HorizontalLine';
 const LayoutInnerFooter = styled(LayoutInner)`
@@ -12,6 +14,10 @@ const LayoutInnerFooter = styled(LayoutInner)`
     min-height: 600px;
 `;
 const FooterContainer = styled(Container)`
+    a {
+        color: #919093;
+        text-decoration: none;
+    }
     justify-content: space-between;
 
     ${FlexLeft} {
@@ -43,6 +49,10 @@ const FooterContainer = styled(Container)`
         color: #fff;
         float: right;
         width: 220px;
+
+        :hover {
+            cursor: pointer;
+        }
     }
 
     ${SubHeading} {
@@ -65,10 +75,10 @@ const FooterContainerCol = styled(FooterContainer)`
     width: 100%;
     margin: 0 auto;
 
-    p {
-        font-weight: 700;
-        font-size: 30px;
-        color: white;
+    img {
+        height: 100px;
+        width: 120px;
+        margin-bottom: 20px;
     }
 `;
 
@@ -83,18 +93,23 @@ const Footer = () => (
                 <SubHeading>Start Building Today</SubHeading>
             </FlexLeft>
             <FlexRight>
-                <Button>Launch Builder &#10230;</Button>
+                <Link to="/theme">
+                    <Button>Launch Builder &#10230;</Button>
+                </Link>
             </FlexRight>
         </FooterContainer>
         <FooterContainerCol>
             <HorizontalLine />
-            <Paragraph>Logo</Paragraph>
+            <img src={logo} alt="decore" />
         </FooterContainerCol>
-        <FooterContainerInner>
+        <FooterContainerInner style={{ alignItems: 'baseline' }}>
             <FlexLeft>
                 <Paragraph>Help & Support</Paragraph>
-                <Paragraph>Help & Support</Paragraph>
-                <Paragraph>Help & Support</Paragraph>
+                <Paragraph>
+                    <a href="https://github.com/juliajohnson18/Interactive-Site-Builder/issues">
+                        Open an issue
+                    </a>
+                </Paragraph>
             </FlexLeft>
             <FlexRight>
                 <Paragraph>Get in touch</Paragraph>

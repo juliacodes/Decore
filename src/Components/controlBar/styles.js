@@ -38,7 +38,36 @@ export const Dropdown = styled.div`
     margin-bottom: 25px;
 
     .theme__control {
-        border-radius: 3px;
+        border-radius: 10px;
+        border: none;
+        padding: 0 5px;
+        box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .theme__indicator-separator {
+        background-color: transparent;
+    }
+
+    .theme__menu {
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
+    }
+    .theme__option,
+    .theme__option--is-focused {
+        border: none;
+    }
+
+    .theme__option--is-selected {
+        border: none;
+        background-color: ${COLORS.deepPurple};
+    }
+
+    .theme__menu-list {
+        border-radius: 10px;
+        border: none;
+        padding: 0;
     }
 
     .theme__option {
@@ -55,7 +84,6 @@ export const SettingsBar = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 15px 25px;
-    border-top: 1px solid ${COLORS.border};
     font-size: 14px;
 
     p {
@@ -63,9 +91,7 @@ export const SettingsBar = styled.div`
     }
 `;
 
-export const TopBar = styled.div`
-    border-bottom: 1px solid ${COLORS.border};
-`;
+export const TopBar = styled.div``;
 
 export const Settings = styled.div`
     display: flex;
@@ -101,10 +127,13 @@ export const Export = styled.button`
     cursor: pointer;
 `;
 
-export const Elements = styled.div``;
+export const Elements = styled.div`
+    margin: 0 auto;
+    width: 270px; /* same width of color dropdown */
+`;
 
 export const Element = styled.div`
-    background-color: #f8f8f8;
+    background-color: white;
     color: ${COLORS.mediumGray};
     padding: 10px;
     cursor: pointer;
@@ -113,7 +142,8 @@ export const Element = styled.div`
     transition: 0.3s ease;
 
     &:hover {
-        background-color: #d9d9d9;
+        background-color: ${COLORS.deepPurple};
+        color: white;
     }
 
     svg {

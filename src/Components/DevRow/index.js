@@ -1,7 +1,8 @@
 import React from 'react';
 import { LayoutInner, Container } from '../Layout';
-import { FlexLeft, FlexRight, ImageDiv } from '../FlexSplit';
+import { FlexLeft, FlexRight, Image } from '../FlexSplit';
 import { SubHeading, Paragraph, HeadingLight } from '../../Styling';
+import code from '../../images/landing/code.jpg';
 
 const DevRow = () => (
     <LayoutInner>
@@ -10,41 +11,45 @@ const DevRow = () => (
                 {' '}
                 <SubHeading>Built For Developers</SubHeading>
                 <Paragraph>
-                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor
-                    sit amet, consectetur Lorem ipsum dolor sit amet,
-                    consectetur
+                    As developers, we know how time consuming setting up a
+                    project can be, and we want to to simplify this process for
+                    you.
                 </Paragraph>
                 <Container style={{ height: 'unset', margin: '50px 0' }}>
                     <FlexLeft style={{ width: '50%' }}>
-                        <HeadingLight>Feature</HeadingLight>
+                        <HeadingLight>Clean Code</HeadingLight>
                         <Paragraph style={{ maxWidth: 150 }}>
-                            Lorem ipsum dolor sit amet, dolor sit amet{' '}
+                            Our templates come with cleanly written code that
+                            you can build off of.
                         </Paragraph>
                     </FlexLeft>
                     <FlexRight style={{ width: '50%' }}>
-                        <HeadingLight>Feature</HeadingLight>
+                        <HeadingLight>SEO Analytics</HeadingLight>
                         <Paragraph style={{ maxWidth: 150 }}>
-                            Lorem ipsum dolor sit amet, dolor sit amet{' '}
+                            Meta tags and descriptions can be time consuming, so
+                            we do it for you.
                         </Paragraph>
                     </FlexRight>
                 </Container>
                 <Container style={{ height: 'unset' }}>
                     <FlexLeft style={{ width: '50%' }}>
-                        <HeadingLight>Feature</HeadingLight>
+                        <HeadingLight>Color Variables</HeadingLight>
                         <Paragraph style={{ maxWidth: 150 }}>
-                            Lorem ipsum dolor sit amet, dolor sit amet{' '}
+                            Get started with a palette of colors that you can
+                            easily apply across your site
                         </Paragraph>
                     </FlexLeft>
                     <FlexRight style={{ width: '50%' }}>
-                        <HeadingLight>Feature</HeadingLight>
+                        <HeadingLight>Font Setup</HeadingLight>
                         <Paragraph style={{ maxWidth: 150 }}>
-                            Lorem ipsum dolor sit amet, dolor sit amet{' '}
+                            Set your font at the beginning, and we'll use google
+                            to apply it for you
                         </Paragraph>
                     </FlexRight>
                 </Container>
             </FlexLeft>
             <FlexRight>
-                <ImageDiv />
+                <Image src={code} alt="code" />
             </FlexRight>
         </Container>
     </LayoutInner>

@@ -19,7 +19,11 @@ export const COLORS = {
     palePink: '#F1DDE8',
     paleBlue: '#E6EFFE',
     mediumGray: '#8F8F8F',
-    border: '#EBEBEB'
+    border: '#EBEBEB',
+    deepPurple: '#6C63FF',
+    lightPurple: 'rgba(108, 99, 255, 0.53)',
+    lightGray: '#F5F5F5',
+    slate: '#505050'
 };
 
 export const Heading = styled.h1`
@@ -63,6 +67,7 @@ export const HeadingLight = styled.h3`
 export const Paragraph = styled.p`
     color: #929090;
     font-size: 15px;
+    line-height: 20px;
 `;
 
 export const Button = styled.button`

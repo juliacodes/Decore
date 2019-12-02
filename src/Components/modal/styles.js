@@ -8,6 +8,8 @@ export const ModalWrapper = styled.div`
     width: 750px;
     margin: 0 20px;
     transition: 0.3s ease;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
 `;
 
 export const ModalBackground = styled.div`
@@ -43,14 +45,13 @@ export const ModalHeading = styled.div`
     align-items: center;
     width: 100%;
     padding: 20px;
-    border-bottom: 1px solid ${COLORS.mediumGray};
     box-sizing: border-box;
     box-shadow: 0px 1px 5px rgba(208, 208, 208, 0.5);
-    font-family: ${FONTS.primary};
+    font-family: ${FONTS.secondary};
     p {
         margin: 0;
-        font-size: 20px;
-        color: ${COLORS.mediumGray};
+        font-size: 30px;
+        color: ${COLORS.slate};
     }
 
     svg {
@@ -60,5 +61,5 @@ export const ModalHeading = styled.div`
 
 export const ModalBody = styled.div`
     padding: 0 20px;
-    font-family: ${FONTS.primary};
+    font-family: ${FONTS.secondary};
 `;
