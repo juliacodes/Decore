@@ -4,7 +4,7 @@ import settings from '../../images/settings.svg';
 
 export const EditorWrapper = styled.div`
     background-color: ${COLORS.lightGray};
-    width: 100%;
+    width: calc(100% - 320px);
 
     .selected {
         background-color: blue;

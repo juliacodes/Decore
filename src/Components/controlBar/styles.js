@@ -3,11 +3,13 @@ import { COLORS } from '../../Styling/Styling';
 
 export const ControlSideBar = styled.div`
     box-sizing: border-box;
-    width: 375px;
+    width: 320px;
     height: 100vh;
     background-color: white;
     display: flex;
     flex-direction: column;
+    position: fixed;
+    right: 0;
 `;
 
 export const Padded = styled.div`
