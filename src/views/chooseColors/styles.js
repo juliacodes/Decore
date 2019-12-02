@@ -1,10 +1,17 @@
 import styled from 'styled-components';
-import { COLORS, FONTS, Button } from '../../Styling/Styling';
+import { COLORS, FONTS, SmallHeading } from '../../Styling/Styling';
 
 export const ChooseColorsWrapper = styled.div`
     max-width: 1200px;
     padding: 50px 20px;
     margin: 0 auto;
+
+    ${SmallHeading} {
+        font-family: ${FONTS.primary};
+        font-weight: 400;
+        font-size: 20px;
+        color: #8f8f8f;
+    }
 `;
 
 export const Heading = styled.h2`
