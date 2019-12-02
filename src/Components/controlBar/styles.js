@@ -8,10 +8,6 @@ export const ControlSideBar = styled.div`
     background-color: white;
     display: flex;
     flex-direction: column;
-
-    .PlLSC.active {
-        background-color: blue;
-    }
 `;
 
 export const Padded = styled.div`
