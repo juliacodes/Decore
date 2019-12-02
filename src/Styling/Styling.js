@@ -22,7 +22,8 @@ export const COLORS = {
     border: '#EBEBEB',
     deepPurple: '#6C63FF',
     lightPurple: 'rgba(108, 99, 255, 0.53)',
-    lightGray: '#F5F5F5'
+    lightGray: '#F5F5F5',
+    slate: '#505050'
 };
 
 export const Heading = styled.h1`
