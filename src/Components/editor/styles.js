@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { COLORS } from '../../Styling/Styling';
+import settings from '../../images/settings.svg';
 
 export const EditorWrapper = styled.div`
     background-color: ${COLORS.lightGray};
@@ -16,6 +17,9 @@ export const BuildChildCont = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    transition-duration: 2s;
+    border: 2px solid transparent;
 `;
 
 export const ChildDiv = styled.div`
