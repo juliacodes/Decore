@@ -28,14 +28,13 @@ html {
     box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.12);
   }
 }
-
+.editor{
 .active{
   animation: fadein .3s ease-in-out forwards;
   border: 3px solid #6C63FF;
   box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.12);
   color: #6C63FF;
-}
-
+}}
 .activeParent{
       position: relative;
 }

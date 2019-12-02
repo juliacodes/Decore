@@ -23,7 +23,7 @@ export default class Editor extends React.Component {
     render() {
         const { builds } = this.state;
         return (
-            <EditorWrapper ref={this.dragulaDecorator}>
+            <EditorWrapper className="editor" ref={this.dragulaDecorator}>
                 {builds.map(build => {
                     return <BuildChild name={build.type} />;
                 })}
