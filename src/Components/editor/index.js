@@ -1,5 +1,6 @@
 import React from 'react';
 // import NavBar from '../editorElements/navbar';
+import Dragula from 'react-dragula';
 import {
     EditorWrapper,
     BuildChild,
@@ -18,10 +19,16 @@ export default class Editor extends React.Component {
         };
     }
 
+    dragulaDecorator = BuildChild => {
+        if (BuildChild) {
+            Dragula([BuildChild], [BuildChild]);
+        }
+    };
+
     render() {
         const { builds } = this.state;
         return (
-            <EditorWrapper>
+            <EditorWrapper ref={this.dragulaDecorator}>
                 {builds.map(build => {
                     if (build.type === 'split-div') {
                         return (
