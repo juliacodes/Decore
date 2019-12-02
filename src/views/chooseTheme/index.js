@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { COLORS, FONTS, SmallHeading, Button } from '../../Styling/Styling';
+import {
+    COLORS,
+    FONTS,
+    SmallHeading,
+    Button,
+    Paragraph
+} from '../../Styling/Styling';
 import {
     ChooseTheme,
     ChooseThemeLayout,
@@ -29,15 +35,40 @@ const ThemeChooser = () => {
                     <Theme
                         onClick={() => handleTheme('first')}
                         className={chosenTheme === 'first' ? 'selected' : null}
-                    />
+                    >
+                        <Paragraph>Blog Template</Paragraph>
+                        <Paragraph className="features">
+                            <span>Components: </span> <br /> navbar <br />
+                            heading <br />
+                            article <br />
+                            footer
+                        </Paragraph>
+                    </Theme>
                     <Theme
                         onClick={() => handleTheme('second')}
                         className={chosenTheme === 'second' ? 'selected' : null}
-                    />
+                    >
+                        {' '}
+                        <Paragraph>Landing Page</Paragraph>
+                        <Paragraph className="features">
+                            <span>Components: </span> <br /> navbar <br />
+                            heading <br />
+                            flex divs <br />
+                            footer
+                        </Paragraph>
+                    </Theme>
                     <Theme
                         onClick={() => handleTheme('third')}
                         className={chosenTheme === 'third' ? 'selected' : null}
-                    />
+                    >
+                        <Paragraph>Landing Page Alt</Paragraph>
+                        <Paragraph className="features">
+                            <span>Components: </span> <br /> navbar <br />
+                            Image Header <br />
+                            Table Grid <br />
+                            footer
+                        </Paragraph>
+                    </Theme>
                 </ThemeWrapper>
                 <Link to={`/edit/${chosenTheme}`}>
                     <Button
@@ -50,12 +81,12 @@ const ThemeChooser = () => {
                         Continue
                     </Button>
                 </Link>
-                <p>
+                <alt>
                     or start from a{' '}
                     <Link to="/colors">
                         <span>blank template</span>
                     </Link>
-                </p>
+                </alt>
             </ChooseThemeLayout>
         </ChooseTheme>
     );

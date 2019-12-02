@@ -11,7 +11,7 @@ export const ChooseTheme = styled.div`
 export const ChooseThemeLayout = styled.div`
     max-width: 1000px;
     height: auto;
-    margin: -75px auto 0 auto;
+    margin: -35px auto 0 auto;
     padding: 0 25px;
     text-align: center;
     @media screen and (${QUERIES.large}) {
@@ -23,8 +23,9 @@ export const ChooseThemeLayout = styled.div`
     ${Button} {
         margin: 50px 0;
     }
-    p {
+    alt {
         position: relative;
+        display: block;
         span {
             color: #6c63ff;
             text-decoration: underline;
@@ -64,15 +65,20 @@ export const ThemeWrapper = styled.div`
 export const Theme = styled.div`
     flex: 1 0 auto;
     height: 325px;
+    max-width: unset;
     margin: 15px 0;
     border: 1px solid transparent;
     box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.07);
     background-color: white;
     transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     cursor: pointer;
     @media only screen and (${QUERIES.medium}) {
         height: 375px;
         margin: 0 5px;
+        max-width: 330px;
     }
     &.selected {
         border-color: ${COLORS.darkBlue};
@@ -80,6 +86,24 @@ export const Theme = styled.div`
         @media only screen and (${QUERIES.medium}) {
             transform: scale(1.2);
             border-color: transparent;
+        }
+    }
+
+    p {
+        color: #3f3d56;
+        font-weight: 500;
+        font-size: 30px;
+    }
+
+    .features {
+        line-height: 40px;
+        font-size: 15px;
+        font-weight: 700;
+        color: ${COLORS.deepPurple};
+
+        > span {
+            color: #89969f;
+            font-weight: 500;
         }
     }
 `;

@@ -19,7 +19,8 @@ export const COLORS = {
     palePink: '#F1DDE8',
     paleBlue: '#E6EFFE',
     mediumGray: '#8F8F8F',
-    border: '#EBEBEB'
+    border: '#EBEBEB',
+    deepPurple: '#6C63FF'
 };
 
 export const Heading = styled.h1`
