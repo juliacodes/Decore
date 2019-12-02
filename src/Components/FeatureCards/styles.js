@@ -20,6 +20,15 @@ const TriContainer = styled(Container)`
         }
     }
 
+    img{
+        width: 300px;
+        margin: 20px auto;
+
+        @media (${QUERIES.medium}) {
+            width: 80%;
+        }
+    }
+
     ${FlexRight} {
         width: 20%;
         padding: 0;
