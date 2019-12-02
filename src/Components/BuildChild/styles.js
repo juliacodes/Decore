@@ -17,6 +17,7 @@ export const SettingsButton = styled.div`
     background-repeat: no-repeat;
     display: block;
     content: '';
+    cursor: pointer;
 `;
 
 export const fadein = keyframes`

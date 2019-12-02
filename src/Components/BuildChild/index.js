@@ -25,10 +25,10 @@ class BuildChild extends React.Component {
     }
 
     handleClick = e => {
-        if (!this.buildNode.current.contains(e.target)) {
-            this.setState({ active: false });
-        } else {
-            this.setState({ active: true });
+        if (this.state.active) {
+            if (!this.buildNode.current.contains(e.target)) {
+                this.setState({ active: false });
+            }
         }
     };
 
@@ -38,12 +38,11 @@ class BuildChild extends React.Component {
             <BuildChildCont
                 className={this.state.active && 'activeParent'}
                 // onClick={() => this.setState({ active: !this.state.active })}
-                ref={this.buildNode}
             >
-                <SettingsButton />
+                <SettingsButton onClick={() => this.setState({ active: !this.state.active })}/>
 
                 {this.state.active && (
-                    <SettingsPopup>
+                    <SettingsPopup ref={this.buildNode}>
                         <Edit>
                             <p>Edit</p>
                         </Edit>
