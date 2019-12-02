@@ -12,9 +12,8 @@ const NavContainer = styled.div`
     top: 0;
     left: 0;
 
-    p {
-        color: white;
-        font-size: 20px;
+    img {
+        width: 80px;
     }
 
     @media (${QUERIES.medium}) {

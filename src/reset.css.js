@@ -1,10 +1,45 @@
 import { createGlobalStyle } from 'styled-components';
+import settings from './images/settings.svg';
 
 export default createGlobalStyle`
 html {
     line-height: 1.15; 
     -webkit-text-size-adjust: 100%; 
   }
+  .PlLSC{
+    background-color:rgba(238, 238, 238, 0);
+        backdrop-filter: blur(0px);
+  }
+
+
+  .PlLSC.active {
+        background-color:rgba(238, 238, 238, 0.21);
+        backdrop-filter: blur(2px);
+    }
+
+@keyframes fadein {
+  0%{
+    border: 0px solid #6C63FF;
+    box-shadow: -5px 5px 30px rgba(0, 0, 0, 0);
+  }
+
+  100%{
+    border: 3px solid #6C63FF;
+    box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.12);
+  }
+}
+.editor{
+.active{
+  animation: fadein .3s ease-in-out forwards;
+  border: 3px solid #6C63FF;
+  box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.12);
+  color: #6C63FF;
+}}
+.activeParent{
+      position: relative;
+}
+
+    
   
   body {
     margin: 0;

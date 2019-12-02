@@ -1,12 +1,13 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Editor from '../../Components/editor';
 import ControlBar from '../../Components/controlBar';
 import Modal from '../../Components/modal';
-import Switch from '../../Components/Switch'
-import {BuilderWrapper, Heading, Edit} from './styles';
-
-
-
+import Element from '../../Components/controlBar/';
+import { EditorWrapper } from '../../Components/editor/styles';
+import { BuilderWrapper, ModalRow, SettingType, SettingVal } from './styles';
+import { FlexLeft, FlexRight } from '../../Components/FlexSplit/FlexSplit';
+import { Button } from '../../Styling';
 
 export default class Builder extends React.Component {
     constructor(props) {
@@ -14,9 +15,7 @@ export default class Builder extends React.Component {
 
         this.state = {
             settings: {
-                projectName: 'Hello World App',
-                projectDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, etiam non purus euismod.',
-                projectMeta: 'Include tags with your title and description to help with search engine optimization'
+                projectName: ''
             }
         };
         this.settingsModal = React.createRef();
@@ -40,11 +39,17 @@ export default class Builder extends React.Component {
         const { settings } = this.state;
         return (
             <BuilderWrapper>
-                <Modal ref={this.settingsModal} title="Settings">
-                    <div>
-                        <label htmlFor="projectName">
-                           <Heading>Project Name</Heading>
-                           <Edit>Edit</Edit>
+                <Modal ref={this.settingsModal} title="Preferences">
+                    <ModalRow>
+                        <FlexLeft>
+                            <SettingType>Project Title</SettingType>
+                            <SettingVal>Hello World</SettingVal>
+                        </FlexLeft>
+                        <FlexRight>
+                            <Button>Edit</Button>
+                        </FlexRight>
+                        {/* <label htmlFor="projectName">
+                            Project Title
                             <input
                                 type="text"
                                 name="projectName"
@@ -52,34 +57,35 @@ export default class Builder extends React.Component {
                                 value={settings.projectName}
                                 onChange={this.handleSettingsChange}
                             />
-                        </label>
-                    </div>
-                    <div>
-                        <label htmlFor="projectDesc">
-                            <Heading>Project Desc</Heading>
-                            <Edit>Edit</Edit>
-                            <input
-                                type="text"
-                                name="projectDesc"
-                                id="projectDesc"
-                                value={settings.projectDesc}
-                                onChange={this.handleSettingsChange}
-                            />
-                        </label>
-                    </div>
-                    <div>
-                        <label htmlFor="projectMeta">
-                            <Heading>Meta Tags</Heading>
-                            <Switch></Switch>
-                            <input
-                                type="text"
-                                name="projectMeta"
-                                id="projectMeta"
-                                value={settings.projectMeta}
-                                onChange={this.handleSettingsChange}
-                            />
-                        </label>
-                    </div>
+                        </label> */}
+                    </ModalRow>
+                    <ModalRow>
+                        <FlexLeft>
+                            <SettingType>Project Description</SettingType>
+                            <SettingVal>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Neque, etiam non purus euismod.
+                            </SettingVal>
+                        </FlexLeft>
+                        <FlexRight>
+                            <Button>Edit</Button>
+                        </FlexRight>
+                    </ModalRow>
+                    <ModalRow>
+                        <FlexLeft>
+                            <SettingType>Meta Tags</SettingType>
+                            <SettingVal>
+                                Include tags with your title and description to
+                                help with search engine optimization
+                            </SettingVal>
+                        </FlexLeft>
+                        <FlexRight>
+                            <label className="switch">
+                                <input type="checkbox" defaultChecked />
+                                <span className="slider round" />
+                            </label>
+                        </FlexRight>
+                    </ModalRow>
                 </Modal>
                 <Editor />
                 <ControlBar handleModal={this.openModal} />

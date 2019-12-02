@@ -1,13 +1,9 @@
 import React from 'react';
 // import NavBar from '../editorElements/navbar';
-import {
-    EditorWrapper,
-    BuildChild,
-    SplitDiv,
-    ChildDiv,
-    NavDiv
-} from './styles';
+import Dragula from 'react-dragula';
+import { EditorWrapper } from './styles';
 import buildData from '../../store/buildData';
+import BuildChild from '../BuildChild';
 
 export default class Editor extends React.Component {
     constructor() {
@@ -18,31 +14,18 @@ export default class Editor extends React.Component {
         };
     }
 
+    dragulaDecorator = BuildChild => {
+        if (BuildChild) {
+            Dragula([BuildChild], [BuildChild]);
+        }
+    };
+
     render() {
         const { builds } = this.state;
         return (
-            <EditorWrapper>
+            <EditorWrapper className="editor" ref={this.dragulaDecorator}>
                 {builds.map(build => {
-                    if (build.type === 'split-div') {
-                        return (
-                            <BuildChild>
-                                <SplitDiv>{build.type}</SplitDiv>
-                                <SplitDiv>{build.type}</SplitDiv>
-                            </BuildChild>
-                        );
-                    }
-                    if (build.type === 'nav') {
-                        return (
-                            <BuildChild>
-                                <NavDiv>{build.type}</NavDiv>
-                            </BuildChild>
-                        );
-                    }
-                    return (
-                        <BuildChild>
-                            <ChildDiv>{build.type}</ChildDiv>
-                        </BuildChild>
-                    );
+                    return <BuildChild name={build.type} />;
                 })}
             </EditorWrapper>
         );
