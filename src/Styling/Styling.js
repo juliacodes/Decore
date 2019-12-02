@@ -6,7 +6,7 @@ export const QUERIES = {
 };
 
 export const FONTS = {
-    primary: 'Inter',
+    primary: 'Muli',
     secondary: 'Muli',
     tertiary: 'Oswald'
 };
