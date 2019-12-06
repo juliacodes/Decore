@@ -1,19 +1,23 @@
 import styled from 'styled-components';
-import { COLORS } from '../../Styling/Styling';
+import { COLORS, QUERIES } from '../../Styling/Styling';
 import settings from '../../images/settings.svg';
 
 export const EditorWrapper = styled.div`
     background-color: ${COLORS.lightGray};
-    width: calc(100% - 320px);
+    width: 100%;
     min-height: 100vh;
 
     .selected {
         background-color: blue;
     }
+
+    @media (${QUERIES.medium}) {
+        width: calc(100% - 320px);
+    }
 `;
 
 export const BuildChildCont = styled.div`
-    width: 50%;
+    width: 80%;
     margin: 30px auto;
     display: flex;
     align-items: center;
@@ -22,6 +26,10 @@ export const BuildChildCont = styled.div`
     transition-duration: 2s;
     border: 2px solid transparent;
     cursor: grab;
+
+    @media (${QUERIES.medium}) {
+        width: 50%;
+    }
 `;
 
 export const ChildDiv = styled.div`
