@@ -100,6 +100,8 @@ export const SettingsBar = styled.div`
     width: calc(100vw - 50px);
     left: 0;
     height: 50px;
+    background-color: white;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
 
     p {
         margin: 0;
@@ -111,6 +113,7 @@ export const SettingsBar = styled.div`
         width: unset;
         left: 0;
         height: unset;
+        box-shadow: none;
     }
 `;
 
