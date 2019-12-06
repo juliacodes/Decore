@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 import React from 'react';
 // import NavBar from '../editorElements/navbar';
 import Dragula from 'react-dragula';
@@ -8,10 +9,15 @@ import BuildChild from '../BuildChild';
 export default class Editor extends React.Component {
     constructor() {
         super();
-
         this.state = {
-            builds: buildData.builds
+            builds: buildData.blank
         };
+    }
+
+    componentDidMount() {
+        const themeStorage = localStorage.getItem('theme');
+        const theme = buildData[themeStorage];
+        this.setState({ builds: theme });
     }
 
     dragulaDecorator = BuildChild => {
