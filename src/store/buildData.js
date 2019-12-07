@@ -1,22 +1,32 @@
 const buildData = {
-    builds: [
+    first: [
         {
-            index: 0,
             type: 'nav'
         },
         {
-            index: 1,
             type: 'tri-div'
         },
         {
-            index: 2,
             type: 'div'
         },
         {
-            index: 3,
             type: 'split-div'
         }
-    ]
+    ],
+    second: [
+        {
+            type: 'nav'
+        },
+        {
+            type: 'tri-div'
+        }
+    ],
+    third: [
+        {
+            type: 'nav'
+        }
+    ],
+    blank: []
 };
 
 export default buildData;

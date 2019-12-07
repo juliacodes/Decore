@@ -20,6 +20,7 @@ const ThemeChooser = () => {
 
     // Set the selected theme when a user clicks one
     const handleTheme = themeName => {
+        localStorage.setItem('theme', themeName);
         setChosenTheme(themeName);
     };
 
