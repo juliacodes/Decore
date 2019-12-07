@@ -80,4 +80,5 @@ export const Button = styled.button`
     color: ${COLORS.deepBlue};
     border: none;
     margin-top: 40px;
+    cursor: pointer;
 `;

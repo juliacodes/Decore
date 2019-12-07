@@ -35,7 +35,7 @@ export const Edit = styled.button`
 
 export const ModalRow = styled.div`
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   margin: 20px 0;
 
@@ -149,8 +149,26 @@ export const SettingType = styled.p`
   margin: 20px 0 5px 0;
   padding: 0;
 `;
+
 export const SettingVal = styled.p`
   color: ${COLORS.mediumGray};
   font-size: 15px;
   max-width: 300px;
+`;
+
+export const SettingInput = styled.input`
+  color: ${COLORS.mediumGray};
+  font-size: 15px;
+  border: none;
+  caret-color: ${COLORS.deepBlue};
+  width: 100%;
+`;
+
+export const SettingTextArea = styled.textarea`
+  color: ${COLORS.mediumGray};
+  font-size: 15px;
+  border: none;
+  resize: none;
+  width: 100%;
+  caret-color: ${COLORS.deepBlue};
 `;

@@ -10,14 +10,16 @@ export default class Editor extends React.Component {
     constructor() {
         super();
         this.state = {
-            builds: buildData.blank
+            builds: buildData.first
         };
     }
 
     componentDidMount() {
         const themeStorage = localStorage.getItem('theme');
         const theme = buildData[themeStorage];
-        this.setState({ builds: theme });
+        if (theme) {
+            this.setState({ builds: theme });
+        }
     }
 
     dragulaDecorator = BuildChild => {

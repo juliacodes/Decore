@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Editor from "../../Components/editor";
 import ControlBar from "../../Components/controlBar";
 import Modal from "../../Components/modal";
@@ -11,7 +10,9 @@ import {
   CodeModalRow,
   CodeEditor,
   SettingType,
-  SettingVal
+  SettingVal,
+  SettingInput,
+  SettingTextArea
 } from "./styles";
 import { FlexLeft, FlexRight } from "../../Components/FlexSplit/FlexSplit";
 import { Button, Paragraph } from "../../Styling";
@@ -22,12 +23,15 @@ export default class Builder extends React.Component {
 
     this.state = {
       settings: {
-        projectName: ""
+        projectName: "Lorem ipsum",
+        projectDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, etiam non purus euismod."
       },
       code: {
         html: ""
       }
     };
+    this.titleInput = React.createRef();
+    this.descriptionInput = React.createRef();
     this.settingsModal = React.createRef();
     this.codeModal = React.createRef();
   }
@@ -55,12 +59,20 @@ export default class Builder extends React.Component {
   handleCodeChange = event => {
     const { code } = { ...this.state };
     const currentState = code;
-
-    // const { name, value } = event.target;
-    // currentState[name] = value;
-
     this.setState({ settings: currentState });
   };
+
+  handleInput = e => {
+    const name = e.target.name;
+    e.persist();
+    this.setState(prevState => ({
+      ...prevState,
+      settings: {
+        [name]: e.target.value
+      }
+    }))
+  }
+
 
   render() {
     const { settings } = this.state;
@@ -70,32 +82,20 @@ export default class Builder extends React.Component {
           <ModalRow>
             <FlexLeft>
               <SettingType>Project Title</SettingType>
-              <SettingVal>Hello World</SettingVal>
+              <SettingInput ref={this.titleInput} type="text" name="projectName" value={settings.projectName} onChange={this.handleInput}/>
             </FlexLeft>
             <FlexRight>
-              <Button>Edit</Button>
+              <Button onClick={() => this.titleInput.current.focus()}>Edit</Button>
             </FlexRight>
-            {/* <label htmlFor="projectName">
-                            Project Title
-                            <input
-                                type="text"
-                                name="projectName"
-                                id="projectName"
-                                value={settings.projectName}
-                                onChange={this.handleSettingsChange}
-                            />
-                        </label> */}
           </ModalRow>
           <ModalRow>
             <FlexLeft>
               <SettingType>Project Description</SettingType>
-              <SettingVal>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque,
-                etiam non purus euismod.
-              </SettingVal>
+              <SettingTextArea ref={this.descriptionInput} name="projectDescription" value={settings.projectDescription} onChange={this.handleInput}>
+              </SettingTextArea>
             </FlexLeft>
             <FlexRight>
-              <Button>Edit</Button>
+              <Button onClick={() => this.descriptionInput.current.focus()}>Edit</Button>
             </FlexRight>
           </ModalRow>
           <ModalRow>

@@ -26,11 +26,11 @@ export default class Modal extends React.Component {
     this.setState({ active: status });
   };
 
-  handleClickOutside = e => {
-    if (!this.modal.current.contains(e.target)) {
-      this.setState({ active: false });
-    }
-  };
+  // handleClickOutside = e => {
+  //   if (!this.modal.current.contains(e.target)) {
+  //     this.setState({ active: false });
+  //   }
+  // };
 
   render() {
     const { active } = this.state;
