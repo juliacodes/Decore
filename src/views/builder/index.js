@@ -30,10 +30,12 @@ export default class Builder extends React.Component {
         html: ""
       }
     };
+
     this.titleInput = React.createRef();
     this.descriptionInput = React.createRef();
     this.settingsModal = React.createRef();
     this.codeModal = React.createRef();
+    this.editor = React.createRef();
   }
 
   // setting modal handler
@@ -73,6 +75,9 @@ export default class Builder extends React.Component {
     }))
   }
 
+  addBuilderElem = (elem) => {
+    this.editor.current && this.editor.current.addNewElem(elem);
+  }
 
   render() {
     const { settings } = this.state;
@@ -149,22 +154,13 @@ export default class Builder extends React.Component {
                 </pre>
               </CodeEditor>
             </FlexRight>
-            {/* <label htmlFor="projectName">
-                            Project Title
-                            <input
-                                type="text"
-                                name="projectName"
-                                id="projectName"
-                                value={settings.projectName}
-                                onChange={this.handleSettingsChange}
-                            />
-                        </label> */}
           </CodeModalRow>
         </Modal>
-        <Editor />
+        <Editor ref={this.editor}/>
         <ControlBar
           handleModal={this.openModal}
           handleCodeModal={this.openCodeModal}
+          addBuilderElem={this.addBuilderElem}
         />
       </BuilderWrapper>
     );

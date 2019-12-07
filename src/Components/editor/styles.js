@@ -46,3 +46,5 @@ export const TriDiv = styled(ChildDiv)`
 `;
 
 export const NavDiv = styled(ChildDiv)``;
+
+export const FooterDiv = styled(ChildDiv)``;

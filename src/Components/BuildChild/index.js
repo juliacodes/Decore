@@ -7,7 +7,8 @@ import {
     SplitDiv,
     ChildDiv,
     NavDiv,
-    TriDiv
+    TriDiv,
+    FooterDiv,
 } from '../editor/styles';
 import { SettingsButton, SettingsPopup, Edit, Delete } from './styles';
 
@@ -105,6 +106,11 @@ class BuildChild extends React.Component {
                     <ChildDiv className={this.state.active && 'active'}>
                         {name}
                     </ChildDiv>
+                )}
+                {name === 'footer' && (
+                    <FooterDiv className={this.state.active && 'active'}>
+                        {name}
+                    </FooterDiv>
                 )}
             </BuildChildCont>
         );

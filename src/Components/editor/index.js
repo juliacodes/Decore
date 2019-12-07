@@ -8,8 +8,8 @@ import buildData from '../../store/buildData';
 import BuildChild from '../BuildChild';
 
 export default class Editor extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             builds: buildData.first
         };
@@ -27,8 +27,7 @@ export default class Editor extends React.Component {
 
     dragulaDecorator = instance => {
         if (instance) {
-            Dragula([instance], {
-            });
+            Dragula([instance])
         }
     };
 
@@ -44,6 +43,14 @@ export default class Editor extends React.Component {
             ...prevState,
             builds: this.state.builds.filter(el => el.uniqueID != uniqueID)
         }));
+    }
+
+    addNewElem = (newElem) => {
+        let builds = this.state.builds.concat({ type: newElem })
+        this.setState(prevState => ({
+            ...prevState,
+            builds
+        }))
     }
 
     render() {
