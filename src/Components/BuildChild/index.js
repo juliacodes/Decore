@@ -20,17 +20,17 @@ class BuildChild extends React.Component {
         this.buildNode = React.createRef();
     }
 
-    componentDidMount() {
-        document.addEventListener('mousedown', this.handleClick)
-    }
+    // componentDidMount() {
+    //     document.addEventListener('mousedown', this.handleClick)
+    // }
 
-    handleClick = e => {
-        if (!this.buildNode.current.contains(e.target)) {
-            this.setState({ active: false });
-        } else {
-            this.setState({ active: true });
-        }
-    };
+    // handleClick = e => {
+    //     if (!this.buildNode.current.contains(e.target)) {
+    //         this.setState({ active: false });
+    //     } else {
+    //         this.setState({ active: true });
+    //     }
+    // };
 
     render() {
         const { name } = this.props;

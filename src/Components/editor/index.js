@@ -17,7 +17,9 @@ export default class Editor extends React.Component {
     componentDidMount() {
         const themeStorage = localStorage.getItem('theme');
         const theme = buildData[themeStorage];
-        this.setState({ builds: theme });
+        if (theme) {
+            this.setState({ builds: theme });
+        }
     }
 
     dragulaDecorator = BuildChild => {
