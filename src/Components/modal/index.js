@@ -38,7 +38,7 @@ export default class Modal extends React.Component {
 
     return (
       <ModalBackground className={active && "active"}>
-        {modalType == "codeModal" ? (
+        {modalType === "codeModal" ? (
           <CodeModalWrapper ref={this.modal}>
             <ModalHeading>
               <p>{title}</p>

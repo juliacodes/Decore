@@ -11,13 +11,19 @@ export const SettingsButton = styled.div`
     position: absolute;
     top: 10px;
     right: 10px;
-    background-image: url(${settings});
-    background-position: center center;
-    background-size: 80%;
-    background-repeat: no-repeat;
     display: block;
     content: '';
     cursor: pointer;
+
+    svg path {
+        transition: 0.3s;
+    }
+
+    svg:hover {
+        path {
+            fill: ${COLORS.deepBlue};
+        }
+    }
 `;
 
 export const fadein = keyframes`

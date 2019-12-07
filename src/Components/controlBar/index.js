@@ -51,8 +51,8 @@ export default class ControlBar extends React.Component {
               />
             </Dropdown>
             <ColorScheme>
-              {Object.keys(colorScheme).map(color => (
-                <Color color={colorScheme[color]} />
+              {Object.keys(colorScheme).map((color, index) => (
+                <Color color={colorScheme[color]} key={index} />
               ))}
             </ColorScheme>
           </Padded>

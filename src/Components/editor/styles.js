@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { COLORS } from '../../Styling/Styling';
-import settings from '../../images/settings.svg';
 
 export const EditorWrapper = styled.div`
     background-color: ${COLORS.lightGray};
