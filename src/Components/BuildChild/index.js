@@ -25,7 +25,7 @@ class BuildChild extends React.Component {
     }
 
     handleClick = e => {
-        if (!this.buildNode.current.contains(e.target)) {
+        if (this.buildNode.current && !this.buildNode.current.contains(e.target)) {
             this.setState({ active: false });
         } else {
             this.setState({ active: true });
