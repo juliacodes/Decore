@@ -51,6 +51,14 @@ export default class Editor extends React.Component {
             ...prevState,
             builds
         }))
+
+        setTimeout(() => {
+            window.scroll({
+                top: document.body.scrollHeight,
+                left: 0,
+                behavior: 'smooth'
+            });
+        })
     }
 
     render() {
