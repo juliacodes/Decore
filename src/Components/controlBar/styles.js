@@ -1,16 +1,22 @@
 import styled from 'styled-components';
-import { COLORS } from '../../Styling/Styling';
+import { COLORS, QUERIES } from '../../Styling/Styling';
 
 export const ControlSideBar = styled.div`
     box-sizing: border-box;
-    width: 320px;
-    height: 100vh;
-    background-color: white;
+    width: 50px;
+    height: 50px;
+
     display: flex;
     flex-direction: column;
     position: fixed;
     top: 0;
     right: 0;
+
+    @media (${QUERIES.medium}) {
+        width: 320px;
+        height: 100vh;
+        background-color: white;
+    }
 `;
 
 export const Padded = styled.div`
@@ -89,12 +95,34 @@ export const SettingsBar = styled.div`
     padding: 15px 25px;
     font-size: 14px;
 
+    position: fixed;
+    bottom: 0;
+    width: calc(100vw - 50px);
+    left: 0;
+    height: 50px;
+    background-color: white;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
+
     p {
         margin: 0;
     }
+
+    @media (${QUERIES.medium}) {
+        position: relative;
+        bottom: 0;
+        width: unset;
+        left: 0;
+        height: unset;
+        box-shadow: none;
+    }
 `;
 
-export const TopBar = styled.div``;
+export const TopBar = styled.div`
+    display: none;
+    @media (${QUERIES.medium}) {
+        display: block;
+    }
+`;
 
 export const Settings = styled.div`
     display: flex;
@@ -133,6 +161,11 @@ export const Export = styled.button`
 export const Elements = styled.div`
     margin: 0 auto;
     width: 270px; /* same width of color dropdown */
+
+    display: none;
+    @media (${QUERIES.medium}) {
+        display: block;
+    }
 `;
 
 export const Element = styled.div`
