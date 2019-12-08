@@ -1,5 +1,5 @@
 const buildData = {
-    first: [
+    blog: [
         {
             type: 'nav'
         },
@@ -13,7 +13,7 @@ const buildData = {
             type: 'split-div'
         }
     ],
-    second: [
+    landing: [
         {
             type: 'nav'
         },
@@ -21,12 +21,12 @@ const buildData = {
             type: 'tri-div'
         }
     ],
-    third: [
+    landingAlternative: [
         {
             type: 'nav'
         }
     ],
-    blank: []
+    custom: []
 };
 
 export default buildData;

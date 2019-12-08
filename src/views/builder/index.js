@@ -1,6 +1,6 @@
 import React from 'react';
 import Editor from '../../Components/Editor';
-import ControlBar from '../../Components/ControlBar';
+import { ControlBar } from '../../Components/ControlBar';
 import Modal from '../../Components/Modal';
 import {
     BuilderWrapper,

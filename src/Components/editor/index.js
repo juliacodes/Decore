@@ -1,24 +1,25 @@
 /* eslint-disable react/no-unused-state */
 import React from 'react';
+import { withRouter } from 'react-router';
 // import NavBar from '../editorElements/navbar';
 import Dragula from 'react-dragula';
 import { EditorWrapper } from './styles';
 import buildData from '../../store/buildData';
 import BuildChild from '../BuildChild';
 
-export default class Editor extends React.Component {
+class Editor extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            builds: buildData.first
+            builds: buildData.landing
         };
 
         this.builder = React.createRef();
     }
 
     componentDidMount() {
-        const themeStorage = localStorage.getItem('theme');
-        const theme = buildData[themeStorage];
+        const requestedTheme = this.props.match.params.theme;
+        const theme = buildData[requestedTheme];
         if (theme) {
             this.setState({ builds: theme });
         }
@@ -83,3 +84,5 @@ export default class Editor extends React.Component {
         );
     }
 }
+
+export default withRouter(Editor);

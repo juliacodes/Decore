@@ -18,11 +18,10 @@ import {
 } from './styles';
 
 const ThemeChooser = () => {
-    const [chosenTheme, setChosenTheme] = useState('second');
+    const [chosenTheme, setChosenTheme] = useState('landing');
 
     // Set the selected theme when a user clicks one
     const handleTheme = themeName => {
-        localStorage.setItem('theme', themeName);
         setChosenTheme(themeName);
     };
 
@@ -36,8 +35,8 @@ const ThemeChooser = () => {
             <ChooseThemeLayout>
                 <ThemeWrapper>
                     <Theme
-                        onClick={() => handleTheme('first')}
-                        className={chosenTheme === 'first' ? 'selected' : null}
+                        onClick={() => handleTheme('blog')}
+                        className={chosenTheme === 'blog' ? 'selected' : null}
                     >
                         <CardHeading>Blog Template</CardHeading>
                         <Paragraph className="features">
@@ -48,8 +47,10 @@ const ThemeChooser = () => {
                         </Paragraph>
                     </Theme>
                     <Theme
-                        onClick={() => handleTheme('second')}
-                        className={chosenTheme === 'second' ? 'selected' : null}
+                        onClick={() => handleTheme('landing')}
+                        className={
+                            chosenTheme === 'landing' ? 'selected' : null
+                        }
                     >
                         {' '}
                         <CardHeading>Landing Page</CardHeading>
@@ -61,8 +62,12 @@ const ThemeChooser = () => {
                         </Paragraph>
                     </Theme>
                     <Theme
-                        onClick={() => handleTheme('third')}
-                        className={chosenTheme === 'third' ? 'selected' : null}
+                        onClick={() => handleTheme('landingAlternative')}
+                        className={
+                            chosenTheme === 'landingAlternative'
+                                ? 'selected'
+                                : null
+                        }
                     >
                         <CardHeading>Landing Page Alt</CardHeading>
                         <Paragraph className="features">

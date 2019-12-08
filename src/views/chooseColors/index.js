@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ChromePicker } from 'react-color';
+import AppContext from '../../AppContext';
 import Font from '../../Components/Font';
 import { COLORS, SmallHeading, Button, FONTS } from '../../Styling/Styling';
 
@@ -16,17 +17,8 @@ import {
 } from './styles';
 
 const ChooseColors = () => {
+    const { colors, setColors } = useContext(AppContext);
     const node = useRef(); // Reference hook for handleClick function
-    const [colors, setColors] = useState({
-        colorOne: '#4ECDC4',
-        colorTwo: '#A7EEE9',
-        colorThree: '#FF6B6B',
-        colorFour: '#FFAAAA',
-        colorFive: '#FFEB8C',
-        colorSix: '#FFF4C1',
-        colorSeven: '#D4D4D4',
-        colorEight: '#EFF3EF'
-    });
 
     const [pickerStatus, setPickerStatus] = useState(false);
     const [pickerSelected, setPickerSelected] = useState('colorOne');
