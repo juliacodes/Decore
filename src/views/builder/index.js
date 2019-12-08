@@ -84,17 +84,17 @@ export default class Builder extends React.Component {
         const { settings } = this.state;
         return (
             <BuilderWrapper>
-                <Modal ref={this.settingsModal} title="Preferences">
+                <Modal ref={this.settingsModal} title='Preferences'>
                     <ModalRow>
                         <FlexLeft>
                             <SettingType>Project Title</SettingType>
                             <SettingInput
                                 ref={this.titleInput}
-                                type="text"
-                                name="projectName"
+                                type='text'
+                                name='projectName'
                                 value={settings.projectName}
                                 onChange={this.handleInput}
-                                aria-label="Project Name"
+                                aria-label='Project Name'
                             />
                         </FlexLeft>
                         <FlexRight>
@@ -110,8 +110,8 @@ export default class Builder extends React.Component {
                             <SettingType>Project Description</SettingType>
                             <SettingTextArea
                                 ref={this.descriptionInput}
-                                name="projectDescription"
-                                aria-label="Project Description"
+                                name='projectDescription'
+                                aria-label='Project Description'
                                 value={settings.projectDescription}
                                 onChange={this.handleInput}
                             />
@@ -135,22 +135,22 @@ export default class Builder extends React.Component {
                             </SettingVal>
                         </FlexLeft>
                         <FlexRight>
-                            <label className="switch" htmlFor="checkbox">
+                            <label className='switch' htmlFor='checkbox'>
                                 Meta
                                 <input
-                                    type="checkbox"
+                                    type='checkbox'
                                     defaultChecked
-                                    id="checkbox"
+                                    id='checkbox'
                                 />
-                                <span className="slider round" />
+                                <span className='slider round' />
                             </label>
                         </FlexRight>
                     </ModalRow>
                 </Modal>
                 <Modal
-                    modalType="codeModal"
+                    modalType='codeModal'
                     ref={this.codeModal}
-                    title="Code Export"
+                    title='Code Export'
                 >
                     <CodeModalRow>
                         <FlexLeft>

@@ -28,8 +28,8 @@ const ThemeChooser = () => {
 
     return (
         <ChooseTheme>
-            <ShortHero background="#5442F8">
-                <SmallHeading fontColor="#FFFFFF" fontFamily={FONTS.secondary}>
+            <ShortHero background='#5442F8'>
+                <SmallHeading fontColor='#FFFFFF' fontFamily={FONTS.secondary}>
                     Choose Your Template
                 </SmallHeading>
             </ShortHero>
@@ -40,7 +40,7 @@ const ThemeChooser = () => {
                         className={chosenTheme === 'first' ? 'selected' : null}
                     >
                         <CardHeading>Blog Template</CardHeading>
-                        <Paragraph className="features">
+                        <Paragraph className='features'>
                             <span>Components: </span> <br /> navbar <br />
                             heading <br />
                             article <br />
@@ -53,7 +53,7 @@ const ThemeChooser = () => {
                     >
                         {' '}
                         <CardHeading>Landing Page</CardHeading>
-                        <Paragraph className="features">
+                        <Paragraph className='features'>
                             <span>Components: </span> <br /> navbar <br />
                             heading <br />
                             flex divs <br />
@@ -65,7 +65,7 @@ const ThemeChooser = () => {
                         className={chosenTheme === 'third' ? 'selected' : null}
                     >
                         <CardHeading>Landing Page Alt</CardHeading>
-                        <Paragraph className="features">
+                        <Paragraph className='features'>
                             <span>Components: </span> <br /> navbar <br />
                             Image Header <br />
                             Table Grid <br />
@@ -86,7 +86,7 @@ const ThemeChooser = () => {
                 </Link>
                 <alt>
                     or start from a{' '}
-                    <Link to="/colors">
+                    <Link to='/colors'>
                         <span>blank template</span>
                     </Link>
                 </alt>

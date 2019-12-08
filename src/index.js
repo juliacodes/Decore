@@ -5,6 +5,7 @@ import ChooseTheme from './views/ChooseTheme';
 import ChooseColors from './views/ChooseColors';
 import Builder from './views/Builder';
 import App from './App';
+import ErrorPage from './views/ErrorPage';
 import * as serviceWorker from './serviceWorker';
 // eslint-disable-next-line import/extensions
 import GlobalStyles from './reset.css.js';
@@ -13,10 +14,11 @@ const routing = (
     <Router>
         <div>
             <GlobalStyles />
-            <Route exact path="/" component={App} />
-            <Route path="/theme" component={ChooseTheme} />
-            <Route path="/colors" component={ChooseColors} />
-            <Route path="/edit/:theme" component={Builder} />
+            <Route exact path='/' component={App} />
+            <Route path='/theme' component={ChooseTheme} />
+            <Route path='/colors' component={ChooseColors} />
+            <Route path='/edit/:theme' component={Builder} />
+            <Route component={ErrorPage} />
         </div>
     </Router>
 );
