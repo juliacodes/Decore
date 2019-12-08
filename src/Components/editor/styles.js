@@ -7,10 +7,6 @@ export const EditorWrapper = styled.div`
     width: 100%;
     min-height: 100vh;
 
-    .selected {
-        background-color: blue;
-    }
-
     @media (${QUERIES.medium}) {
         width: calc(100% - 320px);
     }
@@ -26,7 +22,7 @@ export const BuildChildCont = styled.div`
     transition-duration: 0.3s;
     border: 2px solid transparent;
     cursor: grab;
-
+    color: #636363;
     @media (${QUERIES.medium}) {
         width: 80%;
     }
@@ -81,6 +77,24 @@ export const TriDiv = styled(ChildDiv)`
     width: 30%;
 `;
 
-export const NavDiv = styled(ChildDiv)``;
+export const NavDiv = styled(ChildDiv)`
+    height: 100px;
+    span {
+        display: block;
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+`;
+
+export const NavDivCont = styled(NavDiv)`
+    height: 200px;
+    span {
+        display: block;
+        width: 100%;
+        height: 70px;
+        text-align: center;
+    }
+`;
 
 export const FooterDiv = styled(ChildDiv)``;

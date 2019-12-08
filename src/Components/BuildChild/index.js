@@ -7,6 +7,7 @@ import {
     SplitDiv,
     ChildDiv,
     NavDiv,
+    NavDivCont,
     TriDiv,
     FooterDiv
 } from '../Editor/styles';
@@ -77,19 +78,6 @@ class BuildChild extends React.Component {
                 {/* Semantic Structure Elements */}
                 {name === 'nav' && (
                     <NavDiv className={this.state.active && 'active'}>
-                        <svg
-                            width="24"
-                            height="32"
-                            viewBox="0 0 24 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M18 15.5C18 15.125 17.625 14.75 17.25 14.75H6.75C6.3125 14.75 6 15.125 6 15.5V17.25C6 17.6875 6.3125 18 6.75 18H17.25C17.625 18 18 17.6875 18 17.25V15.5ZM17.25 20H6.75C6.3125 20 6 20.375 6 20.75V22.5C6 22.9375 6.3125 23.25 6.75 23.25H17.25C17.625 23.25 18 22.9375 18 22.5V20.75C18 20.375 17.625 20 17.25 20ZM24 8.25C24 7.5 23.625 6.6875 23.0625 6.125L17.875 0.9375C17.3125 0.375 16.5 0 15.75 0H3C1.3125 0 0 1.375 0 3V29C0 30.6875 1.3125 32 3 32H21C22.625 32 24 30.6875 24 29V8.25ZM16 3.25L20.75 8H16V3.25ZM21 29H3V3H13V9.5C13 10.375 13.625 11 14.5 11H21V29Z"
-                                fill="currentColor"
-                            />
-                        </svg>
-
                         <span>{name}</span>
                     </NavDiv>
                 )}
@@ -386,7 +374,7 @@ class BuildChild extends React.Component {
                     </>
                 )}
                 {name === 'nav-content' && (
-                    <NavDiv className={this.state.active && 'active'}>
+                    <NavDivCont className={this.state.active && 'active'}>
                         <svg
                             width="24"
                             height="32"
@@ -401,7 +389,7 @@ class BuildChild extends React.Component {
                         </svg>
 
                         <span>{name}</span>
-                    </NavDiv>
+                    </NavDivCont>
                 )}
                 {name === 'footer-content' && (
                     <FooterDiv className={this.state.active && 'active'}>
