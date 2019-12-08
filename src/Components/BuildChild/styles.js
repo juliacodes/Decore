@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { keyframes } from 'styled-components/macro';
 import { COLORS } from '../../Styling/Styling';
-import settings from '../../images/settings.svg';
 import editsvg from '../../images/edit.svg';
 import deletesvg from '../../images/delete.svg';
 
@@ -35,33 +34,29 @@ export const SettingsButton = styled.div`
     }
 `;
 
-export const fadein = keyframes`
-0%{
-    opacity: 0;
-    transform: translateX(20px);
-}
-
-100%{
-    opacity: 1;
-    transform: translateY(0px);
-
-}
-`;
-
 export const SettingsPopup = styled.div`
-    width: 100px;
-    padding: 10px;
+    content: '';
     position: absolute;
     top: 45px;
     right: -80px;
+    width: 100px;
+    padding: 10px;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     border-radius: 5.80247px;
     display: block;
-    content: '';
     line-height: 30px;
-    animation: ${fadein} 0.3s ease-in-out forwards;
     z-index: 1;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: 0.3s ease;
+    pointer-events: none;
+
+    &.active-popup {
+        opacity: 1;
+        transform: translateY(0px);
+        pointer-events: all;
+    }
 
     p {
         margin: 0 0 0 20px;
