@@ -38,11 +38,11 @@ export default createGlobalStyle`
     }
   }
 
-  gu-hide{
+  .gu-hide{
     display: none !important;
   }
 
-  .gu-unselectable {
+  .gu-unselectable{
     user-select: none !important;
   }
 
