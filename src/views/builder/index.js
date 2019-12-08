@@ -1,9 +1,9 @@
 import React from "react";
-import Editor from "../../Components/editor";
-import ControlBar from "../../Components/controlBar";
-import Modal from "../../Components/modal";
-import Element from "../../Components/controlBar/";
-import { EditorWrapper } from "../../Components/editor/styles";
+import Editor from "../../Components/Editor";
+import ControlBar from "../../Components/ControlBar";
+import Modal from "../../Components/Modal";
+import Element from "../../Components/ControlBar/";
+import { EditorWrapper } from "../../Components/Editor/styles";
 import {
   BuilderWrapper,
   ModalRow,

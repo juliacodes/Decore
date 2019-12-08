@@ -9,7 +9,7 @@ import {
     NavDiv,
     TriDiv,
     FooterDiv,
-} from '../editor/styles';
+} from '../Editor/styles';
 import { SettingsButton, SettingsPopup, Edit, Delete } from './styles';
 
 class BuildChild extends React.Component {
@@ -42,7 +42,7 @@ class BuildChild extends React.Component {
         return (
             <BuildChildCont ref={node => this.node = node}
             >
-                <SettingsButton onClick={() => this.setState({ active: !this.state.active })}>
+                <SettingsButton onClick={() => this.setState({ active: !this.state.active })} className={this.state.active && "active-controls"}>
                 <svg
                   width="24"
                   height="24"

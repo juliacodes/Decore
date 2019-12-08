@@ -14,6 +14,7 @@ export const SettingsButton = styled.div`
     display: block;
     content: '';
     cursor: pointer;
+    z-index: 1;
 
     svg path {
         transition: 0.3s;
@@ -22,6 +23,14 @@ export const SettingsButton = styled.div`
     svg:hover {
         path {
             fill: ${COLORS.deepBlue};
+        }
+    }
+
+    &.active-controls {
+        svg {
+            path {
+                fill: ${COLORS.deepBlue};
+            }
         }
     }
 `;
@@ -52,6 +61,7 @@ export const SettingsPopup = styled.div`
     content: '';
     line-height: 30px;
     animation: ${fadein} 0.3s ease-in-out forwards;
+    z-index: 1;
 
     p {
         margin: 0 0 0 20px;

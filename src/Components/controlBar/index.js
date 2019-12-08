@@ -1,6 +1,6 @@
 import React from "react";
 import Select from "react-select";
-import Accordion from "../accordion";
+import Accordion from "../Accordion";
 import { premadeList, premadeSchemes } from "../../store/premadeSchemes";
 import {
   ControlSideBar,

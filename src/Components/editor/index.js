@@ -2,7 +2,6 @@
 import React from 'react';
 // import NavBar from '../editorElements/navbar';
 import Dragula from 'react-dragula';
-import uuid from 'uuid';
 import { EditorWrapper } from './styles';
 import buildData from '../../store/buildData';
 import BuildChild from '../BuildChild';

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { COLORS, QUERIES } from '../../Styling/Styling';
 import settings from '../../images/settings.svg';
 
@@ -28,9 +28,22 @@ export const BuildChildCont = styled.div`
     cursor: grab;
 
     @media (${QUERIES.medium}) {
-        width: 50%;
+        width: 80%;
     }
 `;
+
+const fadein = keyframes`
+    0%{
+      border: 0px solid #6C63FF;
+      box-shadow: -5px 5px 30px rgba(0, 0, 0, 0);
+    }
+
+    100%{
+      border: 3px solid #6C63FF;
+      box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.12);
+    }
+`;
+
 
 export const ChildDiv = styled.div`
     position: relative;
@@ -45,6 +58,8 @@ export const ChildDiv = styled.div`
     align-items: center;
     font-size: 20px;
     text-transform: capitalize;
+    border: 3px solid transparent;
+    transition: 0.3s ease;
 `;
 
 export const SplitDiv = styled(ChildDiv)`
