@@ -14,9 +14,6 @@ import {
     FooterDiv
 } from '../Editor/styles';
 import { SettingsButton, SettingsPopup, Edit, Delete } from './styles';
-import wireframeImage from '../../images/wireframe-image.png';
-import wireframeText from '../../images/wireframe-text.png';
-import wireframeCta from '../../images/wireframe-cta.png';
 
 class BuildChild extends React.Component {
     constructor(props) {
