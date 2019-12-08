@@ -23,7 +23,7 @@ export const BuildChildCont = styled.div`
     align-items: center;
     justify-content: space-between;
     position: relative;
-    transition-duration: 2s;
+    transition-duration: 0.2s;
     border: 2px solid transparent;
     cursor: grab;
 
@@ -33,6 +33,7 @@ export const BuildChildCont = styled.div`
 `;
 
 export const ChildDiv = styled.div`
+    position: relative;
     width: 100%;
     margin: 0;
     height: 200px;
