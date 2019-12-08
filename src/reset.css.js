@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { ChildDiv } from './Components/editor/styles';
 
 export default createGlobalStyle`
 html {
@@ -15,6 +16,7 @@ html {
         background-color:rgba(238, 238, 238, 0.21);
         backdrop-filter: blur(2px);
     }
+
 
 @keyframes fadein {
   0%{
@@ -34,9 +36,36 @@ html {
   box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.12);
   color: #6C63FF;
   }
-}}
+}
 .activeParent{
       position: relative;
+}
+
+.gu-transit{
+    transition-duration: .2s;
+    opacity: .7;
+
+  ${ChildDiv}{
+    border: 2px dashed lightgray;
+  }
+  }
+
+  .gu-hide{
+  display: none !important;}
+
+.gu-unselectable{
+  user-select: none !important;
+}
+  .gu-mirror {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  z-index: unset !important;
+  opacity: 0.9;
+  position: fixed !important;
+  transition: opacity 0.4s ease-in-out;
+
+  cursor: grabbing;
 }
 
 
@@ -44,6 +73,7 @@ html {
   body {
     margin: 0;
     font-family: 'Muli', sans-serif;
+
   }
 
   main {
@@ -155,7 +185,6 @@ html {
   [type="submit"]:-moz-focusring {
     outline: 1px dotted ButtonText;
   }
-
 
   fieldset {
     padding: 0.35em 0.75em 0.625em;
