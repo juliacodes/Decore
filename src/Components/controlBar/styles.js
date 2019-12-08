@@ -94,7 +94,6 @@ export const SettingsBar = styled.div`
     justify-content: space-between;
     padding: 15px 25px;
     font-size: 14px;
-
     position: fixed;
     bottom: 0;
     width: calc(100vw - 50px);
@@ -131,10 +130,10 @@ export const Settings = styled.div`
     cursor: pointer;
 
     &:hover {
-        color: ${COLORS.darkBlue};
+        color: ${COLORS.deepBlue};
 
         svg path {
-            fill: ${COLORS.darkBlue};
+            fill: ${COLORS.deepBlue};
         }
     }
 
@@ -153,7 +152,7 @@ export const Export = styled.button`
     background-color: rgba(132, 211, 242, 0.2);
     padding: 10px 30px;
     border-radius: 18px;
-    color: ${COLORS.darkBlue};
+    color: ${COLORS.deepBlue};
     font-weight: bold;
     cursor: pointer;
 `;
