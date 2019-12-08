@@ -23,7 +23,7 @@ export const BuildChildCont = styled.div`
     align-items: center;
     justify-content: space-between;
     position: relative;
-    transition-duration: 0.2s;
+    transition-duration: 0.3s;
     border: 2px solid transparent;
     cursor: grab;
 
@@ -44,7 +44,6 @@ const fadein = keyframes`
     }
 `;
 
-
 export const ChildDiv = styled.div`
     position: relative;
     width: 100%;
@@ -54,12 +53,24 @@ export const ChildDiv = styled.div`
     box-sizing: border-box;
     border-radius: 4.5px;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     font-size: 20px;
     text-transform: capitalize;
     border: 3px solid transparent;
     transition: 0.3s ease;
+
+    svg {
+        margin-top: 50px;
+    }
+
+    span {
+        display: block;
+        width: 100%;
+        height: 70px;
+        text-align: center;
+    }
 `;
 
 export const SplitDiv = styled(ChildDiv)`
