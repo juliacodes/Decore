@@ -13,8 +13,8 @@ import GlobalStyles from './reset.css.js';
 const routing = (
     <BrowserRouter>
         <div>
+            <GlobalStyles />
             <Switch>
-                <GlobalStyles />
                 <Route exact path='/' component={App} />
                 <Route path='/theme' component={ChooseTheme} />
                 <Route path='/colors' component={ChooseColors} />
