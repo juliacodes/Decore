@@ -6,15 +6,9 @@ export default createGlobalStyle`
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
   }
-  .PlLSC{
-    background-color:rgba(238, 238, 238, 0);
-        backdrop-filter: blur(0px);
-  }
 
-
-  .PlLSC.active {
-    background-color:rgba(238, 238, 238, 0.21);
-    backdrop-filter: blur(2px);
+  .fzZQDB.active {
+    z-index: 3;
   }
 
   .editor{

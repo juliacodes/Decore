@@ -11,7 +11,8 @@ export const ModalWrapper = styled.div`
     transition: 0.3s ease;
     box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.23);
     border-radius: 10px;
-    z-index: 2;
+    z-index: 99;
+    display: block;
 `;
 
 export const CodeModalWrapper = styled.div`
