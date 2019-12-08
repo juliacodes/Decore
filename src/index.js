@@ -1,27 +1,27 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Route, BrowserRouter as Router } from "react-router-dom";
-import ChooseTheme from "./views/ChooseTheme";
-import ChooseColors from "./views/ChooseColors";
-import Builder from "./views/Builder";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
+import ChooseTheme from './views/ChooseTheme';
+import ChooseColors from './views/ChooseColors';
+import Builder from './views/Builder';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 // eslint-disable-next-line import/extensions
-import GlobalStyles from "./reset.css.js";
+import GlobalStyles from './reset.css.js';
 
 const routing = (
-  <Router>
-    <div>
-      <GlobalStyles />
-      <Route exact path="/" component={App} />
-      <Route path="/theme" component={ChooseTheme} />
-      <Route path="/colors" component={ChooseColors} />
-      <Route path="/edit/:theme" component={Builder} />
-    </div>
-  </Router>
+    <Router>
+        <div>
+            <GlobalStyles />
+            <Route exact path="/" component={App} />
+            <Route path="/theme" component={ChooseTheme} />
+            <Route path="/colors" component={ChooseColors} />
+            <Route path="/edit/:theme" component={Builder} />
+        </div>
+    </Router>
 );
 
-ReactDOM.render(routing, document.getElementById("root"));
+ReactDOM.render(routing, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
