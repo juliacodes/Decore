@@ -1,5 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
+import { Link } from 'react-router-dom';
 import Accordion from '../accordion';
 import { premadeList, premadeSchemes } from '../../store/premadeSchemes';
 import {
@@ -32,7 +33,6 @@ export default class ControlBar extends React.Component {
     render() {
         const { colorScheme } = this.state;
         const { handleModal } = this.props;
-
         return (
             <ControlSideBar>
                 <TopBar>

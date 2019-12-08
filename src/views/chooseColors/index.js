@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import { ChromePicker } from 'react-color';
 import Font from '../../Components/Font';
 import { COLORS, SmallHeading, Button, FONTS } from '../../Styling/Styling';
-
+import premadeSchemes from '../../store/premadeSchemes';
 import {
     ChooseColorsWrapper,
     TemplateColors,
@@ -118,7 +118,13 @@ const ChooseColors = () => {
                 adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.
             </Paragraph>
-            <Link to="/edit/custom">
+
+            <Link to={{
+                pathname: '/edit/theme',
+                state: {
+                    colors
+                    }
+                }}>
                 <Button
                     background={COLORS.lightBlue}
                     color={COLORS.darkBlue}
@@ -132,6 +138,10 @@ const ChooseColors = () => {
             </Link>
         </ChooseColorsWrapper>
     );
+    
 };
 
-export default ChooseColors;
+export default ChooseColors; 
+
+
+

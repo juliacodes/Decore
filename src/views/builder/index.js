@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Editor from '../../Components/editor';
 import ControlBar from '../../Components/controlBar';
+import { Link } from 'react-router-dom';
 import Modal from '../../Components/modal';
 import Element from '../../Components/controlBar/';
 import { EditorWrapper } from '../../Components/editor/styles';
@@ -88,7 +89,8 @@ export default class Builder extends React.Component {
                     </ModalRow>
                 </Modal>
                 <Editor />
-                <ControlBar handleModal={this.openModal} />
+                <ControlBar handleModal={this.openModal} 
+                setState={this.props.location.state} />
             </BuilderWrapper>
         );
     }
