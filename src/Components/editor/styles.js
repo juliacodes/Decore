@@ -71,6 +71,26 @@ export const ChildDiv = styled.div`
 
 export const SplitDiv = styled(ChildDiv)`
     width: 47%;
+
+    img {
+        height: 70px;
+
+        @media (${QUERIES.medium}) {
+            height: 120px;
+        }
+    }
+
+    .image {
+        margin: 0;
+    }
+`;
+
+export const ImageText = styled(SplitDiv)`
+    height: 300px;
+    svg {
+        margin: 0;
+        height: 200px;
+    }
 `;
 
 export const TriDiv = styled(ChildDiv)`
@@ -88,12 +108,40 @@ export const NavDiv = styled(ChildDiv)`
 `;
 
 export const NavDivCont = styled(NavDiv)`
-    height: 200px;
+    height: 100px;
     span {
         display: block;
         width: 100%;
         height: 70px;
         text-align: center;
+    }
+    display: flex;
+    padding: 0 20px;
+    div {
+        width: 80%;
+        font-size: 30px;
+    }
+
+    div:nth-child(2),
+    div:nth-child(3),
+    div:nth-child(4) {
+        width: 5%;
+        font-size: 20px;
+        text-decoration: underline;
+    }
+`;
+
+export const CtaDiv = styled(ChildDiv)`
+    height: 400px;
+
+    svg {
+        height: 200px;
+        width: 100%;
+        margin: 0;
+
+        @media (${QUERIES.medium}) {
+            height: 250px;
+        }
     }
 `;
 
