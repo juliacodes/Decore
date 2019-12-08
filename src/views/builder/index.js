@@ -2,7 +2,7 @@ import React from "react";
 import Editor from "../../Components/Editor";
 import ControlBar from "../../Components/ControlBar";
 import Modal from "../../Components/Modal";
-import Element from "../../Components/ControlBar/";
+import Element from "../../Components/ControlBar";
 import { EditorWrapper } from "../../Components/Editor/styles";
 import {
   BuilderWrapper,
@@ -24,7 +24,8 @@ export default class Builder extends React.Component {
     this.state = {
       settings: {
         projectName: "Lorem ipsum",
-        projectDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, etiam non purus euismod."
+        projectDescription:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, etiam non purus euismod."
       },
       code: {
         html: ""
@@ -72,12 +73,12 @@ export default class Builder extends React.Component {
       settings: {
         [name]: e.target.value
       }
-    }))
-  }
+    }));
+  };
 
-  addBuilderElem = (elem) => {
+  addBuilderElem = elem => {
     this.editor.current && this.editor.current.addNewElem(elem);
-  }
+  };
 
   render() {
     const { settings } = this.state;
@@ -87,20 +88,36 @@ export default class Builder extends React.Component {
           <ModalRow>
             <FlexLeft>
               <SettingType>Project Title</SettingType>
-              <SettingInput ref={this.titleInput} type="text" name="projectName" value={settings.projectName} onChange={this.handleInput} aria-label="Project Name"/>
+              <SettingInput
+                ref={this.titleInput}
+                type="text"
+                name="projectName"
+                value={settings.projectName}
+                onChange={this.handleInput}
+                aria-label="Project Name"
+              />
             </FlexLeft>
             <FlexRight>
-              <Button onClick={() => this.titleInput.current.focus()}>Edit</Button>
+              <Button onClick={() => this.titleInput.current.focus()}>
+                Edit
+              </Button>
             </FlexRight>
           </ModalRow>
           <ModalRow>
             <FlexLeft>
               <SettingType>Project Description</SettingType>
-              <SettingTextArea ref={this.descriptionInput} name="projectDescription" aria-label="Project Description" value={settings.projectDescription} onChange={this.handleInput}>
-              </SettingTextArea>
+              <SettingTextArea
+                ref={this.descriptionInput}
+                name="projectDescription"
+                aria-label="Project Description"
+                value={settings.projectDescription}
+                onChange={this.handleInput}
+              ></SettingTextArea>
             </FlexLeft>
             <FlexRight>
-              <Button onClick={() => this.descriptionInput.current.focus()}>Edit</Button>
+              <Button onClick={() => this.descriptionInput.current.focus()}>
+                Edit
+              </Button>
             </FlexRight>
           </ModalRow>
           <ModalRow>
@@ -156,7 +173,7 @@ export default class Builder extends React.Component {
             </FlexRight>
           </CodeModalRow>
         </Modal>
-        <Editor ref={this.editor}/>
+        <Editor ref={this.editor} />
         <ControlBar
           handleModal={this.openModal}
           handleCodeModal={this.openCodeModal}

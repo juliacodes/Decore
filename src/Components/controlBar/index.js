@@ -64,7 +64,7 @@ export default class ControlBar extends React.Component {
           </Accordion>
           <Accordion title="Structure">
             {/* Content of the accordon will go in here  */}
-            <Element onClick={() => addBuilderElem('div')}>
+            <Element onClick={() => addBuilderElem("div")}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -80,7 +80,7 @@ export default class ControlBar extends React.Component {
               </svg>
               <p>Div</p>
             </Element>
-            <Element onClick={() => addBuilderElem('nav')}>
+            <Element onClick={() => addBuilderElem("nav")}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -96,7 +96,7 @@ export default class ControlBar extends React.Component {
               </svg>
               <p>Nav-bar</p>
             </Element>
-            <Element onClick={() => addBuilderElem('split-div')}>
+            <Element onClick={() => addBuilderElem("split-div")}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -112,7 +112,7 @@ export default class ControlBar extends React.Component {
               </svg>
               <p>Split-Div</p>
             </Element>
-            <Element onClick={() => addBuilderElem('footer')}>
+            <Element onClick={() => addBuilderElem("footer")}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
