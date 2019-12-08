@@ -48,6 +48,7 @@ export default class ControlBar extends React.Component {
                   label: "Default",
                   value: "default"
                 }}
+                aria-label="Choose Scheme"
               />
             </Dropdown>
             <ColorScheme>

@@ -87,7 +87,7 @@ export default class Builder extends React.Component {
           <ModalRow>
             <FlexLeft>
               <SettingType>Project Title</SettingType>
-              <SettingInput ref={this.titleInput} type="text" name="projectName" value={settings.projectName} onChange={this.handleInput}/>
+              <SettingInput ref={this.titleInput} type="text" name="projectName" value={settings.projectName} onChange={this.handleInput} aria-label="Project Name"/>
             </FlexLeft>
             <FlexRight>
               <Button onClick={() => this.titleInput.current.focus()}>Edit</Button>
@@ -96,7 +96,7 @@ export default class Builder extends React.Component {
           <ModalRow>
             <FlexLeft>
               <SettingType>Project Description</SettingType>
-              <SettingTextArea ref={this.descriptionInput} name="projectDescription" value={settings.projectDescription} onChange={this.handleInput}>
+              <SettingTextArea ref={this.descriptionInput} name="projectDescription" aria-label="Project Description" value={settings.projectDescription} onChange={this.handleInput}>
               </SettingTextArea>
             </FlexLeft>
             <FlexRight>
