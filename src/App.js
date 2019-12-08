@@ -21,7 +21,7 @@ const App = () => (
                     <Heading>404 :(</Heading>
                     <SubHeading>oops!</SubHeading>
                     <Paragraph>
-                        We can't seem to be able to find the page you are
+                        We cannot seem to be able to find the page you are
                         looking for!{' '}
                     </Paragraph>
                     <Button>Go back</Button>
