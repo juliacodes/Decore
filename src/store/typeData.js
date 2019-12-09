@@ -1,59 +1,115 @@
 const typeData = {
     nav: {
         html: 'code',
-        css: 'nav-styling'
+        css: `.nav { 
+    width: 100%; 
+    height: 200px;
+    padding: 30px;
+}`
     },
     header: {
         html: 'code',
-        css: 'header-styling'
+        css: `.header { 
+    width: 100%; 
+    height: 400px;
+    padding: 30px;
+}`
     },
     article: {
         html: 'code',
-        css: 'styling'
+        css: `.article { 
+    width: 100%; 
+    height: 400px;
+    padding: 30px;
+}`
     },
     section: {
         html: 'code',
-        css: 'section-styling'
+        css: `.section { 
+    width: 100%; 
+    height: 400px;
+    padding: 30px;
+}`
     },
     table: {
         html: 'code',
-        css: 'styling'
+        css: `.table { 
+    width: 100%; 
+    height: 400px;
+    padding: 30px;
+}`
     },
     footer: {
         html: 'code',
-        css: 'footer-styling'
+        css: `.footer { 
+    width: 100%; 
+    height: 400px;
+    padding: 30px;
+}`
     },
     div: {
         html: 'code',
-        css: 'styling'
+        css: `div { 
+    width: 100%; 
+    height: 400px;
+    padding: 30px;
+}`
     },
     splitDiv: {
         html: 'code',
-        css: 'styling'
+        css: `.splitDiv { 
+    width: 100%; 
+    height: 400px;
+    padding: 30px;
+}`
     },
-    triSplitDiv: {
+    triDiv: {
         html: 'code',
-        css: 'styling'
+        css: `.triDiv { 
+    width: 100%; 
+    height: 400px;
+    padding: 30px;
+}`
     },
     image: {
         html: 'code',
-        css: 'styling'
+        css: `img { 
+    width: 100%; 
+    height: 400px;
+    padding: 30px;
+}`
     },
     cta: {
         html: 'code',
-        css: 'styling'
+        css: `.cta { 
+    width: 100%; 
+    height: 400px;
+    padding: 30px;
+}`
     },
     imageText: {
         html: 'code',
-        css: 'styling'
+        css: `.imageText { 
+    width: 100%; 
+    height: 400px;
+    padding: 30px;
+}`
     },
     navContent: {
         html: 'code',
-        css: 'styling'
+        css: `.navContent { 
+    width: 100%; 
+    height: 400px;
+    padding: 30px;
+}`
     },
     footerContent: {
         html: 'code',
-        css: 'styling'
+        css: `.footerContent { 
+    width: 100%; 
+    height: 400px;
+    padding: 30px;
+}`
     }
 };
 
