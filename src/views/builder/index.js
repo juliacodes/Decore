@@ -168,7 +168,26 @@ export default class Builder extends React.Component {
     <body>
     <div class="Container">
 `}{' '}
-                                        {code.items.length > 0 &&
+                                        {code.items.map(
+                                            ({ uniqueID, type }) => {
+                                                return (
+                                                    <pre
+                                                        style={{
+                                                            margin: 0,
+                                                            padding: 0
+                                                        }}
+                                                    >
+                                                        <code key={uniqueID}>
+                                                            {
+                                                                typeData[type]
+                                                                    .html
+                                                            }
+                                                        </code>
+                                                    </pre>
+                                                );
+                                            }
+                                        )}
+                                        {/* {code.items.length > 0 &&
                                             code.items.map(
                                                 ({ uniqueID, type }, index) => {
                                                     return (
@@ -189,7 +208,7 @@ export default class Builder extends React.Component {
                                                         </pre>
                                                     );
                                                 }
-                                            )}
+                                            )} */}
                                         {`
     </div>
     </body>
