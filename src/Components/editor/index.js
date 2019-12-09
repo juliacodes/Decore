@@ -44,6 +44,10 @@ export default class Editor extends React.Component {
             ...prevState,
             builds: this.state.builds.filter(el => el.uniqueID !== uniqueID)
         }));
+        for (let i = 0; i < this.state.builds.length; i++) {
+            localStorage.setItem(i, this.state.builds[i].type);
+            console.log(localStorage.getItem(i));
+        }
     };
 
     addNewElem = newElem => {
@@ -52,6 +56,9 @@ export default class Editor extends React.Component {
             ...prevState,
             builds
         }));
+
+        localStorage.setItem('items', JSON.stringify(this.state.builds));
+        console.log(JSON.parse(localStorage.getItem('items') || '[]'));
 
         setTimeout(() => {
             window.scroll({

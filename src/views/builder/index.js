@@ -14,20 +14,19 @@ import {
 } from './styles';
 import { FlexLeft, FlexRight } from '../../Components/FlexSplit/FlexSplit';
 import { Button, Paragraph } from '../../Styling';
+import typeData from '../../store/typeData';
 
 export default class Builder extends React.Component {
     constructor(props) {
         super(props);
-
+        let items = JSON.parse(localStorage.getItem('items')); //gets item listing from local storage
         this.state = {
             settings: {
                 projectName: 'Lorem ipsum',
                 projectDescription:
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, etiam non purus euismod.'
             },
-            code: {
-                html: ''
-            }
+            code: { items }
         };
 
         this.titleInput = React.createRef();
@@ -81,7 +80,7 @@ export default class Builder extends React.Component {
     };
 
     render() {
-        const { settings } = this.state;
+        const { settings, code } = this.state;
         return (
             <BuilderWrapper>
                 <Modal ref={this.settingsModal} title='Preferences'>
@@ -154,10 +153,13 @@ export default class Builder extends React.Component {
                 >
                     <CodeModalRow>
                         <FlexLeft>
-                            <Paragraph>HTML</Paragraph>
+                            <Paragraph></Paragraph>
                             <CodeEditor>
                                 <pre>
                                     <code>
+                                        {code.items[0].map((value, index) => {
+                                            return <li key={index}>{value}</li>;
+                                        })}
                                         {`<!DOCTYPE html>
     <html>
     <head>
