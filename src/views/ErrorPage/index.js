@@ -4,7 +4,6 @@ import { Heading, SubHeading, Paragraph, Button } from '../../Styling';
 import { LayoutInner, Layout, Container } from '../../Components/Layout';
 import { FlexLeft } from '../../Components/FlexSplit';
 import Navbar from '../../Components/Navbar';
-import Shapes from '../../Components/BackgroundShapes';
 
 const ErrorPage = () => (
     <Layout>

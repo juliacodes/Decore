@@ -14,7 +14,6 @@ import {
 } from './styles';
 import { FlexLeft, FlexRight } from '../../Components/FlexSplit/FlexSplit';
 import { Button, Paragraph } from '../../Styling';
-import typeData from '../../store/typeData';
 
 export default class Builder extends React.Component {
     constructor(props) {
@@ -168,8 +167,8 @@ export default class Builder extends React.Component {
     <body>
     <div class="Container">
 `}{' '}
-                                        {code.items.map(
-                                            ({ uniqueID, type }) => {
+                                        {code.items && code.items.map(
+                                            ({ uniqueID, type }, index) => {
                                                 return (
                                                     <pre
                                                         style={{

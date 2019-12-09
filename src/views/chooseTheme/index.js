@@ -4,7 +4,6 @@ import {
     COLORS,
     FONTS,
     SmallHeading,
-    Heading,
     Button,
     Paragraph
 } from '../../Styling/Styling';
@@ -84,12 +83,12 @@ const ThemeChooser = () => {
                         Continue
                     </Button>
                 </Link>
-                <alt>
+                <p>
                     or start from a{' '}
                     <Link to='/colors'>
                         <span>blank template</span>
                     </Link>
-                </alt>
+                </p>
             </ChooseThemeLayout>
         </ChooseTheme>
     );

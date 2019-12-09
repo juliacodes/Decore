@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { keyframes } from 'styled-components/macro';
 import { COLORS } from '../../Styling/Styling';
 import editsvg from '../../images/edit.svg';
 import deletesvg from '../../images/delete.svg';
