@@ -174,7 +174,7 @@ export default class ControlBar extends React.Component {
                             </svg>
                             <p>Div</p>
                         </Element>
-                        <Element onClick={() => addBuilderElem('split-div')}>
+                        <Element onClick={() => addBuilderElem('splitDiv')}>
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 width='24'
@@ -190,7 +190,7 @@ export default class ControlBar extends React.Component {
                             </svg>
                             <p>Split-Div</p>
                         </Element>
-                        <Element onClick={() => addBuilderElem('tri-div')}>
+                        <Element onClick={() => addBuilderElem('triDiv')}>
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 width='24'
@@ -240,7 +240,7 @@ export default class ControlBar extends React.Component {
                             </svg>
                             <p>Call to Action</p>
                         </Element>
-                        <Element onClick={() => addBuilderElem('image-text')}>
+                        <Element onClick={() => addBuilderElem('imageText')}>
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 width='24'
@@ -256,7 +256,7 @@ export default class ControlBar extends React.Component {
                             </svg>
                             <p>Image &amp; Text</p>
                         </Element>
-                        <Element onClick={() => addBuilderElem('nav-content')}>
+                        <Element onClick={() => addBuilderElem('navContent')}>
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 width='24'
@@ -273,7 +273,7 @@ export default class ControlBar extends React.Component {
                             <p>Nav with Content</p>
                         </Element>
                         <Element
-                            onClick={() => addBuilderElem('footer-content')}
+                            onClick={() => addBuilderElem('footerContent')}
                         >
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'

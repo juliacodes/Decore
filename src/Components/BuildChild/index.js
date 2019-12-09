@@ -193,7 +193,7 @@ class BuildChild extends React.Component {
                         <span>{name}</span>
                     </ChildDiv>
                 )}
-                {name === 'split-div' && (
+                {name === 'splitDiv' && (
                     <>
                         <SplitDiv className={this.state.active && 'active'}>
                             <svg
@@ -229,7 +229,7 @@ class BuildChild extends React.Component {
                         </SplitDiv>
                     </>
                 )}
-                {name === 'tri-div' && (
+                {name === 'triDiv' && (
                     <>
                         <TriDiv className={this.state.active && 'active'}>
                             <svg
@@ -377,7 +377,7 @@ class BuildChild extends React.Component {
                         </CtaDiv>
                     </>
                 )}
-                {name === 'image-text' && (
+                {name === 'imageText' && (
                     <>
                         <ImageText className={this.state.active && 'active'}>
                             <svg
@@ -499,7 +499,7 @@ class BuildChild extends React.Component {
                         </ImageText>
                     </>
                 )}
-                {name === 'nav-content' && (
+                {name === 'navContent' && (
                     <NavDivCont className={this.state.active && 'active'}>
                         <div>Logo</div>
                         <div>Link</div>
@@ -507,7 +507,7 @@ class BuildChild extends React.Component {
                         <div>Link</div>
                     </NavDivCont>
                 )}
-                {name === 'footer-content' && (
+                {name === 'footerContent' && (
                     <FooterDiv
                         className={this.state.active && 'active'}
                     ></FooterDiv>
