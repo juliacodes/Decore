@@ -157,8 +157,8 @@ export default class Builder extends React.Component {
                             <CodeEditor>
                                 <pre>
                                     <code>
-                                        {code.items[0].map((value, index) => {
-                                            return <li key={index}>{value}</li>;
+                                        {code.items.map(({uniqueID, type}) => {
+                                            return <li key={uniqueID}>{type}</li>;
                                         })}
                                         {`<!DOCTYPE html>
     <html>
