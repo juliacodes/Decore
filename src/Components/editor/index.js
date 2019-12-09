@@ -54,22 +54,19 @@ export default class Editor extends React.Component {
         console.log(JSON.parse(localStorage.getItem('items') || '[]'));
     };
 
-    addNewElem = newElem => {
+    addNewElem = async newElem => {
         const builds = this.state.builds.concat({ type: newElem });
-        this.setState(prevState => ({
-            ...prevState,
+        await this.setState({
             builds
-        }));
+        });
 
+        console.log(this.state.builds)
         localStorage.setItem('items', JSON.stringify(this.state.builds));
         console.log(JSON.parse(localStorage.getItem('items') || '[]'));
-
-        setTimeout(() => {
-            window.scroll({
-                top: document.body.scrollHeight,
-                left: 0,
-                behavior: 'smooth'
-            });
+        window.scroll({
+            top: document.body.scrollHeight,
+            left: 0,
+            behavior: 'smooth'
         });
     };
 

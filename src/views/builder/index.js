@@ -166,10 +166,10 @@ export default class Builder extends React.Component {
     </head>
     <body>
 `}{' '}
-                                        {code.items.map(
-                                            ({ uniqueID, type }) => {
+                                        {code.items.length > 0 && code.items.map(
+                                            ({ uniqueID, type }, index) => {
                                                 return (
-                                                    <pre>
+                                                    <pre key={index}>
                                                         <code key={uniqueID}>
                                                             {`<div class="`}
                                                             {type}
