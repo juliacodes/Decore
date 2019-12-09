@@ -14,7 +14,6 @@ import {
 } from './styles';
 import { FlexLeft, FlexRight } from '../../Components/FlexSplit/FlexSplit';
 import { Button, Paragraph } from '../../Styling';
-import typeData from '../../store/typeData';
 
 export default class Builder extends React.Component {
     constructor(props) {
@@ -166,7 +165,7 @@ export default class Builder extends React.Component {
     </head>
     <body>
 `}{' '}
-                                        {code.items.length > 0 && code.items.map(
+                                        {code.items && code.items.map(
                                             ({ uniqueID, type }, index) => {
                                                 return (
                                                     <pre key={index}>

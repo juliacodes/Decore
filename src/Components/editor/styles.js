@@ -1,6 +1,5 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { COLORS, QUERIES } from '../../Styling/Styling';
-import settings from '../../images/settings.svg';
 
 export const EditorWrapper = styled.div`
     background-color: ${COLORS.lightGray};
@@ -25,18 +24,6 @@ export const BuildChildCont = styled.div`
     color: #636363;
     @media (${QUERIES.medium}) {
         width: 80%;
-    }
-`;
-
-const fadein = keyframes`
-    0%{
-      border: 0px solid #6C63FF;
-      box-shadow: -5px 5px 30px rgba(0, 0, 0, 0);
-    }
-
-    100%{
-      border: 3px solid #6C63FF;
-      box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.12);
     }
 `;
 

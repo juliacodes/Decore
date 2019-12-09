@@ -77,7 +77,7 @@ const ChooseColors = () => {
                     />
                 ))}
                 <ColorPicker
-                    display={pickerStatus}
+                    style={pickerStatus ? { display: 'block'} : {display: 'none'}}
                     top={pickerLocation.y}
                     left={pickerLocation.x}
                 >
