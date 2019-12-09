@@ -46,6 +46,7 @@ export const ModalBackground = styled.div`
         visibility: visible;
         pointer-events: all;
         opacity: 1;
+        z-index: 2;
 
         ${ModalWrapper} {
             transform: translateY(0);
