@@ -155,7 +155,7 @@ export default class Builder extends React.Component {
                 >
                     <CodeModalRow>
                         <FlexLeft>
-                            <Paragraph></Paragraph>
+                            <Paragraph>HTML</Paragraph>
                             <CodeEditor>
                                 <pre>
                                     <code>
@@ -166,19 +166,22 @@ export default class Builder extends React.Component {
     </head>
     <body>
 `}{' '}
-                                        {code.items.length > 0 && code.items.map(
-                                            ({ uniqueID, type }, index) => {
-                                                return (
-                                                    <pre key={index}>
-                                                        <code key={uniqueID}>
-                                                            {`<div class="`}
-                                                            {type}
-                                                            {`"></div`}
-                                                        </code>
-                                                    </pre>
-                                                );
-                                            }
-                                        )}
+                                        {code.items.length > 0 &&
+                                            code.items.map(
+                                                ({ uniqueID, type }, index) => {
+                                                    return (
+                                                        <pre key={index}>
+                                                            <code
+                                                                key={uniqueID}
+                                                            >
+                                                                {`<div class="`}
+                                                                {type}
+                                                                {`"></div`}
+                                                            </code>
+                                                        </pre>
+                                                    );
+                                                }
+                                            )}
                                         {`
     </body>
 </html>`}
@@ -191,9 +194,17 @@ export default class Builder extends React.Component {
                             <CodeEditor>
                                 <pre>
                                     <code>
-                                        {`body{
-    color: blue;
-}`}
+                                        {code.items.map(
+                                            ({ uniqueID, type }) => {
+                                                return (
+                                                    <pre>
+                                                        <code key={uniqueID}>
+                                                            {typeData[type].css}
+                                                        </code>
+                                                    </pre>
+                                                );
+                                            }
+                                        )}
                                     </code>
                                 </pre>
                             </CodeEditor>

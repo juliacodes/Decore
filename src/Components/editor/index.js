@@ -30,9 +30,6 @@ export default class Editor extends React.Component {
         if (instance) {
             Dragula([instance]);
         }
-
-        localStorage.setItem('items', JSON.stringify(this.state.builds));
-        console.log(JSON.parse(localStorage.getItem('items') || '[]'));
     };
 
     guidGenerator = () => {
