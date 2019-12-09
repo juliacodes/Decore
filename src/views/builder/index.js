@@ -187,28 +187,6 @@ export default class Builder extends React.Component {
                                                 );
                                             }
                                         )}
-                                        {/* {code.items.length > 0 &&
-                                            code.items.map(
-                                                ({ uniqueID, type }, index) => {
-                                                    return (
-                                                        <pre
-                                                            style={{
-                                                                padding: 0,
-                                                                margin: 0
-                                                            }}
-                                                            key={index}
-                                                        >
-                                                            <code
-                                                                key={uniqueID}
-                                                            >
-                                                                {`<div class="`}
-                                                                {type}
-                                                                {`"></div`}
-                                                            </code>
-                                                        </pre>
-                                                    );
-                                                }
-                                            )} */}
                                         {`
     </div>
     </body>
