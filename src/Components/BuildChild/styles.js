@@ -69,7 +69,7 @@ export const Edit = styled.div`
 `;
 
 export const Delete = styled.div`
-    color: #fe8f8f;
+    color: #E40101;
     background-image: url(${deletesvg});
     background-position: left center;
     background-repeat: no-repeat;
