@@ -12,6 +12,7 @@ import {
     ChooseThemeLayout,
     ThemeWrapper,
     Theme,
+    CardHeading,
     ShortHero
 } from './styles';
 
@@ -26,8 +27,8 @@ const ThemeChooser = () => {
 
     return (
         <ChooseTheme>
-            <ShortHero background="#5442F8">
-                <SmallHeading fontColor="#FFFFFF" fontFamily={FONTS.secondary}>
+            <ShortHero background='#5442F8'>
+                <SmallHeading fontColor='#FFFFFF' fontFamily={FONTS.secondary}>
                     Choose Your Template
                 </SmallHeading>
             </ShortHero>
@@ -37,8 +38,8 @@ const ThemeChooser = () => {
                         onClick={() => handleTheme('first')}
                         className={chosenTheme === 'first' ? 'selected' : null}
                     >
-                        <Paragraph>Blog Template</Paragraph>
-                        <Paragraph className="features">
+                        <CardHeading>Blog Template</CardHeading>
+                        <Paragraph className='features'>
                             <span>Components: </span> <br /> navbar <br />
                             heading <br />
                             article <br />
@@ -50,8 +51,8 @@ const ThemeChooser = () => {
                         className={chosenTheme === 'second' ? 'selected' : null}
                     >
                         {' '}
-                        <Paragraph>Landing Page</Paragraph>
-                        <Paragraph className="features">
+                        <CardHeading>Landing Page</CardHeading>
+                        <Paragraph className='features'>
                             <span>Components: </span> <br /> navbar <br />
                             heading <br />
                             flex divs <br />
@@ -62,8 +63,8 @@ const ThemeChooser = () => {
                         onClick={() => handleTheme('third')}
                         className={chosenTheme === 'third' ? 'selected' : null}
                     >
-                        <Paragraph>Landing Page Alt</Paragraph>
-                        <Paragraph className="features">
+                        <CardHeading>Landing Page Alt</CardHeading>
+                        <Paragraph className='features'>
                             <span>Components: </span> <br /> navbar <br />
                             Image Header <br />
                             Table Grid <br />
@@ -82,12 +83,12 @@ const ThemeChooser = () => {
                         Continue
                     </Button>
                 </Link>
-                <alt>
+                <p>
                     or start from a{' '}
-                    <Link to="/colors">
+                    <Link to='/colors'>
                         <span>blank template</span>
                     </Link>
-                </alt>
+                </p>
             </ChooseThemeLayout>
         </ChooseTheme>
     );

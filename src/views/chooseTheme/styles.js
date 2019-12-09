@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS, QUERIES, Button } from '../../Styling/Styling';
+import { COLORS, QUERIES, Button, FONTS } from '../../Styling/Styling';
 
 export const ChooseTheme = styled.div`
     min-height: 100vh;
@@ -27,7 +27,7 @@ export const ChooseThemeLayout = styled.div`
         position: relative;
         display: block;
         span {
-            color: #6c63ff;
+            color: ${COLORS.deepPurple};
             text-decoration: underline;
         }
         &:before,
@@ -102,7 +102,7 @@ export const Theme = styled.div`
         color: ${COLORS.deepPurple};
 
         > span {
-            color: #89969f;
+            color: ${COLORS.mediumGray};
             font-weight: 500;
         }
     }
@@ -131,4 +131,12 @@ export const ShortHero = styled.div`
         background-repeat: no-repeat;
         background-position: center;
     }
+`;
+
+export const CardHeading = styled.h2`
+    color: ${COLORS.mediumGray};
+    font-size: 30px;
+    line-height: 20px;
+    font-weight: 500;
+    font-family: ${FONTS.primary};
 `;

@@ -1,45 +1,54 @@
 import { createGlobalStyle } from 'styled-components';
+import { ChildDiv } from './Components/Editor/styles';
 
 export default createGlobalStyle`
-html {
+  html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
   }
-  .PlLSC{
-    background-color:rgba(238, 238, 238, 0);
-        backdrop-filter: blur(0px);
+
+  .fzZQDB.active {
+    z-index: 3;
   }
 
-
-  .PlLSC.active {
-        background-color:rgba(238, 238, 238, 0.21);
-        backdrop-filter: blur(2px);
+  .editor{
+    .active{
+      border: 3px solid #6C63FF;
+      box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.12);
+      color: #6C63FF;
     }
-
-@keyframes fadein {
-  0%{
-    border: 0px solid #6C63FF;
-    box-shadow: -5px 5px 30px rgba(0, 0, 0, 0);
   }
 
-  100%{
-    border: 3px solid #6C63FF;
-    box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.12);
+  .activeParent{
+    position: relative;
   }
-}
-.editor{
-.active{
-  animation: fadein .3s ease-in-out forwards;
-  border: 3px solid #6C63FF;
-  box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.12);
-  color: #6C63FF;
+
+  .gu-transit{
+    transition-duration: .2s;
+    opacity: .7;
+
+    ${ChildDiv}{
+      border: 2px dashed lightgray;
+    }
   }
-}}
-.activeParent{
-      position: relative;
-}
 
+  .gu-hide{
+    display: none !important;
+  }
 
+  .gu-unselectable{
+    user-select: none !important;
+  }
+
+  .gu-mirror {
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: unset !important;
+    opacity: 0.9;
+    position: fixed !important;
+    transition: opacity 0.4s ease-in-out;
+    cursor: grabbing;
+  }
 
   body {
     margin: 0;
@@ -155,7 +164,6 @@ html {
   [type="submit"]:-moz-focusring {
     outline: 1px dotted ButtonText;
   }
-
 
   fieldset {
     padding: 0.35em 0.75em 0.625em;

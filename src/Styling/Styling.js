@@ -18,9 +18,9 @@ export const COLORS = {
     lightBlue: '#e7f6fd',
     palePink: '#F1DDE8',
     paleBlue: '#E6EFFE',
-    mediumGray: '#8F8F8F',
+    mediumGray: '#757575',
     border: '#EBEBEB',
-    deepPurple: '#6C63FF',
+    deepPurple: '#645CFF',
     lightPurple: 'rgba(108, 99, 255, 0.53)',
     lightGray: '#F5F5F5',
     slate: '#505050'
@@ -65,7 +65,7 @@ export const HeadingLight = styled.h3`
 `;
 
 export const Paragraph = styled.p`
-    color: #929090;
+    color: ${COLORS.mediumGray};
     font-size: 15px;
     line-height: 20px;
 `;

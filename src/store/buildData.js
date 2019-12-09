@@ -4,13 +4,13 @@ const buildData = {
             type: 'nav'
         },
         {
-            type: 'tri-div'
+            type: 'triDiv'
         },
         {
             type: 'div'
         },
         {
-            type: 'split-div'
+            type: 'splitDiv'
         }
     ],
     second: [
@@ -18,7 +18,7 @@ const buildData = {
             type: 'nav'
         },
         {
-            type: 'tri-div'
+            type: 'triDiv'
         }
     ],
     third: [

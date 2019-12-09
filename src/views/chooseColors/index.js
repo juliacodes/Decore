@@ -77,7 +77,7 @@ const ChooseColors = () => {
                     />
                 ))}
                 <ColorPicker
-                    display={pickerStatus}
+                    style={pickerStatus ? { display: 'block'} : {display: 'none'}}
                     top={pickerLocation.y}
                     left={pickerLocation.x}
                 >
@@ -93,17 +93,17 @@ const ChooseColors = () => {
                 <ColorButton
                     backgroundColor={colors.colorOne}
                     border={colors.colorOne}
-                    color="#FFFFFF"
+                    color='#FFFFFF'
                 >
                     Primary
                 </ColorButton>
                 <ColorButton
                     backgroundColor={colors.colorThree}
-                    color="#FFFFFF"
+                    color='#FFFFFF'
                 >
                     Secondary
                 </ColorButton>
-                <ColorButton backgroundColor={colors.colorFive} color="#FFFFFF">
+                <ColorButton backgroundColor={colors.colorFive} color='#FFFFFF'>
                     Alt
                 </ColorButton>
             </ButtonGroup>
@@ -112,20 +112,20 @@ const ChooseColors = () => {
             <Font />
 
             <SmallHeading>Links</SmallHeading>
-            <Paragraph className="apply-font">
+            <Paragraph className='apply-font'>
                 Lorem ipsum dolor sit amet,{' '}
                 <TemplateLink color={colors.colorOne}>consectetur</TemplateLink>{' '}
                 adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.
             </Paragraph>
-            <Link to="/edit/custom">
+            <Link to='/edit/custom'>
                 <Button
                     background={COLORS.lightBlue}
                     color={COLORS.darkBlue}
                     fontFamily={FONTS.primary}
                     hoverBackground={COLORS.darkBlue}
                     hoverColor={COLORS.lightBlue}
-                    margin="100px auto 50px auto"
+                    margin='100px auto 50px auto'
                 >
                     Continue
                 </Button>
