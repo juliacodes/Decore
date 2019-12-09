@@ -162,15 +162,23 @@ export default class Builder extends React.Component {
                                         {`<!DOCTYPE html>
     <html>
     <head>
+    <link rel="stylesheet" href="FILENAME.css">
     <title>Page Title</title>
     </head>
     <body>
+    <div class="Container">
 `}{' '}
                                         {code.items.length > 0 &&
                                             code.items.map(
                                                 ({ uniqueID, type }, index) => {
                                                     return (
-                                                        <pre key={index}>
+                                                        <pre
+                                                            style={{
+                                                                padding: 0,
+                                                                margin: 0
+                                                            }}
+                                                            key={index}
+                                                        >
                                                             <code
                                                                 key={uniqueID}
                                                             >
@@ -183,6 +191,7 @@ export default class Builder extends React.Component {
                                                 }
                                             )}
                                         {`
+    </div>
     </body>
 </html>`}
                                     </code>

@@ -19,7 +19,7 @@ const typeData = {
         html: 'code',
         css: `.article { 
     width: 100%; 
-    height: 400px;
+    height: 500px;
     padding: 30px;
 }`
     },
@@ -43,7 +43,7 @@ const typeData = {
         html: 'code',
         css: `.footer { 
     width: 100%; 
-    height: 400px;
+    height: 200px;
     padding: 30px;
 }`
     },
@@ -61,6 +61,13 @@ const typeData = {
     width: 100%; 
     height: 400px;
     padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .splitDiv > div {
+        width: 50%;
+    }
 }`
     },
     triDiv: {
@@ -69,6 +76,13 @@ const typeData = {
     width: 100%; 
     height: 400px;
     padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .triDiv > div {
+        width: 30%;
+    }
 }`
     },
     image: {
@@ -77,6 +91,7 @@ const typeData = {
     width: 100%; 
     height: 400px;
     padding: 30px;
+    background-image: url(IMAGEURL);
 }`
     },
     cta: {
@@ -99,15 +114,29 @@ const typeData = {
         html: 'code',
         css: `.navContent { 
     width: 100%; 
-    height: 400px;
+    height: 200px;
     padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .navContent > .logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .navContent > .link {
+        width: 20%;
+        height: 50px;
+
+    }
 }`
     },
     footerContent: {
         html: 'code',
         css: `.footerContent { 
     width: 100%; 
-    height: 400px;
+    height: 200px;
     padding: 30px;
 }`
     }
