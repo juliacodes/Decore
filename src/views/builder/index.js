@@ -54,6 +54,8 @@ export default class Builder extends React.Component {
     // code modal handler
     openCodeModal = () => {
         this.codeModal.current.toggleModal(true);
+        let items = JSON.parse(localStorage.getItem('items')); //gets item listing from local storage
+        this.setState({ code: { items } });
     };
 
     handleCodeChange = () => {
@@ -157,19 +159,27 @@ export default class Builder extends React.Component {
                             <CodeEditor>
                                 <pre>
                                     <code>
-                                        {code.items.map(({uniqueID, type}) => {
-                                            return <li key={uniqueID}>{type}</li>;
-                                        })}
                                         {`<!DOCTYPE html>
     <html>
     <head>
     <title>Page Title</title>
     </head>
     <body>
-
-    <h1>My First Heading</h1>
-    <p>My first paragraph.</p>
-
+`}{' '}
+                                        {code.items.map(
+                                            ({ uniqueID, type }) => {
+                                                return (
+                                                    <pre>
+                                                        <code key={uniqueID}>
+                                                            {`<div class="`}
+                                                            {type}
+                                                            {`"></div`}
+                                                        </code>
+                                                    </pre>
+                                                );
+                                            }
+                                        )}
+                                        {`
     </body>
 </html>`}
                                     </code>

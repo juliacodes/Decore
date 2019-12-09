@@ -9,14 +9,16 @@ import BuildChild from '../BuildChild';
 export default class Editor extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             builds: buildData.first
         };
-
         this.builder = React.createRef();
     }
 
     componentDidMount() {
+        localStorage.setItem('items', JSON.stringify(this.state.builds));
+
         const themeStorage = localStorage.getItem('theme');
         const theme = buildData[themeStorage];
         if (theme) {
@@ -28,6 +30,9 @@ export default class Editor extends React.Component {
         if (instance) {
             Dragula([instance]);
         }
+
+        localStorage.setItem('items', JSON.stringify(this.state.builds));
+        console.log(JSON.parse(localStorage.getItem('items') || '[]'));
     };
 
     guidGenerator = () => {
@@ -44,10 +49,9 @@ export default class Editor extends React.Component {
             ...prevState,
             builds: this.state.builds.filter(el => el.uniqueID !== uniqueID)
         }));
-        for (let i = 0; i < this.state.builds.length; i++) {
-            localStorage.setItem(i, this.state.builds[i].type);
-            console.log(localStorage.getItem(i));
-        }
+
+        localStorage.setItem('items', JSON.stringify(this.state.builds));
+        console.log(JSON.parse(localStorage.getItem('items') || '[]'));
     };
 
     addNewElem = newElem => {
