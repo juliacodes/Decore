@@ -2,6 +2,7 @@ import React from 'react';
 import Editor from '../../Components/Editor';
 import ControlBar from '../../Components/ControlBar';
 import Modal from '../../Components/Modal';
+import typeData from '../../store/typeData';
 import {
     BuilderWrapper,
     ModalRow,
@@ -199,7 +200,7 @@ export default class Builder extends React.Component {
                             <CodeEditor>
                                 <pre>
                                     <code>
-                                        {code.items.map(
+                                        {code.items && code.items.map(
                                             ({ uniqueID, type }) => {
                                                 return (
                                                     <pre>
