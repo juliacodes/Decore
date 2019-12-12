@@ -1,7 +1,13 @@
-## Decore - A customizable layout generator built for developers
+# Decore
+
+### A customizable layout generator built for developers
+
+[View Site](https://site-builder.netlify.com/)
 
 ![Landing Page](https://github.com/juliajohnson18/Interactive-Site-Builder/blob/manage/readme/readme-images/readme-example.png?raw=true)
-Landing Page
+
+> Landing Page
 
 ![Building Page](https://github.com/juliajohnson18/Interactive-Site-Builder/blob/manage/readme/readme-images/readme-example-builder.png?raw=true)
-Building Page
+
+> Building Page
