@@ -64,9 +64,9 @@ class BuildChild extends React.Component {
                 </SettingsButton>
 
                 <SettingsPopup className={active && 'active-popup'}>
-                    <Edit>
+                    {/*<Edit>
                         <p>Edit</p>
-                    </Edit>
+                    </Edit> */}
                     <Delete
                         onClick={() => {
                             this.setState({ active: false });

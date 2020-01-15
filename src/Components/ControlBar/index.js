@@ -1,5 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
+import { connect } from 'react-redux';
+import { changeAllColors } from '../../actions/colors';
 import Accordion from '../Accordion';
 import { premadeList, premadeSchemes } from '../../store/premadeSchemes';
 import {
@@ -16,22 +18,19 @@ import {
     Export
 } from './styles';
 
-export default class ControlBar extends React.Component {
+class ControlBar extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            colorScheme: premadeSchemes.default
-        };
     }
 
     handleChangeScheme = theme => {
-        this.setState({ colorScheme: premadeSchemes[theme.value] });
+        const { dispatch } = this.props;
+        // this.setState({ colorScheme: premadeSchemes[theme.value] });
+        dispatch(changeAllColors(premadeSchemes[theme.value]));
     };
 
     render() {
-        const { colorScheme } = this.state;
-        const { handleModal, handleCodeModal, addBuilderElem } = this.props;
+        const { handleModal, handleCodeModal, addBuilderElem, colors } = this.props;
 
         return (
             <ControlSideBar>
@@ -52,8 +51,8 @@ export default class ControlBar extends React.Component {
                             />
                         </Dropdown>
                         <ColorScheme>
-                            {Object.keys(colorScheme).map((color, index) => (
-                                <Color color={colorScheme[color]} key={index} />
+                            {Object.keys(colors).map((color, index) => (
+                                <Color color={colors[color]} key={index} />
                             ))}
                         </ColorScheme>
                     </Padded>
@@ -315,3 +314,11 @@ export default class ControlBar extends React.Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        colors: state
+    };
+};
+
+export default connect(mapStateToProps)(ControlBar);
