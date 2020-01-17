@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ChromePicker } from 'react-color';
+import { changeColor } from '../../actions/colors';
 import Font from '../../Components/Font';
 import { COLORS, SmallHeading, Button, FONTS } from '../../Styling/Styling';
 
@@ -15,123 +17,149 @@ import {
     ColorButton
 } from './styles';
 
-const ChooseColors = () => {
-    const node = useRef(); // Reference hook for handleClick function
-    const [colors, setColors] = useState({
-        colorOne: '#4ECDC4',
-        colorTwo: '#A7EEE9',
-        colorThree: '#FF6B6B',
-        colorFour: '#FFAAAA',
-        colorFive: '#FFEB8C',
-        colorSix: '#FFF4C1',
-        colorSeven: '#D4D4D4',
-        colorEight: '#EFF3EF'
-    });
+class ChooseColors extends React.Component {
+    constructor(props) {
+        super(props);
 
-    const [pickerStatus, setPickerStatus] = useState(false);
-    const [pickerSelected, setPickerSelected] = useState('colorOne');
-    const [pickerLocation, setPickerLocation] = useState({
-        x: undefined,
-        y: undefined
-    });
+        this.state = {
+            pickerStatus: false,
+            pickerSelected: 'colorOne',
+            pickerLocation: {
+                x: undefined,
+                y: undefined
+            }
+        };
 
-    const handlePicker = (color, e) => {
-        setPickerSelected(color);
-        setPickerStatus(true);
-        setPickerLocation({
-            x: e.target.offsetLeft,
-            y: e.target.offsetTop
-        });
+        this.node = React.createRef();
+    }
+
+    handlePicker = (color, e) => {
+        // console.log(color, e.target.offsetLeft);
+        const { offsetLeft, offsetTop } = e.target;
+        this.setState(prevState => ({
+            ...prevState,
+            pickerSelected: color,
+            pickerStatus: true,
+            pickerLocation: {
+                x: offsetLeft,
+                y: offsetTop
+            }
+        }));
     };
 
-    const handleChangeComplete = color => {
-        setColors(prevState => ({ ...prevState, [pickerSelected]: color.hex }));
+    handleChangeComplete = color => {
+        const { pickerSelected } = this.state;
+        const { dispatch } = this.props;
+        // this.setState(prevState => ({}));
+        // setColors(prevState => ({ ...prevState, [pickerSelected]: color.hex }));
+        dispatch(changeColor(pickerSelected, color.hex));
     };
 
-    // If click event is not within a element with ref={node},
-    // set the status of the picker to false (hidden)
-    const handleClick = e => {
-        if (!node.current.contains(e.target)) {
-            setPickerStatus(false);
+    handleClick = e => {
+        if (this.node.current && !this.node.current.contains(e.target)) {
+            this.setState(prevState => ({
+                ...prevState,
+                pickerStatus: false
+            }));
         }
     };
 
-    useEffect(() => {
-        document.addEventListener('mousedown', handleClick); // return function to be called when unmounted
+    componentDidMount = () => {
+        document.addEventListener('mousedown', this.handleClick); // return function to be called when unmounted
         return () => {
-            document.removeEventListener('mousedown', handleClick);
+            document.removeEventListener('mousedown', this.handleClick);
         };
-    }, []);
+    };
 
-    return (
-        <ChooseColorsWrapper>
-            <SmallHeading>Template Colors</SmallHeading>
-            <TemplateColors ref={node}>
-                {Object.keys(colors).map((color, index) => (
-                    <Color
-                        // Using index for this case is fine since there is only a set number of colors
-                        // eslint-disable-next-line react/no-array-index-key
-                        key={index}
-                        background={colors[color]}
-                        onClick={e => handlePicker(color, e)}
-                    />
-                ))}
-                <ColorPicker
-                    style={pickerStatus ? { display: 'block'} : {display: 'none'}}
-                    top={pickerLocation.y}
-                    left={pickerLocation.x}
-                >
-                    <ChromePicker
-                        color={colors[pickerSelected]}
-                        onChange={handleChangeComplete}
-                        disableAlpha
-                    />
-                </ColorPicker>
-            </TemplateColors>
-            <SmallHeading>Example Components</SmallHeading>
-            <ButtonGroup>
-                <ColorButton
-                    backgroundColor={colors.colorOne}
-                    border={colors.colorOne}
-                    color='#FFFFFF'
-                >
-                    Primary
-                </ColorButton>
-                <ColorButton
-                    backgroundColor={colors.colorThree}
-                    color='#FFFFFF'
-                >
-                    Secondary
-                </ColorButton>
-                <ColorButton backgroundColor={colors.colorFive} color='#FFFFFF'>
-                    Alt
-                </ColorButton>
-            </ButtonGroup>
+    render() {
+        const { pickerStatus, pickerLocation, pickerSelected } = this.state;
+        const { colors } = this.props;
+        return (
+            <ChooseColorsWrapper>
+                <SmallHeading>Template Colors</SmallHeading>
+                <TemplateColors ref={this.node}>
+                    {Object.keys(colors).map((color, index) => (
+                        <Color
+                            // Using index for this case is fine since there is only a set number of colors
+                            // eslint-disable-next-line react/no-array-index-key
+                            key={index}
+                            background={colors[color]}
+                            onClick={e => this.handlePicker(color, e)}
+                        />
+                    ))}
+                    <ColorPicker
+                        style={
+                            pickerStatus
+                                ? { display: 'block' }
+                                : { display: 'none' }
+                        }
+                        top={pickerLocation.y}
+                        left={pickerLocation.x}
+                    >
+                        <ChromePicker
+                            color={colors[pickerSelected]}
+                            onChange={this.handleChangeComplete}
+                            disableAlpha
+                        />
+                    </ColorPicker>
+                </TemplateColors>
+                <SmallHeading>Example Components</SmallHeading>
+                <ButtonGroup>
+                    <ColorButton
+                        backgroundColor={colors.colorOne}
+                        border={colors.colorOne}
+                        color="#FFFFFF"
+                    >
+                        Primary
+                    </ColorButton>
+                    <ColorButton
+                        backgroundColor={colors.colorThree}
+                        color="#FFFFFF"
+                    >
+                        Secondary
+                    </ColorButton>
+                    <ColorButton
+                        backgroundColor={colors.colorFive}
+                        color="#FFFFFF"
+                    >
+                        Alt
+                    </ColorButton>
+                </ButtonGroup>
 
-            <SmallHeading>Select A Font</SmallHeading>
-            <Font />
+                {/*<SmallHeading>Select A Font</SmallHeading>
+                <Font />
+                */}
 
-            <SmallHeading>Links</SmallHeading>
-            <Paragraph className='apply-font'>
-                Lorem ipsum dolor sit amet,{' '}
-                <TemplateLink color={colors.colorOne}>consectetur</TemplateLink>{' '}
-                adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
-            </Paragraph>
-            <Link to='/edit/custom'>
-                <Button
-                    background={COLORS.lightBlue}
-                    color={COLORS.darkBlue}
-                    fontFamily={FONTS.primary}
-                    hoverBackground={COLORS.darkBlue}
-                    hoverColor={COLORS.lightBlue}
-                    margin='100px auto 50px auto'
-                >
-                    Continue
-                </Button>
-            </Link>
-        </ChooseColorsWrapper>
-    );
+                <SmallHeading>Links</SmallHeading>
+                <Paragraph className="apply-font">
+                    Lorem ipsum dolor sit amet,{' '}
+                    <TemplateLink color={colors.colorOne}>
+                        consectetur
+                    </TemplateLink>{' '}
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.
+                </Paragraph>
+                <Link to="/edit/custom">
+                    <Button
+                        background={COLORS.lightBlue}
+                        color={COLORS.darkBlue}
+                        fontFamily={FONTS.primary}
+                        hoverBackground={COLORS.darkBlue}
+                        hoverColor={COLORS.lightBlue}
+                        margin="100px auto 50px auto"
+                    >
+                        Continue
+                    </Button>
+                </Link>
+            </ChooseColorsWrapper>
+        );
+    }
+}
+
+const mapStateToProps = state => {
+    return {
+        colors: state.colors
+    };
 };
 
-export default ChooseColors;
+export default connect(mapStateToProps)(ChooseColors);

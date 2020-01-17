@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { changePreference } from '../../actions/preferences';
 import Editor from '../../Components/Editor';
 import ControlBar from '../../Components/ControlBar';
 import Modal from '../../Components/Modal';
@@ -16,16 +18,11 @@ import {
 import { FlexLeft, FlexRight } from '../../Components/FlexSplit/FlexSplit';
 import { Button, Paragraph } from '../../Styling';
 
-export default class Builder extends React.Component {
+class Builder extends React.Component {
     constructor(props) {
         super(props);
         const items = JSON.parse(localStorage.getItem('items')); // gets item listing from local storage
         this.state = {
-            settings: {
-                projectName: 'Lorem ipsum',
-                projectDescription:
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, etiam non purus euismod.'
-            },
             code: { items }
         };
 
@@ -65,14 +62,11 @@ export default class Builder extends React.Component {
     };
 
     handleInput = e => {
-        const { name } = e.target;
+        const { dispatch } = this.props;
+        const { name, value } = e.target;
         e.persist();
-        this.setState(prevState => ({
-            ...prevState,
-            settings: {
-                [name]: e.target.value
-            }
-        }));
+
+        dispatch(changePreference(name, value));
     };
 
     addBuilderElem = elem => {
@@ -82,7 +76,8 @@ export default class Builder extends React.Component {
     };
 
     render() {
-        const { settings, code } = this.state;
+        const { code } = this.state;
+        const { preferences } = this.props;
         return (
             <BuilderWrapper>
                 <Modal ref={this.settingsModal} title='Preferences'>
@@ -92,8 +87,8 @@ export default class Builder extends React.Component {
                             <SettingInput
                                 ref={this.titleInput}
                                 type='text'
-                                name='projectName'
-                                value={settings.projectName}
+                                name='projectTitle'
+                                value={preferences.projectTitle}
                                 onChange={this.handleInput}
                                 aria-label='Project Name'
                             />
@@ -113,7 +108,7 @@ export default class Builder extends React.Component {
                                 ref={this.descriptionInput}
                                 name='projectDescription'
                                 aria-label='Project Description'
-                                value={settings.projectDescription}
+                                value={preferences.projectDescription}
                                 onChange={this.handleInput}
                             />
                         </FlexLeft>
@@ -162,7 +157,8 @@ export default class Builder extends React.Component {
                                         {`<!DOCTYPE html>
     <head>
     <link rel="stylesheet" href="FILENAME.css">
-    <title>Page Title</title>
+    <title>${preferences.projectTitle}</title>
+    <meta name="description content="${preferences.projectDescription}"/>
     </head>
         <body>
             <div class="Container">
@@ -237,3 +233,11 @@ export default class Builder extends React.Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        preferences: state.preferences
+    };
+};
+
+export default connect(mapStateToProps)(Builder);

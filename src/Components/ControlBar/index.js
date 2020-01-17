@@ -1,5 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
+import { connect } from 'react-redux';
+import { changeAllColors } from '../../actions/colors';
 import Accordion from '../Accordion';
 import { premadeList, premadeSchemes } from '../../store/premadeSchemes';
 import {
@@ -16,23 +18,66 @@ import {
     Export
 } from './styles';
 
-export default class ControlBar extends React.Component {
+class ControlBar extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            colorScheme: premadeSchemes.default
-        };
+            schemes: premadeSchemes,
+            schemeList: [...premadeList],
+            currentSchemeName: ''
+        }
     }
 
     handleChangeScheme = theme => {
-        this.setState({ colorScheme: premadeSchemes[theme.value] });
+        const { dispatch } = this.props;
+        const { schemes } = this.state;
+
+        dispatch(changeAllColors(schemes[theme.value]));
+        this.setState(prevState => ({
+            ...prevState,
+            currentSchemeName: theme.value
+        }))
     };
 
-    render() {
-        const { colorScheme } = this.state;
-        const { handleModal, handleCodeModal, addBuilderElem } = this.props;
+    handleCheckColors = () => {
+        const { colors } = this.props;
 
+        // Check for object equality
+        for (const key of Object.keys(premadeSchemes)) {
+
+            // If the users colors are exactly like an object in the premadeSchemes,
+            // return true and set the state accordingly
+            if (JSON.stringify(colors) === JSON.stringify(premadeSchemes[key])) {
+                console.log('is in premadeSchemes');
+                this.setState({currentSchemeName: key});
+                return true;
+            }
+        }
+        // If the users colors are not exactly like any of the objects in the premadeSchemes file,
+        // return false and set the state accordingly
+        console.log('not premadeSchemes');
+        this.setState({
+            schemeList: [
+                { value: 'custom', label: 'Custom '},
+                ...this.state.schemeList
+            ],
+            currentSchemeName: 'custom',
+            schemes: {
+                ...this.state.schemes,
+                custom: colors
+            }
+        });
+        return false;
+    }
+
+    componentDidMount() {
+        this.handleCheckColors();
+    }
+
+    render() {
+        const { handleModal, handleCodeModal, addBuilderElem, colors } = this.props;
+        const { schemeList, currentSchemeName } = this.state;
         return (
             <ControlSideBar>
                 <TopBar>
@@ -42,18 +87,16 @@ export default class ControlBar extends React.Component {
                                 inputId='theme'
                                 placeholder='Choose Scheme'
                                 classNamePrefix='theme'
-                                options={premadeList}
+                                options={this.state.schemeList}
                                 onChange={this.handleChangeScheme}
-                                defaultValue={{
-                                    label: 'Default',
-                                    value: 'default'
-                                }}
-                                aria-label='Choose Scheme'
+                                aria-label="Choose Scheme"
+                                // value={this.state.schemeList[this.state.currentSchemeName]}
+                                value={schemeList.filter(({value}) => value === currentSchemeName)}
                             />
                         </Dropdown>
                         <ColorScheme>
-                            {Object.keys(colorScheme).map((color, index) => (
-                                <Color color={colorScheme[color]} key={index} />
+                            {Object.keys(colors).map((color, index) => (
+                                <Color color={colors[color]} key={index} />
                             ))}
                         </ColorScheme>
                     </Padded>
@@ -315,3 +358,11 @@ export default class ControlBar extends React.Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        colors: state.colors
+    };
+};
+
+export default connect(mapStateToProps)(ControlBar);

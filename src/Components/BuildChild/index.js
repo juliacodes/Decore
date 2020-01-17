@@ -13,7 +13,7 @@ import {
     CtaDiv,
     FooterDiv
 } from '../Editor/styles';
-import { SettingsButton, SettingsPopup, Edit, Delete } from './styles';
+import { SettingsButton, SettingsPopup, Delete } from './styles';
 
 class BuildChild extends React.Component {
     constructor(props) {
@@ -64,9 +64,9 @@ class BuildChild extends React.Component {
                 </SettingsButton>
 
                 <SettingsPopup className={active && 'active-popup'}>
-                    <Edit>
+                    {/*<Edit>
                         <p>Edit</p>
-                    </Edit>
+                    </Edit> */}
                     <Delete
                         onClick={() => {
                             this.setState({ active: false });
