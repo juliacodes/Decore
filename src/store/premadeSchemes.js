@@ -26,5 +26,4 @@ export const premadeSchemes = {
         colorSeven: '#e5dfdf',
         colorEight: '#f8f8f8'
     }
-    // Need a lot more color schemes ...
 };

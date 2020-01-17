@@ -21,17 +21,63 @@ import {
 class ControlBar extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            schemes: premadeSchemes,
+            schemeList: [...premadeList],
+            currentSchemeName: ''
+        }
     }
 
     handleChangeScheme = theme => {
         const { dispatch } = this.props;
-        // this.setState({ colorScheme: premadeSchemes[theme.value] });
-        dispatch(changeAllColors(premadeSchemes[theme.value]));
+        const { schemes } = this.state;
+
+        dispatch(changeAllColors(schemes[theme.value]));
+        this.setState(prevState => ({
+            ...prevState,
+            currentSchemeName: theme.value
+        }))
     };
+
+    handleCheckColors = () => {
+        const { colors } = this.props;
+
+        // Check for object equality
+        for (const key of Object.keys(premadeSchemes)) {
+
+            // If the users colors are exactly like an object in the premadeSchemes,
+            // return true and set the state accordingly
+            if (JSON.stringify(colors) === JSON.stringify(premadeSchemes[key])) {
+                console.log('is in premadeSchemes');
+                this.setState({currentSchemeName: key});
+                return true;
+            }
+        }
+        // If the users colors are not exactly like any of the objects in the premadeSchemes file,
+        // return false and set the state accordingly
+        console.log('not premadeSchemes');
+        this.setState({
+            schemeList: [
+                { value: 'custom', label: 'Custom '},
+                ...this.state.schemeList
+            ],
+            currentSchemeName: 'custom',
+            schemes: {
+                ...this.state.schemes,
+                custom: colors
+            }
+        });
+        return false;
+    }
+
+    componentDidMount() {
+        this.handleCheckColors();
+    }
 
     render() {
         const { handleModal, handleCodeModal, addBuilderElem, colors } = this.props;
-
+        const { schemeList, currentSchemeName } = this.state;
         return (
             <ControlSideBar>
                 <TopBar>
@@ -41,13 +87,11 @@ class ControlBar extends React.Component {
                                 inputId='theme'
                                 placeholder='Choose Scheme'
                                 classNamePrefix='theme'
-                                options={premadeList}
+                                options={this.state.schemeList}
                                 onChange={this.handleChangeScheme}
-                                defaultValue={{
-                                    label: 'Default',
-                                    value: 'default'
-                                }}
-                                aria-label='Choose Scheme'
+                                aria-label="Choose Scheme"
+                                // value={this.state.schemeList[this.state.currentSchemeName]}
+                                value={schemeList.filter(({value}) => value === currentSchemeName)}
                             />
                         </Dropdown>
                         <ColorScheme>
@@ -317,7 +361,7 @@ class ControlBar extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        colors: state
+        colors: state.colors
     };
 };
 

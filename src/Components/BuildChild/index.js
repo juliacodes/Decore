@@ -13,7 +13,7 @@ import {
     CtaDiv,
     FooterDiv
 } from '../Editor/styles';
-import { SettingsButton, SettingsPopup, Edit, Delete } from './styles';
+import { SettingsButton, SettingsPopup, Delete } from './styles';
 
 class BuildChild extends React.Component {
     constructor(props) {

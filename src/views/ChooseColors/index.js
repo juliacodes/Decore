@@ -158,7 +158,7 @@ class ChooseColors extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        colors: state
+        colors: state.colors
     };
 };
 
