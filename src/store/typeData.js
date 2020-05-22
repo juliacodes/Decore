@@ -1,11 +1,13 @@
 const typeData = {
     nav: {
-        html: `<nav></nav>`,
-        css: `.nav { 
-    width: 100%; 
-    height: 200px;
-    padding: 30px;
-}`
+        html: `<div class="nav">Nav</div>`,
+        css: `.nav {
+background-color: white;
+height: 100px;
+display: flex;
+align-items: center;
+justify-content: center;
+}`,
     },
     header: {
         html: `<header></header>`,
@@ -13,7 +15,7 @@ const typeData = {
     width: 100%; 
     height: 400px;
     padding: 30px;
-}`
+}`,
     },
     article: {
         html: `<article></article>`,
@@ -21,7 +23,7 @@ const typeData = {
     width: 100%; 
     height: 500px;
     padding: 30px;
-}`
+}`,
     },
     section: {
         html: `<section></section>`,
@@ -29,7 +31,7 @@ const typeData = {
     width: 100%; 
     height: 400px;
     padding: 30px;
-}`
+}`,
     },
     table: {
         html: `<table></table>`,
@@ -37,7 +39,7 @@ const typeData = {
     width: 100%; 
     height: 400px;
     padding: 30px;
-}`
+}`,
     },
     footer: {
         html: `<footer></footer>`,
@@ -45,15 +47,18 @@ const typeData = {
     width: 100%; 
     height: 200px;
     padding: 30px;
-}`
+}`,
     },
     div: {
-        html: `<div></div>`,
-        css: `div { 
-    width: 100%; 
-    height: 400px;
-    padding: 30px;
-}`
+        html: `<div class="div">Div</div>`,
+        css: `.div {
+            background-color: white;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          `,
     },
     splitDiv: {
         html: `<div class="splitDiv">
@@ -71,7 +76,7 @@ const typeData = {
     .splitDiv > div {
         width: 50%;
     }
-}`
+}`,
     },
     triDiv: {
         html: `<div class="triDiv">
@@ -90,7 +95,7 @@ const typeData = {
     .triDiv > div {
         width: 30%;
     }
-}`
+}`,
     },
     image: {
         html: `<img></img>`,
@@ -99,7 +104,7 @@ const typeData = {
     height: 400px;
     padding: 30px;
     background-image: url(IMAGEURL);
-}`
+}`,
     },
     cta: {
         html: `<div class="cta">
@@ -126,7 +131,7 @@ const typeData = {
         padding: 20px;
         margin: 10px;
     }
-}`
+}`,
     },
     imageText: {
         html: `<div class="imageText">
@@ -152,29 +157,63 @@ const typeData = {
     .imageText > .flexRight{
         width: 50%;
     }
-}`
+}`,
     },
     navContent: {
-        html: 'code',
-        css: `.navContent { 
-    width: 100%; 
-    height: 200px;
-    padding: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .navContent > .logo {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .navContent > .link {
-        width: 20%;
-        height: 50px;
-
-    }
-}`
+        html: `<div class="nav">
+        <ul>
+          <div class="left">
+            <li class="logo"><a href="">Logo</a></li>
+          </div>
+          <div class="right">
+            <li><a href="">Link</a></li>
+            <li><a href="">Link</a></li>
+            <li><a href="">Link</a></li>
+          </div>
+        </ul>
+      </div>`,
+        css: `.nav {
+            background-color: white;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
+          .nav > ul {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+            margin: 0;
+          }
+          
+          ul > .left,
+          ul > .right {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          
+          ul > .left {
+            justify-content: flex-start;
+          }
+          
+          ul > .right {
+            justify-content: flex-end;
+          }
+          
+          li {
+            list-style-type: none;
+            margin: 0 20px;
+          }
+          
+          .logo {
+            font-size: 30px;
+          }`,
     },
     footerContent: {
         html: 'code',
@@ -182,8 +221,8 @@ const typeData = {
     width: 100%; 
     height: 200px;
     padding: 30px;
-}`
-    }
+}`,
+    },
 };
 
 export default typeData;

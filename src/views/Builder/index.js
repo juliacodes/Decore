@@ -13,7 +13,7 @@ import {
     SettingType,
     SettingVal,
     SettingInput,
-    SettingTextArea
+    SettingTextArea,
 } from './styles';
 import { FlexLeft, FlexRight } from '../../Components/FlexSplit/FlexSplit';
 import { Button, Paragraph } from '../../Styling';
@@ -23,7 +23,7 @@ class Builder extends React.Component {
         super(props);
         const items = JSON.parse(localStorage.getItem('items')); // gets item listing from local storage
         this.state = {
-            code: { items }
+            code: { items },
         };
 
         this.titleInput = React.createRef();
@@ -38,7 +38,7 @@ class Builder extends React.Component {
         this.settingsModal.current.toggleModal(true);
     };
 
-    handleSettingsChange = event => {
+    handleSettingsChange = (event) => {
         const { settings } = { ...this.state };
         const currentState = settings;
 
@@ -61,7 +61,7 @@ class Builder extends React.Component {
         this.setState({ settings: currentState });
     };
 
-    handleInput = e => {
+    handleInput = (e) => {
         const { dispatch } = this.props;
         const { name, value } = e.target;
         e.persist();
@@ -69,7 +69,7 @@ class Builder extends React.Component {
         dispatch(changePreference(name, value));
     };
 
-    addBuilderElem = elem => {
+    addBuilderElem = (elem) => {
         if (this.editor.current) {
             this.editor.current.addNewElem(elem);
         }
@@ -154,15 +154,8 @@ class Builder extends React.Component {
                             <CodeEditor>
                                 <pre>
                                     <code>
-                                        {`<!DOCTYPE html>
-    <head>
-    <link rel="stylesheet" href="FILENAME.css">
-    <title>${preferences.projectTitle}</title>
-    <meta name="description content="${preferences.projectDescription}"/>
-    </head>
-        <body>
-            <div class="Container">
-`}{' '}
+                                        {`
+<main>`}{' '}
                                         {code.items &&
                                             code.items.map(
                                                 ({ uniqueID, type }, index) => {
@@ -170,7 +163,7 @@ class Builder extends React.Component {
                                                         <pre
                                                             style={{
                                                                 margin: 0,
-                                                                padding: 0
+                                                                padding: 0,
                                                             }}
                                                         >
                                                             <code
@@ -187,9 +180,7 @@ class Builder extends React.Component {
                                                 }
                                             )}
                                         {`
-        </div>
-    </body>
-</html>`}
+</main>`}
                                     </code>
                                 </pre>
                             </CodeEditor>
@@ -199,6 +190,28 @@ class Builder extends React.Component {
                             <CodeEditor>
                                 <pre>
                                     <code>
+                                        {`
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+}
+  
+main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+  
+div {
+    margin: 0 auto 20px auto;
+    height: auto;
+    width: 100%;
+}`}{' '}
                                         {code.items &&
                                             code.items.map(
                                                 ({ uniqueID, type }) => {
@@ -234,9 +247,9 @@ class Builder extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
-        preferences: state.preferences
+        preferences: state.preferences,
     };
 };
 
