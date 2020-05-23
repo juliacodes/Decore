@@ -18,6 +18,9 @@ import {
 } from './styles';
 import { FlexLeft, FlexRight } from '../../Components/FlexSplit/FlexSplit';
 import { Button, Paragraph } from '../../Styling';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 class Builder extends React.Component {
     constructor(props) {
@@ -25,6 +28,8 @@ class Builder extends React.Component {
         const items = JSON.parse(localStorage.getItem('items')); // gets item listing from local storage
         this.state = {
             code: { items },
+            value: 'hi',
+            copied: false,
         };
 
         this.titleInput = React.createRef();
@@ -54,6 +59,7 @@ class Builder extends React.Component {
         this.codeModal.current.toggleModal(true);
         const items = JSON.parse(localStorage.getItem('items')); // gets item listing from local storage
         this.setState({ code: { items } });
+        this.setState({ value: { items } });
     };
 
     handleCodeChange = () => {
@@ -153,46 +159,55 @@ class Builder extends React.Component {
                         <FlexLeft>
                             <Paragraph>HTML</Paragraph>
                             <CodeEditor>
-                                <pre>
-                                    <code>
-                                        {`
+                                <SyntaxHighlighter
+                                    language='html'
+                                    style={tomorrow}
+                                >
+                                    {`
 <main>`}{' '}
-                                        {code.items &&
-                                            code.items.map(
-                                                ({ uniqueID, type }, index) => {
-                                                    return (
-                                                        <pre
-                                                            style={{
-                                                                margin: 0,
-                                                                padding: 0,
-                                                            }}
-                                                        >
-                                                            <code
-                                                                key={uniqueID}
-                                                            >
-                                                                {
-                                                                    typeData[
-                                                                        type
-                                                                    ].html
-                                                                }
-                                                            </code>
-                                                        </pre>
-                                                    );
-                                                }
-                                            )}
-                                        {`
+                                </SyntaxHighlighter>
+                                {code.items &&
+                                    code.items.map(
+                                        ({ uniqueID, type }, index) => {
+                                            return (
+                                                <SyntaxHighlighter
+                                                    language='html'
+                                                    style={tomorrow}
+                                                >
+                                                    {typeData[type].html}
+                                                </SyntaxHighlighter>
+                                            );
+                                        }
+                                    )}
+                                <SyntaxHighlighter
+                                    language='html'
+                                    style={tomorrow}
+                                >
+                                    {`
 </main>`}
-                                    </code>
-                                </pre>
+                                </SyntaxHighlighter>
                             </CodeEditor>
-                            <Export>click to copy</Export>
+                            <CopyToClipboard
+                                text={this.state.value}
+                                onCopy={() => this.setState({ copied: true })}
+                            >
+                                {this.state.copied ? (
+                                    <span style={{ color: 'red' }}>
+                                        <Export>Done</Export>
+                                    </span>
+                                ) : (
+                                    <Export>Copy</Export>
+                                )}
+                            </CopyToClipboard>
                         </FlexLeft>
                         <FlexRight>
                             <Paragraph>CSS</Paragraph>
                             <CodeEditor>
-                                <pre>
-                                    <code>
-                                        {`
+                                <SyntaxHighlighter
+                                    language='css'
+                                    style={tomorrow}
+                                >
+                                    {`
 body {
     padding: 0;
     margin: 0;
@@ -222,26 +237,18 @@ main > * {
     height: auto;
     width: 100%;
 }`}{' '}
-                                        {code.items &&
-                                            code.items.map(
-                                                ({ uniqueID, type }) => {
-                                                    return (
-                                                        <pre>
-                                                            <code
-                                                                key={uniqueID}
-                                                            >
-                                                                {
-                                                                    typeData[
-                                                                        type
-                                                                    ].css
-                                                                }
-                                                            </code>
-                                                        </pre>
-                                                    );
-                                                }
-                                            )}
-                                    </code>
-                                </pre>
+                                </SyntaxHighlighter>
+                                {code.items &&
+                                    code.items.map(({ uniqueID, type }) => {
+                                        return (
+                                            <SyntaxHighlighter
+                                                language='css'
+                                                style={tomorrow}
+                                            >
+                                                {typeData[type].css}
+                                            </SyntaxHighlighter>
+                                        );
+                                    })}
                             </CodeEditor>
                             <Export>click to copy</Export>
                         </FlexRight>

@@ -7,6 +7,11 @@ export default createGlobalStyle`
     -webkit-text-size-adjust: 100%;
   }
 
+ pre{
+    background-color: white !important;
+    margin: 0;
+  }
+
   .fzZQDB.active {
     z-index: 3;
   }
