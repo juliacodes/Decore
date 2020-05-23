@@ -14,6 +14,7 @@ import {
     SettingVal,
     SettingInput,
     SettingTextArea,
+    Export,
 } from './styles';
 import { FlexLeft, FlexRight } from '../../Components/FlexSplit/FlexSplit';
 import { Button, Paragraph } from '../../Styling';
@@ -184,6 +185,7 @@ class Builder extends React.Component {
                                     </code>
                                 </pre>
                             </CodeEditor>
+                            <Export>click to copy</Export>
                         </FlexLeft>
                         <FlexRight>
                             <Paragraph>CSS</Paragraph>
@@ -241,6 +243,7 @@ main > * {
                                     </code>
                                 </pre>
                             </CodeEditor>
+                            <Export>click to copy</Export>
                         </FlexRight>
                     </CodeModalRow>
                 </Modal>
