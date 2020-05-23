@@ -187,7 +187,7 @@ class Builder extends React.Component {
 </main>`}
                                 </SyntaxHighlighter>
                             </CodeEditor>
-                            <CopyToClipboard
+                            {/* <CopyToClipboard
                                 text={this.state.value}
                                 onCopy={() => this.setState({ copied: true })}
                             >
@@ -198,7 +198,7 @@ class Builder extends React.Component {
                                 ) : (
                                     <Export>Copy</Export>
                                 )}
-                            </CopyToClipboard>
+                            </CopyToClipboard> */}
                         </FlexLeft>
                         <FlexRight>
                             <Paragraph>CSS</Paragraph>
@@ -250,7 +250,7 @@ main > * {
                                         );
                                     })}
                             </CodeEditor>
-                            <Export>click to copy</Export>
+                            {/* <Export>click to copy</Export> */}
                         </FlexRight>
                     </CodeModalRow>
                 </Modal>
