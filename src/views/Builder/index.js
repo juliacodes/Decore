@@ -197,6 +197,14 @@ body {
     box-sizing: border-box;
     background-color: #f5f5f5;
 }
+
+.div {
+    background-color: white;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
   
 main {
     width: 100%;
@@ -207,7 +215,7 @@ main {
     flex-direction: column;
 }
   
-div {
+main > * {
     margin: 0 auto 20px auto;
     height: auto;
     width: 100%;
