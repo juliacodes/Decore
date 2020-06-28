@@ -1,4 +1,4 @@
-## Decore [(View Site)](https://site-builder.netlify.com/)
+## Decore [(View Site)](https://de-core.netlify.app/)
 
 ### A customizable layout generator built for developers
 
