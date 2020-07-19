@@ -4,7 +4,7 @@ import {
     ModalWrapper,
     CodeModalWrapper,
     ModalHeading,
-    ModalBody
+    ModalBody,
 } from './styles';
 
 export default class Modal extends React.Component {
@@ -12,7 +12,7 @@ export default class Modal extends React.Component {
         super(props);
 
         this.state = {
-            active: false
+            active: false,
         };
 
         this.modal = React.createRef();
@@ -22,11 +22,11 @@ export default class Modal extends React.Component {
         document.addEventListener('mousedown', this.handleClickOutside);
     }
 
-    toggleModal = status => {
+    toggleModal = (status) => {
         this.setState({ active: status });
     };
 
-    handleClickOutside = e => {
+    handleClickOutside = (e) => {
         if (this.modal.current && !this.modal.current.contains(e.target)) {
             this.setState({ active: false });
         }

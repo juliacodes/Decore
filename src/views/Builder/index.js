@@ -13,17 +13,23 @@ import {
     SettingType,
     SettingVal,
     SettingInput,
-    SettingTextArea
+    SettingTextArea,
+    Export,
 } from './styles';
 import { FlexLeft, FlexRight } from '../../Components/FlexSplit/FlexSplit';
 import { Button, Paragraph } from '../../Styling';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 class Builder extends React.Component {
     constructor(props) {
         super(props);
         const items = JSON.parse(localStorage.getItem('items')); // gets item listing from local storage
         this.state = {
-            code: { items }
+            code: { items },
+            value: 'hi',
+            copied: false,
         };
 
         this.titleInput = React.createRef();
@@ -38,7 +44,7 @@ class Builder extends React.Component {
         this.settingsModal.current.toggleModal(true);
     };
 
-    handleSettingsChange = event => {
+    handleSettingsChange = (event) => {
         const { settings } = { ...this.state };
         const currentState = settings;
 
@@ -53,6 +59,7 @@ class Builder extends React.Component {
         this.codeModal.current.toggleModal(true);
         const items = JSON.parse(localStorage.getItem('items')); // gets item listing from local storage
         this.setState({ code: { items } });
+        this.setState({ value: { items } });
     };
 
     handleCodeChange = () => {
@@ -61,7 +68,7 @@ class Builder extends React.Component {
         this.setState({ settings: currentState });
     };
 
-    handleInput = e => {
+    handleInput = (e) => {
         const { dispatch } = this.props;
         const { name, value } = e.target;
         e.persist();
@@ -69,7 +76,7 @@ class Builder extends React.Component {
         dispatch(changePreference(name, value));
     };
 
-    addBuilderElem = elem => {
+    addBuilderElem = (elem) => {
         if (this.editor.current) {
             this.editor.current.addNewElem(elem);
         }
@@ -152,74 +159,98 @@ class Builder extends React.Component {
                         <FlexLeft>
                             <Paragraph>HTML</Paragraph>
                             <CodeEditor>
-                                <pre>
-                                    <code>
-                                        {`<!DOCTYPE html>
-    <head>
-    <link rel="stylesheet" href="FILENAME.css">
-    <title>${preferences.projectTitle}</title>
-    <meta name="description content="${preferences.projectDescription}"/>
-    </head>
-        <body>
-            <div class="Container">
-`}{' '}
-                                        {code.items &&
-                                            code.items.map(
-                                                ({ uniqueID, type }, index) => {
-                                                    return (
-                                                        <pre
-                                                            style={{
-                                                                margin: 0,
-                                                                padding: 0
-                                                            }}
-                                                        >
-                                                            <code
-                                                                key={uniqueID}
-                                                            >
-                                                                {
-                                                                    typeData[
-                                                                        type
-                                                                    ].html
-                                                                }
-                                                            </code>
-                                                        </pre>
-                                                    );
-                                                }
-                                            )}
-                                        {`
-        </div>
-    </body>
-</html>`}
-                                    </code>
-                                </pre>
+                                <SyntaxHighlighter
+                                    language='html'
+                                    style={tomorrow}
+                                >
+                                    {`
+<main>`}{' '}
+                                </SyntaxHighlighter>
+                                {code.items &&
+                                    code.items.map(
+                                        ({ uniqueID, type }, index) => {
+                                            return (
+                                                <SyntaxHighlighter
+                                                    language='html'
+                                                    style={tomorrow}
+                                                >
+                                                    {typeData[type].html}
+                                                </SyntaxHighlighter>
+                                            );
+                                        }
+                                    )}
+                                <SyntaxHighlighter
+                                    language='html'
+                                    style={tomorrow}
+                                >
+                                    {`
+</main>`}
+                                </SyntaxHighlighter>
                             </CodeEditor>
+                            {/* <CopyToClipboard
+                                text={this.state.value}
+                                onCopy={() => this.setState({ copied: true })}
+                            >
+                                {this.state.copied ? (
+                                    <span style={{ color: 'red' }}>
+                                        <Export>Done</Export>
+                                    </span>
+                                ) : (
+                                    <Export>Copy</Export>
+                                )}
+                            </CopyToClipboard> */}
                         </FlexLeft>
                         <FlexRight>
                             <Paragraph>CSS</Paragraph>
                             <CodeEditor>
-                                <pre>
-                                    <code>
-                                        {code.items &&
-                                            code.items.map(
-                                                ({ uniqueID, type }) => {
-                                                    return (
-                                                        <pre>
-                                                            <code
-                                                                key={uniqueID}
-                                                            >
-                                                                {
-                                                                    typeData[
-                                                                        type
-                                                                    ].css
-                                                                }
-                                                            </code>
-                                                        </pre>
-                                                    );
-                                                }
-                                            )}
-                                    </code>
-                                </pre>
+                                <SyntaxHighlighter
+                                    language='css'
+                                    style={tomorrow}
+                                >
+                                    {`
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+}
+
+.div {
+    background-color: white;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+  
+main > * {
+    margin: 0 auto 20px auto;
+    height: auto;
+    width: 100%;
+}`}{' '}
+                                </SyntaxHighlighter>
+                                {code.items &&
+                                    code.items.map(({ uniqueID, type }) => {
+                                        return (
+                                            <SyntaxHighlighter
+                                                language='css'
+                                                style={tomorrow}
+                                            >
+                                                {typeData[type].css}
+                                            </SyntaxHighlighter>
+                                        );
+                                    })}
                             </CodeEditor>
+                            {/* <Export>click to copy</Export> */}
                         </FlexRight>
                     </CodeModalRow>
                 </Modal>
@@ -234,9 +265,9 @@ class Builder extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
-        preferences: state.preferences
+        preferences: state.preferences,
     };
 };
 

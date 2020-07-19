@@ -125,9 +125,7 @@ export const CodeModalRow = styled(ModalRow)`
             box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.05);
             overflow: scroll;
         }
-    }
-
-    ${FlexRight} {
+        position: relative;
     }
 `;
 
@@ -141,6 +139,12 @@ export const CodeEditor = styled.div`
         margin-top: 0;
         padding: 10px 20px 20px 20px;
     }
+`;
+
+export const Export = styled.button`
+    position: absolute;
+    bottom: 20px;
+    right: 0;
 `;
 
 export const SettingType = styled.p`
