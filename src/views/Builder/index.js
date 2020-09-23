@@ -15,7 +15,7 @@ import {
     SettingInput,
     SettingTextArea
 } from './styles';
-import { FlexLeft, FlexRight, FlexCenter } from '../../Components/FlexSplit/FlexSplit';
+import { FlexLeft, FlexRight } from '../../Components/FlexSplit/FlexSplit';
 import { Button, Paragraph } from '../../Styling';
 var fileDownload = require('js-file-download');
 
@@ -262,7 +262,7 @@ class Builder extends React.Component {
                     </CodeModalRow>
                     
                         <center>
-                    <Button onClick={downloadcodes}>Download</Button>
+                    <Button onClick={downloadcodes} style={{fontSize:'16px',fontWeight:'800',width:'120px',height:'35px'}}>Download</Button>
                     <Paragraph>* Allow Download Multiple Files</Paragraph>
                         </center>
                   
