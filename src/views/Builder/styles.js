@@ -7,9 +7,11 @@ export const BuilderWrapper = styled.div`
 
     ${Button} {
         margin: 0;
-        padding: 0;
-        width: 73px;
-        height: 31px;
+        // padding:0px 5px;
+        // width: 73px;
+        // height: 31px;
+        font-size:16px;
+        font-weight:800;
     }
 `;
 

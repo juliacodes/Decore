@@ -8,6 +8,7 @@
     "babel-preset-react": "^6.24.1",
     "dragula": "^3.7.2",
     "font-picker-react": "^3.4.1",
+    "js-file-download": "^0.4.12",
     "react": "^16.10.2",
     "react-color": "^2.17.3",
     "react-dom": "^16.10.2",
