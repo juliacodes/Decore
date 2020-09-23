@@ -28,7 +28,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "plugin:react/recommended"
+    "extends": "plugin:react/recommended",
+    "babelMacros": {
+      "styledComponents": {}
+    }
   },
   "browserslist": {
     "production": [
