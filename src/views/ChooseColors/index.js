@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ChromePicker } from 'react-color';
 import { changeColor } from '../../actions/colors';
-import Font from '../../Components/Font';
+// import Font from '../../Components/Font';
 import { COLORS, SmallHeading, Button, FONTS } from '../../Styling/Styling';
 
 import {
