@@ -17,6 +17,7 @@ import {
 } from './styles';
 import { FlexLeft, FlexRight } from '../../Components/FlexSplit/FlexSplit';
 import { Button, Paragraph } from '../../Styling';
+var fileDownload = require('js-file-download');
 
 class Builder extends React.Component {
     constructor(props) {
@@ -78,6 +79,42 @@ class Builder extends React.Component {
     render() {
         const { code } = this.state;
         const { preferences } = this.props;
+        let csscode=()=>{
+          return code.items &&
+                code.items.map(
+                    ({ uniqueID, type }) => {
+                        return (
+                            typeData[type].css
+                        );
+                    }
+                )
+        }
+        let htmlcode = () => {
+            return`<!DOCTYPE html>
+            <head>
+            <link rel="stylesheet" href="${preferences.projectDescription}.css">
+            <title>${preferences.projectTitle}</title>
+            <meta name="description content="${preferences.projectDescription}"/>
+            </head>
+                <body>
+                    <div class="Container">
+            `+ code.items &&
+                code.items.map(
+                    ({ uniqueID, type }) => {
+                        return (
+                            typeData[type].html
+                        );
+                        }
+                    )+   
+            `</div>
+            </body>
+            </html>` 
+        }
+
+        let downloadcodes=()=>{
+            fileDownload(csscode(),`${preferences.projectTitle}.css`);
+            fileDownload(htmlcode(),`${preferences.projectTitle}.html`);
+        }
         return (
             <BuilderWrapper>
                 <Modal ref={this.settingsModal} title='Preferences'>
@@ -221,7 +258,16 @@ class Builder extends React.Component {
                                 </pre>
                             </CodeEditor>
                         </FlexRight>
+                      
                     </CodeModalRow>
+                    
+                        <center>
+                    <Button onClick={downloadcodes} style={{fontSize:'16px',fontWeight:'800',width:'120px',height:'35px'}}>Download</Button>
+                    <Paragraph>* Allow Download Multiple Files</Paragraph>
+                        </center>
+                  
+                        
+                        
                 </Modal>
                 <Editor ref={this.editor} />
                 <ControlBar
